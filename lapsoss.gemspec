@@ -18,11 +18,11 @@ Gem::Specification.new do |spec|
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/seuros/lapsoss'
-  spec.metadata['changelog_uri'] = 'https://github.com/seuros/lapsoss/blob/main/CHANGELOG.md'
+  spec.metadata['changelog_uri'] = 'https://github.com/seuros/lapsoss/blob/master/CHANGELOG.md'
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   # Specify which files should be added to the gem when it is released.
-  spec.files = Dir.glob('lib/**/*') + %w[README.md LICENSE.txt CHANGELOG.md]
+  spec.files = Dir.glob('lib/**/*') + %w[README.md LICENSE.txt]
   spec.require_paths = [ 'lib' ]
 
   # Runtime dependencies

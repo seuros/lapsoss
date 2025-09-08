@@ -16,7 +16,7 @@
 .vscode/
 .byebug_history
 .rspec_status
-.rubocop-* 
+.rubocop-*
 
 # Ruby version managers
 .ruby-version
@@ -38,3 +38,5 @@
 test/dummy/log/*
 test/dummy/tmp/**
 test/dummy/storage/**
+
+Gemfile.lock
