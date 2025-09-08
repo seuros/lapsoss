@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"f775298f-b335-445a-9ad6-c8c19b90d50e","sent_at":"2025-07-07T02:32:27+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751851947.1317692,"environment":null,"release":null,"tags":null,"user":null,"extra":null,"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.1.0, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 01:32:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"f775298fb335445a9ad6c8c19b90d50e"}'
+  recorded_at: Mon, 07 Jul 2025 01:32:27 GMT
+recorded_with: VCR 6.3.1

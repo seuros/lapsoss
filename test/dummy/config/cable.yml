@@ -1,0 +1,10 @@
+development:
+  adapter: solid_cable
+  polling_interval: 0.1.seconds
+
+#development:
+#  adapter: redis
+#  channel_prefix: <%= "actionmcp_#{Rails.application.env}" %>
+
+test:
+  adapter: test

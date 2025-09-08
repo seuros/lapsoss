@@ -1,0 +1,2593 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"6ec5d325-16db-4a0d-b5d5-8e12029a463a","sent_at":"2025-07-07T07:50:33+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751871033.944545,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 06:50:34 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"6ec5d32516db4a0db5d58e12029a463a"}'
+  recorded_at: Mon, 07 Jul 2025 06:50:34 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"1645fad4-c8f7-4aa9-9b50-72e5e09e2a9c","sent_at":"2025-07-07T12:15:30+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751886930.194651,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 11:15:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"1645fad4c8f74aa99b5072e5e09e2a9c"}'
+  recorded_at: Mon, 07 Jul 2025 11:15:30 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c8228a6f-f43f-4737-b048-be65c21e808a","sent_at":"2025-07-07T12:21:47+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751887307.3642108,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 11:21:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c8228a6ff43f4737b048be65c21e808a"}'
+  recorded_at: Mon, 07 Jul 2025 11:21:47 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"d7b84f15-4da1-40ec-99a3-86f14dbeea73","sent_at":"2025-07-07T12:23:49+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751887429.793361,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 11:23:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"d7b84f154da140ec99a386f14dbeea73"}'
+  recorded_at: Mon, 07 Jul 2025 11:23:49 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"34fadd68-6002-4b5f-bcf6-af583751a014","sent_at":"2025-07-08T16:17:23+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751987843.732139,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"test_sentry_adapter.rb","lineno":12,"function":"'block in <class:TestSentryAdapter>'","in_app":true},{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block'","module":"'VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette'","module":"'VCR","in_app":false}]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Jul 2025 15:17:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"34fadd6860024b5fbcf6af583751a014"}'
+  recorded_at: Tue, 08 Jul 2025 15:17:23 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAFSRbWgAA2VSXU/bMBR936+w/AJo/UjSZFBrmsY23iYeKEOaaBU5zg3KcOzIdqoi6H/fvUmoKERVW9vnnHt8Tp45bMGEvC654ImM0qQ4h2laSTlNl3I5vYBFNk1L/KmyL1m0uOAT7okgAxGiJJtG59Po4jZJRJqKLPkcxSKKCFU+cvHMjWwAkVq23nqP+1twvrYG96JZPIv4fv/pmYenllC9F8QoawINGbdl2+payYC0+T+PXKK0WobKugbPXVc8IUsjXZOKc9bhOtQN+CCblov4PEuiOI6WySxeZIssm3Aw29pZ09BEYTqtJ9yBBunhdRnkg6crBFThIrgO3rGGk/2Edx4cISnFOFkgrJG1HgHfYYceNMyUbQgMu+AkoVXng23yUgZc8q3UHdB54UCWynVN0U/v9/Hf/abnKmhDH9+bk0N+qyBNKV15NSYwaAp+izZYHwurnG3Y70MbmI96RD8KSLFy2NagWNUaxu7oEnP6yql595TLUrYB3MwVlHptwFi694RXnVGDO35SaKseWW3YV6Wl94I8rHr+5UD/doLs2uTY7mu6rYO8736H6d5zxsCUCMIPY2SArblCbufAs0MULFg2CK85Ky3fjO/PLuTkDb0wfO5+3sywplyhFwgBTtd8vM2omB8E1/yMdNCOxTsf+aFnDA/rNFX9gEwEs5dh9dJbHZ5hpx86TDqlPAUT49zOT1jpjWBX13f3a766ur69+Zv/WeW/Vtdrvjk7SFEIWP5RJ1vl5l2o9XwrXS0LDbl0Dz7vQ8cbaf2+nuVRO4QYwFRCY8tOk+oJpiTE3Sh5iYo/CPOz13vTViW1h4+O3r0Qy/Ro5tv0P0z9IL7Z0+c/roismJ8EAAA=
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      Content-Encoding:
+      - gzip
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Jul 2025 21:44:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"2a042b7e4faa49a98e354d8e3f565038"}'
+  recorded_at: Tue, 08 Jul 2025 21:44:52 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"23a5522e-2bc4-41bb-ac0e-7f41f6dd8ec0","sent_at":"2025-07-09T16:26:04+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752074764.718739,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 15:26:04 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 15:26:04 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 15:26:04 UTC"}]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:26:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"23a5522e2bc441bbac0e7f41f6dd8ec0"}'
+  recorded_at: Wed, 09 Jul 2025 15:26:04 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"d31d2b2d-7f17-4c85-b9fc-438b6b621b9b","sent_at":"2025-07-09T16:34:33+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752075273.499707,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:34:33 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"d31d2b2d7f174c85b9fc438b6b621b9b"}'
+  recorded_at: Wed, 09 Jul 2025 15:34:33 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"e4076a3f-ef2e-43e2-8a4b-5050ff382020","sent_at":"2025-07-09T16:39:59+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752075599.7783082,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:39:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"e4076a3fef2e43e28a4b5050ff382020"}'
+  recorded_at: Wed, 09 Jul 2025 15:39:59 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"d6cb5eed-c138-48b4-871d-6fcdc2013408","sent_at":"2025-07-09T16:41:57+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752075717.194992,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:41:57 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"d6cb5eedc13848b4871d6fcdc2013408"}'
+  recorded_at: Wed, 09 Jul 2025 15:41:57 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"a906c8e3-629f-4b81-a3f4-cc36464dd76e","sent_at":"2025-07-09T17:20:40+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752078040.757143,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 16:20:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"a906c8e3629f4b81a3f4cc36464dd76e"}'
+  recorded_at: Wed, 09 Jul 2025 16:20:40 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"53f6b6af-a057-4658-b931-461d8e200740","sent_at":"2025-07-09T18:03:19+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752080599.872032,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 17:03:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"53f6b6afa0574658b931461d8e200740"}'
+  recorded_at: Wed, 09 Jul 2025 17:03:20 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"b92af016-39b5-4a07-a5ca-fbec364c94b9","sent_at":"2025-07-09T19:41:24+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752086484.261604,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 18:41:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"b92af01639b54a07a5cafbec364c94b9"}'
+  recorded_at: Wed, 09 Jul 2025 18:41:24 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"e56776ea-fe17-4487-a949-6102d5c73a5c","sent_at":"2025-07-10T00:47:39+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752104859.691536,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 23:47:39 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"e56776eafe174487a9496102d5c73a5c"}'
+  recorded_at: Wed, 09 Jul 2025 23:47:39 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"df6ffe3d-dd6e-4e1d-8c41-c4b3ae8b3a28","sent_at":"2025-07-10T07:56:37+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752130597.251938,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"test/sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true,"pre_context":["  end","","  test \"captures exception to Sentry\" do"],"context_line":"    VCR.use_cassette(\"sentry_capture_exception\") do","post_context":["      Lapsoss.configure do |config|","        config.use_sentry(name: :sentry_us, dsn: ENV[\"SENTRY_US_DSN\"])","      end"]}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Jul 2025 06:56:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"df6ffe3ddd6e4e1d8c41c4b3ae8b3a28"}'
+  recorded_at: Thu, 10 Jul 2025 06:56:37 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"2ad7067a-8409-43b5-be40-559a15146ea1","sent_at":"2025-07-10T09:25:54+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752135954.91182,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Jul 2025 08:25:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"2ad7067a840943b5be40559a15146ea1"}'
+  recorded_at: Thu, 10 Jul 2025 08:25:55 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"1f741a71-d41e-4794-ac52-bf69e08ce859","sent_at":"2025-07-13T18:47:09+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752428829.763593,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 17:47:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"1f741a71d41e4794ac52bf69e08ce859"}'
+  recorded_at: Sun, 13 Jul 2025 17:47:10 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"6119b600-61db-43a3-9c8b-75ee69f9bf26","sent_at":"2025-07-13T20:07:12+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752433632.969725,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:07:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"6119b60061db43a39c8b75ee69f9bf26"}'
+  recorded_at: Sun, 13 Jul 2025 19:07:13 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"a28eb78b-174b-44ee-bb7b-7f0f33df79a4","sent_at":"2025-07-13T20:08:23+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752433703.2248828,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:08:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"a28eb78b174b44eebb7b7f0f33df79a4"}'
+  recorded_at: Sun, 13 Jul 2025 19:08:23 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"d2a4c3de-9312-46d8-9a0d-92c9bc9b157f","sent_at":"2025-07-13T20:10:52+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752433852.252116,"environment":null,"release":null,"tags":{},"user":{},"extra":{"feature_flags":{"new_checkout":"enabled","dark_mode":"variant_a"}},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error with feature flags","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:10:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"d2a4c3de931246d89a0d92c9bc9b157f"}'
+  recorded_at: Sun, 13 Jul 2025 19:10:52 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"93a6c4a1-09ee-42d1-ab4c-1bed76f994a5","sent_at":"2025-07-13T20:11:58+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752433918.2432709,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:11:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"93a6c4a109ee42d1ab4c1bed76f994a5"}'
+  recorded_at: Sun, 13 Jul 2025 19:11:58 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"fc4e1567-3f00-47e2-b8f0-6f8dd23faa68","sent_at":"2025-07-13T20:13:33+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752434013.1539772,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:13:33 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"fc4e15673f0047e2b8f06f8dd23faa68"}'
+  recorded_at: Sun, 13 Jul 2025 19:13:33 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"503530f0-16de-441e-a50e-d5118e2b4464","sent_at":"2025-07-13T20:15:18+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752434118.541235,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:15:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"503530f016de441ea50ed5118e2b4464"}'
+  recorded_at: Sun, 13 Jul 2025 19:15:18 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"6e43ad22-099e-4db9-880a-be5e13c825dd","sent_at":"2025-07-13T20:15:49+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752434149.577937,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:15:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"6e43ad22099e4db9880abe5e13c825dd"}'
+  recorded_at: Sun, 13 Jul 2025 19:15:50 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"ca24cb69-7404-40c0-adba-6eca8c6428b6","sent_at":"2025-07-13T23:15:27+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752444927.0272262,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 22:15:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"ca24cb69740440c0adba6eca8c6428b6"}'
+  recorded_at: Sun, 13 Jul 2025 22:15:27 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"d7def36d-134a-4098-b675-f366c37efb8e","sent_at":"2025-07-13T23:18:41+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752445121.862218,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 22:18:41 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"d7def36d134a4098b675f366c37efb8e"}'
+  recorded_at: Sun, 13 Jul 2025 22:18:41 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"8fd5955a-bc05-4a42-af69-66d74a133d66","sent_at":"2025-07-13T23:18:59+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752445139.755918,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 22:18:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"8fd5955abc054a42af6966d74a133d66"}'
+  recorded_at: Sun, 13 Jul 2025 22:18:59 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"cddbbf1c-2953-4d97-a748-7e54c9a982f6","sent_at":"2025-07-27T19:59:52+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1753642792.2732658,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 27 Jul 2025 18:59:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"cddbbf1c29534d97a7487e54c9a982f6"}'
+  recorded_at: Sun, 27 Jul 2025 18:59:52 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"5b167cb3-d4c7-43ee-923e-d74a55892aea","sent_at":"2025-07-27T20:35:49+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1753644949.21548,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 27 Jul 2025 19:35:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"5b167cb3d4c743ee923ed74a55892aea"}'
+  recorded_at: Sun, 27 Jul 2025 19:35:49 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"3c4dc0b0-1c6a-40e1-9630-534abd0fa535","sent_at":"2025-07-27T22:25:43+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1753651543.843869,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 27 Jul 2025 21:25:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"3c4dc0b01c6a40e19630534abd0fa535"}'
+  recorded_at: Sun, 27 Jul 2025 21:25:43 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"3f476498-806f-4ae7-ae88-59eb3ac90da5","sent_at":"2025-09-08T19:58:16Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"51c00b39-a8be-4ac9-830c-04d66612abda","timestamp":"2025-09-08T19:58:16Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 19:58:16 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"3f476498806f4ae7ae8859eb3ac90da5"}'
+  recorded_at: Mon, 08 Sep 2025 19:58:16 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"2d149470-c65e-42e3-9da4-524f2941da73","sent_at":"2025-09-08T19:58:31Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"8c6883bd-1f0a-4267-8796-839bea201e6f","timestamp":"2025-09-08T19:58:31Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 19:58:31 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"2d149470c65e42e39da4524f2941da73"}'
+  recorded_at: Mon, 08 Sep 2025 19:58:31 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c18ff91e-8c6c-4eee-ab2f-add31a009af2","sent_at":"2025-09-08T20:00:03Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"ed852348-33b9-4095-80d2-2c3d7e76498d","timestamp":"2025-09-08T20:00:03Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:00:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c18ff91e8c6c4eeeab2fadd31a009af2"}'
+  recorded_at: Mon, 08 Sep 2025 20:00:03 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c00e51e3-72a2-47ce-8202-e8c64cd76f31","sent_at":"2025-09-08T20:06:44Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"8b7c2c01-049d-4689-b28b-79c95933fd0e","timestamp":"2025-09-08T20:06:44Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:06:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c00e51e372a247ce8202e8c64cd76f31"}'
+  recorded_at: Mon, 08 Sep 2025 20:06:45 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"e083fa6d-da75-43e9-ac64-2db09c7418f5","sent_at":"2025-09-08T20:07:03Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"a258ebcf-e7b4-453a-bdd1-8d44349a7e48","timestamp":"2025-09-08T20:07:03Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:07:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"e083fa6dda7543e9ac642db09c7418f5"}'
+  recorded_at: Mon, 08 Sep 2025 20:07:03 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"ef6ba16b-533c-42f0-a251-ac55c4ccd2fe","sent_at":"2025-09-08T20:08:48Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"25ebff6f-7e34-417d-bd09-26903bb38dac","timestamp":"2025-09-08T20:08:48Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:08:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"ef6ba16b533c42f0a251ac55c4ccd2fe"}'
+  recorded_at: Mon, 08 Sep 2025 20:08:49 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"3db08469-ba2c-4a0d-8fd4-30b55afc03b8","sent_at":"2025-09-08T20:09:00Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"6b215bb5-a797-46cd-8d3d-281762fac66b","timestamp":"2025-09-08T20:09:00Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"3db08469ba2c4a0d8fd430b55afc03b8"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:00 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"347be2b8-6424-41c7-9496-9cf1b031c98d","sent_at":"2025-09-08T20:09:15Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"9675a905-5dd5-41d3-aeb3-8f4cd7c3d494","timestamp":"2025-09-08T20:09:15Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"347be2b8642441c794969cf1b031c98d"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:15 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"7fa396ff-36d3-4504-b37f-f30b28faec57","sent_at":"2025-09-08T20:09:34Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"7c87c160-c039-418a-a076-4c8ee932bb89","timestamp":"2025-09-08T20:09:34Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:34 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"7fa396ff36d34504b37ff30b28faec57"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:34 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"ec8b3f0e-82f8-421b-9b09-c6c4df2b99ac","sent_at":"2025-09-08T20:09:52Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"76cfd2d9-d9c7-4a10-8cb9-6be05d7df25d","timestamp":"2025-09-08T20:09:52Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"ec8b3f0e82f8421b9b09c6c4df2b99ac"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:52 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"6c04ba93-17a7-423e-ba4d-14e5b1aaa4a0","sent_at":"2025-09-08T20:11:41Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"803a04c5-3ec4-45a1-a331-6fe07fee178f","timestamp":"2025-09-08T20:11:41Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:11:41 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"6c04ba9317a7423eba4d14e5b1aaa4a0"}'
+  recorded_at: Mon, 08 Sep 2025 20:11:41 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"f9548d55-2f50-4739-a2d7-ab1603e71af4","sent_at":"2025-09-08T20:11:57Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"e409fa55-fe34-431a-82d2-bf2ddf24e6a8","timestamp":"2025-09-08T20:11:57Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:11:57 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"f9548d552f504739a2d7ab1603e71af4"}'
+  recorded_at: Mon, 08 Sep 2025 20:11:57 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"46b39314-43a0-4dc9-bf39-3f6420f3fa11","sent_at":"2025-09-08T20:12:08Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"9400b67e-cd8c-4f99-80ce-3fb8d8c6992b","timestamp":"2025-09-08T20:12:08Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:12:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"46b3931443a04dc9bf393f6420f3fa11"}'
+  recorded_at: Mon, 08 Sep 2025 20:12:09 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c3113b45-5d1b-439d-9ec7-93fb0e187554","sent_at":"2025-09-08T20:16:45Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"53e963a3-2e2c-4f34-9462-5b4cf1eb9d56","timestamp":"2025-09-08T20:16:45Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:16:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c3113b455d1b439d9ec793fb0e187554"}'
+  recorded_at: Mon, 08 Sep 2025 20:16:45 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"990eb038-d99a-4eaf-a9cd-29b22fdbd78c","sent_at":"2025-09-08T20:17:03Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"527d0178-8318-4fc1-b5da-ac099b64a97e","timestamp":"2025-09-08T20:17:03Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:17:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"990eb038d99a4eafa9cd29b22fdbd78c"}'
+  recorded_at: Mon, 08 Sep 2025 20:17:03 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c69e05aa-c295-446e-8c6e-e575de18d64b","sent_at":"2025-09-08T20:17:18Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"1113dd94-e8c8-4dc8-a059-67da310e6608","timestamp":"2025-09-08T20:17:18Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:17:18 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c69e05aac295446e8c6ee575de18d64b"}'
+  recorded_at: Mon, 08 Sep 2025 20:17:18 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"b0774f47-1405-4d24-8f60-9401e7887402","sent_at":"2025-09-08T20:18:11Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"11ffdeba-7851-420d-b864-9ea667556394","timestamp":"2025-09-08T20:18:11Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:18:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"b0774f4714054d248f609401e7887402"}'
+  recorded_at: Mon, 08 Sep 2025 20:18:11 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"e06873f4-0d6d-4ed7-ae2e-b96b5c8bad11","sent_at":"2025-09-08T20:18:21Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"cb4527a0-23d7-4cb6-afe9-7eeb812dbd39","timestamp":"2025-09-08T20:18:21Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:18:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"e06873f40d6d4ed7ae2eb96b5c8bad11"}'
+  recorded_at: Mon, 08 Sep 2025 20:18:22 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"e8f238ec-66d8-4971-9ec7-8114ad37e85f","sent_at":"2025-09-08T20:18:49Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"2ade5124-4e6d-46ba-91ed-73f67ee4de71","timestamp":"2025-09-08T20:18:49Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:18:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"e8f238ec66d849719ec78114ad37e85f"}'
+  recorded_at: Mon, 08 Sep 2025 20:18:49 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"4596b72b-2236-4ebc-8327-37283de35a46","sent_at":"2025-09-08T20:23:10Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"30dfbf6e-10f4-4ad9-8f58-981c7ec7e4e8","timestamp":"2025-09-08T20:23:10Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:23:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"4596b72b22364ebc832737283de35a46"}'
+  recorded_at: Mon, 08 Sep 2025 20:23:11 GMT
+recorded_with: VCR 6.3.1

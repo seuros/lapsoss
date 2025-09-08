@@ -1,0 +1,32 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# Rails framework (railties only)
+# Allow pinning from CI via RAILS_VERSION
+rails_version = ENV["RAILS_VERSION"]
+if rails_version && !rails_version.empty?
+  gem "actionpack", rails_version
+  gem "railties", rails_version
+else
+  gem "actionpack", "~> 8.0.4"
+  gem "railties", "~> 8.0.4"
+end
+
+# Lapsoss gem (from parent directory)
+gem "lapsoss", path: "../.."
+
+# Development and test dependencies
+group :development, :test do
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails"
+  gem "rspec-rails"
+end
+
+group :development do
+  gem "web-console"
+end
+
+# Server
+gem "falcon", "~> 0.39"
+gem "puma", "~> 6.0"

@@ -1,0 +1,36 @@
+name: Ruby CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Ruby ${{ matrix.ruby }} / Rails ${{ matrix.rails }}
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby:
+          - "3.3"
+          - "3.4" # Current development version
+        rails:
+          - "7.2"
+          - "8.0"
+          - "8.1.0.beta1"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true # runs bundle install and caches gems
+
+      - name: Run tests
+        env:
+          RAILS_VERSION: ${{ matrix.rails }}
+        run: bin/rails test

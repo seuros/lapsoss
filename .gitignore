@@ -1,0 +1,40 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# Build artifacts
+*.gem
+
+# Editors/IDEs
+.DS_Store
+.idea/
+.vscode/
+.byebug_history
+.rspec_status
+.rubocop-* 
+
+# Ruby version managers
+.ruby-version
+.ruby-gemset
+.tool-versions
+
+# Bundler/vendor
+/vendor/bundle/
+/vendor/cache/
+
+# Environment variables
+.env
+.env.*
+
+# VCR cassettes (will contain sanitized versions)
+# Cassettes are committed to ensure reproducible tests
+
+# Rails dummy app artifacts
+test/dummy/log/*
+test/dummy/tmp/**
+test/dummy/storage/**

@@ -1,0 +1,101 @@
+# frozen_string_literal: true
+
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'pkg/**/*'
+    - 'test/cassettes/**/*'
+    - 'test/dummy/vendor/**/*'
+    - 'test/dummy/tmp/**/*'
+    - 'test/dummy/log/**/*'
+
+# We're a library, not an application
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+# Allow longer lines in tests and examples
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'test/**/*'
+    - 'examples/**/*'
+
+# Allow assignment in conditional for cleaner code
+Lint/AssignmentInCondition:
+  Enabled: false
+
+# Allow more compact class definitions
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Allow top-level documentation to be skipped for adapters
+Style/Documentation:
+  Enabled: false
+
+# Allow block comments for large configuration blocks
+Style/BlockComments:
+  Enabled: false
+
+# Allow numeric literals for clarity in examples
+Style/NumericLiterals:
+  Exclude:
+    - 'examples/**/*'
+    - 'test/**/*'
+
+# Allow guard clauses without else
+Style/GuardClause:
+  MinBodyLength: 3
+
+# Allow more parameters for adapter initializers
+Metrics/ParameterLists:
+  Max: 6
+
+# Allow longer methods in adapters (they handle complex payload building)
+Metrics/MethodLength:
+  Max: 25
+  Exclude:
+    - 'lib/lapsoss/adapters/**/*'
+    - 'test/**/*'
+
+# Allow longer classes for comprehensive adapters
+Metrics/ClassLength:
+  Max: 200
+  Exclude:
+    - 'test/**/*'
+
+# Allow longer modules for complete functionality
+Metrics/ModuleLength:
+  Max: 200
+  Exclude:
+    - 'test/**/*'
+
+# Allow more complex adapter methods
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+# Allow more complex conditional logic in adapters
+Metrics/PerceivedComplexity:
+  Max: 10
+
+# Allow longer blocks in configuration and tests
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*'
+    - 'examples/**/*'
+    - '*.gemspec'
+
+# Allow rescue without specific exception in adapters
+Style/RescueStandardError:
+  Exclude:
+    - 'lib/lapsoss/adapters/**/*'
+
+# Allow empty rescue in adapters for graceful degradation
+Lint/SuppressedException:
+  Exclude:
+    - 'lib/lapsoss/adapters/**/*'

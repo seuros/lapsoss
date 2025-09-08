@@ -1,0 +1,2852 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"f3251350-0814-4674-b568-62ad86a5504e","sent_at":"2025-07-07T07:50:33+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751871033.4382012,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 06:50:33 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"f325135008144674b56862ad86a5504e"}'
+  recorded_at: Mon, 07 Jul 2025 06:50:33 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"afb633cc-fe6c-44f9-a854-24de01064c6f","sent_at":"2025-07-07T12:15:30+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751886930.701521,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 11:15:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"afb633ccfe6c44f9a85424de01064c6f"}'
+  recorded_at: Mon, 07 Jul 2025 11:15:30 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"5747da09-5aae-4e24-a2b3-5e27badff3e5","sent_at":"2025-07-07T12:21:47+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751887307.8757818,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 11:21:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"5747da095aae4e24a2b35e27badff3e5"}'
+  recorded_at: Mon, 07 Jul 2025 11:21:47 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"68a7c850-18f7-4f84-9f27-9a5a7c5d4497","sent_at":"2025-07-07T12:23:48+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751887428.767833,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 07 Jul 2025 11:23:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"68a7c85018f74f849f279a5a7c5d4497"}'
+  recorded_at: Mon, 07 Jul 2025 11:23:48 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"615c02a3-8cee-41d2-a741-532da48e3281","sent_at":"2025-07-08T16:17:25+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1751987845.296872,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Jul 2025 15:17:25 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"615c02a38cee41d2a741532da48e3281"}'
+  recorded_at: Tue, 08 Jul 2025 15:17:25 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"df487e41-19a7-4728-af0c-a622af27b6a6","sent_at":"2025-07-08T22:44:50+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752011090.5657222,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-08 21:44:50 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-08 21:44:50 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-08 21:44:50 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Jul 2025 21:44:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"df487e4119a74728af0ca622af27b6a6"}'
+  recorded_at: Tue, 08 Jul 2025 21:44:50 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"966f5653-162f-4a16-816c-1956825ecb13","sent_at":"2025-07-09T16:26:04+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752074764.203212,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 15:26:04 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 15:26:04 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 15:26:04 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:26:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"966f5653162f4a16816c1956825ecb13"}'
+  recorded_at: Wed, 09 Jul 2025 15:26:04 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"0b155e5b-98df-4be4-9de6-81f320c84fb7","sent_at":"2025-07-09T16:34:35+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752075275.030869,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 15:34:35 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 15:34:35 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 15:34:35 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:34:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"0b155e5b98df4be49de681f320c84fb7"}'
+  recorded_at: Wed, 09 Jul 2025 15:34:35 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"4b9608d2-4ebc-47cf-b486-a623567bc605","sent_at":"2025-07-09T16:39:58+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752075598.726342,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 15:39:58 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 15:39:58 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 15:39:58 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:39:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"4b9608d24ebc47cfb486a623567bc605"}'
+  recorded_at: Wed, 09 Jul 2025 15:39:58 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"8240ed57-0a53-4417-bea2-abe62ce40c05","sent_at":"2025-07-09T16:41:56+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752075716.6849349,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 15:41:56 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 15:41:56 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 15:41:56 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 15:41:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"8240ed570a534417bea2abe62ce40c05"}'
+  recorded_at: Wed, 09 Jul 2025 15:41:56 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"9da803c9-2a4f-4ba5-974b-5e3912a3d0b0","sent_at":"2025-07-09T17:20:39+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752078039.72929,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 16:20:39 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 16:20:39 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 16:20:39 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 16:20:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"9da803c92a4f4ba5974b5e3912a3d0b0"}'
+  recorded_at: Wed, 09 Jul 2025 16:20:39 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"620a7d42-6fbf-4bdd-80e4-5e59301400c4","sent_at":"2025-07-09T18:03:19+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752080599.363123,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 17:03:19 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 17:03:19 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 17:03:19 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 17:03:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"620a7d426fbf4bdd80e45e59301400c4"}'
+  recorded_at: Wed, 09 Jul 2025 17:03:19 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"409799c0-59eb-4d37-a7d3-1a7ac38815b3","sent_at":"2025-07-09T19:41:22+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752086482.726937,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 18:41:22 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 18:41:22 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 18:41:22 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 18:41:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"409799c059eb4d37a7d31a7ac38815b3"}'
+  recorded_at: Wed, 09 Jul 2025 18:41:23 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c9609ceb-8606-454c-b867-b2c816d48a6f","sent_at":"2025-07-10T00:47:40+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752104860.719292,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 23:47:40 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 23:47:40 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 23:47:40 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jul 2025 23:47:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c9609ceb8606454cb867b2c816d48a6f"}'
+  recorded_at: Wed, 09 Jul 2025 23:47:40 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"ff3ea71f-3a8a-4905-86df-14a634f15763","sent_at":"2025-07-10T07:56:37+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752130597.775445,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-10 06:56:37 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-10 06:56:37 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-10 06:56:37 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Jul 2025 06:56:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"ff3ea71f3a8a490586df14a634f15763"}'
+  recorded_at: Thu, 10 Jul 2025 06:56:37 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"ce4fcbaf-ab90-4be0-8963-1f7ca7a647db","sent_at":"2025-07-10T09:25:55+01:00","sdk":{"name":"lapsoss","version":"0.1.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752135955.9656162,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-10 08:25:55 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-10 08:25:55 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-10 08:25:55 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.1.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Jul 2025 08:25:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"ce4fcbafab904be089631f7ca7a647db"}'
+  recorded_at: Thu, 10 Jul 2025 08:25:56 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"53c41aa0-021c-4e76-af30-612902e97574","sent_at":"2025-07-13T18:41:00+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"info","timestamp":1752428460.064714,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 17:41:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"53c41aa0021c4e76af30612902e97574"}'
+  recorded_at: Sun, 13 Jul 2025 17:41:00 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"70b12079-f4e6-4487-b63e-348c9d2298a6","sent_at":"2025-07-13T18:41:00+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752428460.5761971,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 17:41:00 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 17:41:00 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 17:41:00 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 17:41:01 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"70b12079f4e64487b63e348c9d2298a6"}'
+  recorded_at: Sun, 13 Jul 2025 17:41:00 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"9d437d26-36f9-407c-9f69-ce240efe1ef4","sent_at":"2025-07-13T18:42:30+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752428550.3867772,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 17:42:30 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 17:42:30 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 17:42:30 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 17:42:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"9d437d2636f9407c9f69ce240efe1ef4"}'
+  recorded_at: Sun, 13 Jul 2025 17:42:30 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"5164e209-1a9b-4cbe-8425-4d3de83bf764","sent_at":"2025-07-13T18:47:10+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752428830.2780201,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 17:47:10 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 17:47:10 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 17:47:10 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 17:47:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"5164e2091a9b4cbe84254d3de83bf764"}'
+  recorded_at: Sun, 13 Jul 2025 17:47:10 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"35645c9b-5f9a-4263-87c6-af23ae77e5e9","sent_at":"2025-07-13T18:53:55+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752429235.987346,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 17:53:55 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 17:53:55 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 17:53:55 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 17:53:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"35645c9b5f9a426387c6af23ae77e5e9"}'
+  recorded_at: Sun, 13 Jul 2025 17:53:56 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"199efdbe-d929-4820-9456-6610f8e80f53","sent_at":"2025-07-13T20:07:11+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752433631.9452631,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 19:07:11 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 19:07:11 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 19:07:11 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:07:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"199efdbed929482094566610f8e80f53"}'
+  recorded_at: Sun, 13 Jul 2025 19:07:12 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"19d980bf-189a-41d3-b538-b19d9a882b16","sent_at":"2025-07-13T20:08:24+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752433704.7837172,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 19:08:24 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 19:08:24 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 19:08:24 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:08:25 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"19d980bf189a41d3b538b19d9a882b16"}'
+  recorded_at: Sun, 13 Jul 2025 19:08:25 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"92463973-35e6-426f-be24-61f46a507651","sent_at":"2025-07-13T20:11:57+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752433917.217469,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 19:11:57 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 19:11:57 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 19:11:57 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:11:57 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"9246397335e6426fbe2461f46a507651"}'
+  recorded_at: Sun, 13 Jul 2025 19:11:57 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"ed98c189-1484-4bcc-9aa3-68a0b454ebf3","sent_at":"2025-07-13T20:13:34+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752434014.177291,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 19:13:34 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 19:13:34 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 19:13:34 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:13:34 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"ed98c18914844bcc9aa368a0b454ebf3"}'
+  recorded_at: Sun, 13 Jul 2025 19:13:34 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"f0bd0a2e-7723-4965-8fdc-fa8923ca5aca","sent_at":"2025-07-13T20:15:19+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752434119.566528,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 19:15:19 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 19:15:19 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 19:15:19 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:15:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"f0bd0a2e772349658fdcfa8923ca5aca"}'
+  recorded_at: Sun, 13 Jul 2025 19:15:19 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"e0608e5b-ac28-4f1b-b5ef-b7dd483f5fc7","sent_at":"2025-07-13T20:15:48+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752434148.04333,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 19:15:48 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 19:15:48 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 19:15:48 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 19:15:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"e0608e5bac284f1bb5efb7dd483f5fc7"}'
+  recorded_at: Sun, 13 Jul 2025 19:15:48 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"5d1c28e5-d6be-44ba-96c2-8208d62cf7e5","sent_at":"2025-07-13T23:15:25+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752444925.487047,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 22:15:25 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 22:15:25 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 22:15:25 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 22:15:25 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"5d1c28e5d6be44ba96c28208d62cf7e5"}'
+  recorded_at: Sun, 13 Jul 2025 22:15:25 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"8da521cd-04e9-423e-bd86-7ec2d329f350","sent_at":"2025-07-13T23:18:40+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752445120.809325,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 22:18:40 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 22:18:40 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 22:18:40 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 22:18:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"8da521cd04e9423ebd867ec2d329f350"}'
+  recorded_at: Sun, 13 Jul 2025 22:18:40 GMT
+- request:
+    method: post
+    uri: https://EXAMPLE_ORG_ID.ingest.us.sentry.io/api/EXAMPLE_PROJECT_ID/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"07a69274-6765-4376-8712-fb12469bdac5","sent_at":"2025-07-13T23:19:00+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1752445140.298692,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 22:19:00 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 22:19:00 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 22:19:00 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2025 22:19:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"07a69274676543768712fb12469bdac5"}'
+  recorded_at: Sun, 13 Jul 2025 22:19:00 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"3c7ec3be-dd09-4cc3-920a-d69a27cf290a","sent_at":"2025-07-27T19:59:53+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1753642793.304924,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-27 18:59:53 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-27 18:59:53 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-27 18:59:53 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 27 Jul 2025 18:59:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"3c7ec3bedd094cc3920ad69a27cf290a"}'
+  recorded_at: Sun, 27 Jul 2025 18:59:53 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c90b55df-5721-4372-a7c8-5001573524ab","sent_at":"2025-07-27T20:35:47+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1753644947.640394,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-27 19:35:47 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-27 19:35:47 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-27 19:35:47 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 27 Jul 2025 19:35:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c90b55df57214372a7c85001573524ab"}'
+  recorded_at: Sun, 27 Jul 2025 19:35:47 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"3d5935ef-0347-49e2-84bf-171472a32f79","sent_at":"2025-07-27T22:25:42+01:00","sdk":{"name":"lapsoss","version":"0.2.0"}}
+        {"type":"event","content_type":"application/json"}
+        {"platform":"ruby","level":"error","timestamp":1753651542.8124921,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-27 21:25:42 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-27 21:25:42 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-27 21:25:42 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
+    headers:
+      User-Agent:
+      - lapsoss/0.2.0
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 27 Jul 2025 21:25:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"3d5935ef034749e284bf171472a32f79"}'
+  recorded_at: Sun, 27 Jul 2025 21:25:42 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"8920fa76-5e71-428f-9170-86629ac30807","sent_at":"2025-09-08T19:58:16Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"896c88bb-cc36-47ec-bbc7-010464f9c6ad","timestamp":"2025-09-08T19:58:16Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T19:58:16Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T19:58:16Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T19:58:16Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 19:58:16 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"8920fa765e71428f917086629ac30807"}'
+  recorded_at: Mon, 08 Sep 2025 19:58:16 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"28dc0370-4cb3-4f01-bfbb-1dc6075780db","sent_at":"2025-09-08T19:58:30Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"92661577-c5e6-401a-b646-e40634a2645e","timestamp":"2025-09-08T19:58:30Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T19:58:30Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T19:58:30Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T19:58:30Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 19:58:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"28dc03704cb34f01bfbb1dc6075780db"}'
+  recorded_at: Mon, 08 Sep 2025 19:58:30 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"8d545fce-ec82-4ed6-b978-5c9953eb0ff2","sent_at":"2025-09-08T19:59:42Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"1607aba1-7b14-4529-9380-9129bcfec701","timestamp":"2025-09-08T19:59:42Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"StandardError","message":"Test error from Lapsoss","backtrace":[{"filename":"vcr/util/variable_args_block_caller.rb","line_number":9,"method":"VCR::VariableArgsBlockCaller#call_block","function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in 'VCR::VariableArgsBlockCaller#call_block'","exception_class":"StandardError","crash_frame":true},{"filename":"vcr.rb","line_number":194,"method":"VCR#use_cassette","function":"use_cassette","module":"VCR","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in 'VCR#use_cassette'","exception_class":"StandardError","crash_frame":false},{"filename":"sentry_adapter_test.rb","line_number":12,"method":"block in \u003cclass:SentryAdapterTest\u003e","function":"block in \u003cclass:SentryAdapterTest\u003e","in_app":true,"raw":"/path/to/project/lapsoss/test/sentry_adapter_test.rb:12:in 'block in \u003cclass:SentryAdapterTest\u003e'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":94,"method":"block (2 levels) in Minitest::Test#run","function":"run","module":"block (2 levels) in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":190,"method":"Minitest::Test#capture_exceptions","function":"capture_exceptions","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":89,"method":"block in Minitest::Test#run","function":"run","module":"block in Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest.rb","line_number":368,"method":"Minitest::Runnable#time_it","function":"time_it","module":"Minitest::Runnable","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'","exception_class":"StandardError","crash_frame":false},{"filename":"minitest/test.rb","line_number":88,"method":"Minitest::Test#run","function":"run","module":"Minitest::Test","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in 'Minitest::Test#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/executor/test_helper.rb","line_number":5,"method":"block in ActiveSupport::Executor::TestHelper#run","function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'","exception_class":"StandardError","crash_frame":false},{"filename":"active_support/execution_wrapper.rb","line_number":104,"method":"ActiveSupport::ExecutionWrapper.perform","function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false,"raw":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'","exception_class":"StandardError","crash_frame":false}]},"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 19:59:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"8d545fceec824ed6b9785c9953eb0ff2"}'
+  recorded_at: Mon, 08 Sep 2025 19:59:43 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"2f37be1e-26bc-41ea-8df8-2148ee97c7cc","sent_at":"2025-09-08T19:59:42Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"fe869999-98e1-46a4-96a1-b9b42467e515","timestamp":"2025-09-08T19:59:42Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T19:59:42Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T19:59:42Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T19:59:42Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 19:59:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"2f37be1e26bc41ea8df82148ee97c7cc"}'
+  recorded_at: Mon, 08 Sep 2025 19:59:43 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"b8041151-511b-4558-9f47-4a7b2426ffb7","sent_at":"2025-09-08T20:00:04Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"a4637103-6cdd-4040-b6b8-fd09840da613","timestamp":"2025-09-08T20:00:04Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:00:04Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:00:04Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:00:04Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:00:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"b8041151511b45589f474a7b2426ffb7"}'
+  recorded_at: Mon, 08 Sep 2025 20:00:04 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"5669fe45-6434-4488-820a-fb59021aab06","sent_at":"2025-09-08T20:06:45Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"be0290f8-b285-4ba5-b7ad-50c8d39eb780","timestamp":"2025-09-08T20:06:45Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:06:45Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:06:45Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:06:45Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:06:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"5669fe4564344488820afb59021aab06"}'
+  recorded_at: Mon, 08 Sep 2025 20:06:45 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"124395af-3798-4eaf-b2b2-9369dd2dbfab","sent_at":"2025-09-08T20:07:04Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"aa20fa20-8d6d-4933-ac6c-cf877f398b8e","timestamp":"2025-09-08T20:07:04Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:07:04Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:07:04Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:07:04Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:07:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"124395af37984eafb2b29369dd2dbfab"}'
+  recorded_at: Mon, 08 Sep 2025 20:07:04 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"282a60c8-848d-4441-a0b8-ff258f40f195","sent_at":"2025-09-08T20:08:49Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"c3b9e773-281d-46b5-953c-321b4bef6d23","timestamp":"2025-09-08T20:08:49Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:08:49Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:08:49Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:08:49Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:08:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"282a60c8848d4441a0b8ff258f40f195"}'
+  recorded_at: Mon, 08 Sep 2025 20:08:49 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c0fe80da-fa38-4fd6-85b7-ea22ff86340f","sent_at":"2025-09-08T20:09:01Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"36b3107f-1a20-497d-8016-bc2cf2adfff0","timestamp":"2025-09-08T20:09:01Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:09:01Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:09:01Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:09:01Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:01 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c0fe80dafa384fd685b7ea22ff86340f"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:01 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"60708b34-0ba8-40e9-b8d8-d4759bbf2e95","sent_at":"2025-09-08T20:09:15Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"19be8ef7-3b14-4f50-aa7e-4025ed44bf90","timestamp":"2025-09-08T20:09:15Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:09:15Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:09:15Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:09:15Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"60708b340ba840e9b8d8d4759bbf2e95"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:15 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"dd86ba5b-0da8-4a88-b96d-8022a2d6ed94","sent_at":"2025-09-08T20:09:32Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"f219c4c9-a208-4133-ac3c-58253499bbc4","timestamp":"2025-09-08T20:09:32Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:09:32Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:09:32Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:09:32Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:33 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"dd86ba5b0da84a88b96d8022a2d6ed94"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:32 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"d995000a-0d17-4c70-99b6-d9dddfb0d04b","sent_at":"2025-09-08T20:09:52Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"59aac2fd-c7c7-4847-84bf-7a216a77b51e","timestamp":"2025-09-08T20:09:52Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:09:52Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:09:52Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:09:52Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:09:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"d995000a0d174c7099b6d9dddfb0d04b"}'
+  recorded_at: Mon, 08 Sep 2025 20:09:52 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"d21e2faf-b287-43ec-8a22-0621423e1088","sent_at":"2025-09-08T20:11:42Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"d719ed36-33e7-4b38-9791-4217f41b09db","timestamp":"2025-09-08T20:11:42Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:11:42Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:11:42Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:11:42Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:11:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"d21e2fafb28743ec8a220621423e1088"}'
+  recorded_at: Mon, 08 Sep 2025 20:11:42 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"ed2a34e2-99d5-4de9-ad2f-34ca3617e0c3","sent_at":"2025-09-08T20:11:56Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"674ba1ab-659b-4c18-bd5a-84fff8c1a916","timestamp":"2025-09-08T20:11:56Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:11:56Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:11:56Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:11:56Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:11:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"ed2a34e299d54de9ad2f34ca3617e0c3"}'
+  recorded_at: Mon, 08 Sep 2025 20:11:56 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"5e9ac43f-420f-4458-8c4e-d9db5db7bb8e","sent_at":"2025-09-08T20:12:09Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"02a42d18-c813-4b47-b90b-1231664e0a7b","timestamp":"2025-09-08T20:12:09Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:12:09Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:12:09Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:12:09Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:12:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"5e9ac43f420f44588c4ed9db5db7bb8e"}'
+  recorded_at: Mon, 08 Sep 2025 20:12:09 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"878b3ec6-b48a-42c7-88fc-89ab79ded264","sent_at":"2025-09-08T20:16:46Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"8843cba3-3a90-4e82-800c-37b18b20b3a9","timestamp":"2025-09-08T20:16:46Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:16:46Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:16:46Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:16:46Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:16:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"878b3ec6b48a42c788fc89ab79ded264"}'
+  recorded_at: Mon, 08 Sep 2025 20:16:46 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"a84d3dbf-6e77-40f6-8bc4-c41f21857d90","sent_at":"2025-09-08T20:17:04Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"4ec55b28-6667-4f87-9842-88551f6cccc7","timestamp":"2025-09-08T20:17:04Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:17:04Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:17:04Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:17:04Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:17:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"a84d3dbf6e7740f68bc4c41f21857d90"}'
+  recorded_at: Mon, 08 Sep 2025 20:17:04 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"3353ebc3-da40-4057-a8c4-9ae650515069","sent_at":"2025-09-08T20:17:19Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"bf6c390d-92c9-463d-afd1-ab9fbe006959","timestamp":"2025-09-08T20:17:19Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:17:19Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:17:19Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:17:19Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:17:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"3353ebc3da404057a8c49ae650515069"}'
+  recorded_at: Mon, 08 Sep 2025 20:17:19 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"c45b8993-d821-4dcb-b053-5e5a971c5810","sent_at":"2025-09-08T20:18:12Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"9f1a6d8b-6ce6-46ac-a200-867fd2b12c83","timestamp":"2025-09-08T20:18:12Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:18:12Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:18:12Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:18:12Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:18:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"c45b8993d8214dcbb0535e5a971c5810"}'
+  recorded_at: Mon, 08 Sep 2025 20:18:12 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"bcc2ad8e-694b-4ae4-afbd-e50fa6c90280","sent_at":"2025-09-08T20:18:23Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"d077bad2-40e9-4928-8315-d64b3261a693","timestamp":"2025-09-08T20:18:23Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:18:23Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:18:23Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:18:23Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:18:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"bcc2ad8e694b4ae4afbde50fa6c90280"}'
+  recorded_at: Mon, 08 Sep 2025 20:18:23 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"a00d7171-d06f-43d0-9ad5-94b0679ba443","sent_at":"2025-09-08T20:18:48Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"e28b16d7-e3cc-4656-abc2-5cbe3b93080a","timestamp":"2025-09-08T20:18:48Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:18:48Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:18:48Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:18:48Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:18:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"a00d7171d06f43d09ad594b0679ba443"}'
+  recorded_at: Mon, 08 Sep 2025 20:18:48 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"4e42b144-450e-4d21-8a89-1a31200ce98a","sent_at":"2025-09-08T20:23:10Z","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"6a28bcb9-7ecc-4e4d-b86c-ed5722bb82ed","timestamp":"2025-09-08T20:23:10Z","environment":"production","level":"error","platform":"ruby","sdk":{"name":"lapsoss","version":"0.3.1","packages":[{"name":"lapsoss-ruby","version":"0.3.1"}]},"exception":{"type":"RuntimeError","message":"Error after breadcrumbs"},"breadcrumbs":[{"timestamp":"2025-09-08T20:23:10Z","type":"navigation","message":"User clicked button","data":{"metadata":{"button":"submit"}}},{"timestamp":"2025-09-08T20:23:10Z","type":"http","message":"API request started","data":{"metadata":{"url":"/api/test"}}},{"timestamp":"2025-09-08T20:23:10Z","type":"error","message":"API request failed","data":{"metadata":{"status":500}}}]}
+    headers:
+      User-Agent:
+      - Lapsoss/0.3.1 Ruby/3.4.5 Rails/8.0.2
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - 0.3.1
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 20:23:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"4e42b144450e4d218a891a31200ce98a"}'
+  recorded_at: Mon, 08 Sep 2025 20:23:10 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,9 @@
+[coss]
+version = "0.1.0"
+
+[principles]
+universal_access = true
+anti_vendor_lock_in = true
+optional_dependencies = true
+modular_scope = true
+contributor_ethics = true
