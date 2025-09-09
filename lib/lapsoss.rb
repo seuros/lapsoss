@@ -44,6 +44,29 @@ module Lapsoss
       client.capture_message(message, level: level, **context)
     end
 
+    # Rails.error-compatible methods for non-Rails environments
+
+    # Handle errors and swallow them (like Rails.error.handle)
+    def handle(error_class = StandardError, fallback: nil, **context)
+      yield
+    rescue error_class => e
+      capture_exception(e, **context.merge(handled: true))
+      fallback.respond_to?(:call) ? fallback.call : fallback
+    end
+
+    # Record errors and re-raise them (like Rails.error.record)
+    def record(error_class = StandardError, **context)
+      yield
+    rescue error_class => e
+      capture_exception(e, **context.merge(handled: false))
+      raise
+    end
+
+    # Report an error manually (like Rails.error.report)
+    def report(exception, handled: true, **context)
+      capture_exception(exception, **context.merge(handled: handled))
+    end
+
     def add_breadcrumb(message, type: :default, **metadata)
       client.add_breadcrumb(message, type: type, **metadata)
     end

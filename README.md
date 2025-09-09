@@ -310,6 +310,103 @@ config.transport_timeout = 10
 config.transport_jitter = true # Prevent thundering herd
 ```
 
+## Testing in Rails Console
+
+Want to see Lapsoss in action? Try this in your Rails console:
+
+```ruby
+# Configure Lapsoss with the logger adapter for immediate visibility
+Lapsoss.configure do |config|
+  config.use_logger(name: :console_test)
+  config.async = false  # Synchronous for immediate output
+  config.debug = true   # Verbose logging
+end
+
+# Create a class that demonstrates error handling
+class Liberation
+  def self.liberate!
+    Rails.error.handle do
+      raise StandardError, "Freedom requires breaking chains!"
+    end
+    puts "✅ Continued execution after error"
+  end
+  
+  def self.revolt!
+    Rails.error.record do
+      raise RuntimeError, "Revolution cannot be stopped!"
+    end
+    puts "This won't print - error was re-raised"
+  end
+end
+
+# Test error capture (error is swallowed)
+Liberation.liberate!
+# You'll see the error logged but execution continues
+
+# Test error recording (error is re-raised)
+begin
+  Liberation.revolt!
+rescue => e
+  puts "Caught re-raised error: #{e.message}"
+end
+
+# Manual error reporting with context
+begin
+  1 / 0
+rescue => e
+  Rails.error.report(e, context: { user_id: 42, action: "console_test" })
+end
+
+# Check what was captured
+puts "\n🎉 Lapsoss captured all errors through Rails.error!"
+```
+
+You'll see all errors logged to your console with full backtraces and context. This same integration works automatically for all Rails controllers, jobs, and mailers.
+
+## Using Lapsoss Outside Rails
+
+Lapsoss provides the same convenient error handling methods directly, perfect for background jobs, rake tasks, or standalone scripts:
+
+```ruby
+# In your Sidekiq job, rake task, or any Ruby code
+require 'lapsoss'
+
+Lapsoss.configure do |config|
+  config.use_sentry(dsn: ENV['SENTRY_DSN'])
+end
+
+# Handle errors (swallow them)
+result = Lapsoss.handle do
+  risky_operation
+end
+# Returns nil if error occurred, or the block's result
+
+# Handle with fallback
+user = Lapsoss.handle(fallback: User.anonymous) do
+  User.find(id)
+end
+
+# Record errors (re-raise them)
+Lapsoss.record do
+  critical_operation  # Error is captured then re-raised
+end
+
+# Report errors manually
+begin
+  something_dangerous
+rescue => e
+  Lapsoss.report(e, user_id: user.id, context: 'background_job')
+  # Continue processing...
+end
+
+# These methods mirror Rails.error exactly:
+# - Lapsoss.handle   → Rails.error.handle
+# - Lapsoss.record   → Rails.error.record  
+# - Lapsoss.report   → Rails.error.report
+```
+
+This means your error handling code works the same way everywhere - in Rails controllers, background jobs, rake tasks, or standalone scripts.
+
 ## Creating Custom Adapters
 
 ```ruby

@@ -25,14 +25,14 @@ class ActionDispatch::IntegrationTest
     Lapsoss::Current.reset
 
     # Temporarily disable Rails error subscriber to avoid double capture
-    @original_subscribers = Rails.application.executor.error_reporter.instance_variable_get(:@subscribers).dup
-    Rails.application.executor.error_reporter.instance_variable_get(:@subscribers).reject! { |s| s.is_a?(Lapsoss::RailsErrorSubscriber) }
+    @original_subscribers = Rails.error.instance_variable_get(:@subscribers).dup
+    Rails.error.instance_variable_get(:@subscribers).reject! { |s| s.is_a?(Lapsoss::RailsErrorSubscriber) }
   end
 
   teardown do
     # Restore original subscribers
     if @original_subscribers
-      Rails.application.executor.error_reporter.instance_variable_set(:@subscribers, @original_subscribers)
+      Rails.error.instance_variable_set(:@subscribers, @original_subscribers)
     end
   end
 end

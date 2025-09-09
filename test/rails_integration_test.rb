@@ -57,7 +57,7 @@ class RailsIntegrationTest < ActionDispatch::IntegrationTest
     Lapsoss::Registry.instance.register_adapter(mock_adapter)
 
     # Temporarily unsubscribe the Rails error subscriber to avoid double capture
-    subscribers = Rails.application.executor.error_reporter.instance_variable_get(:@subscribers)
+    subscribers = Rails.error.instance_variable_get(:@subscribers)
     original_subscribers = subscribers.dup
     subscribers.reject! { |s| s.is_a?(Lapsoss::RailsErrorSubscriber) }
 
@@ -76,7 +76,7 @@ class RailsIntegrationTest < ActionDispatch::IntegrationTest
       assert(event.backtrace.any? { |frame| frame.include?("application_controller.rb") })
     ensure
       # Restore original subscribers
-      Rails.application.executor.error_reporter.instance_variable_set(:@subscribers, original_subscribers)
+      Rails.error.instance_variable_set(:@subscribers, original_subscribers)
       # Clean up Lapsoss state
       Lapsoss.instance_variable_set(:@configuration, nil)
       Lapsoss.instance_variable_set(:@client, nil)

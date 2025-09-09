@@ -49,7 +49,7 @@ module Lapsoss
     end
 
     initializer "lapsoss.rails_error_subscriber", after: "lapsoss.add_middleware" do |app|
-      app.executor.error_reporter.subscribe(Lapsoss::RailsErrorSubscriber.new)
+      Rails.error.subscribe(Lapsoss::RailsErrorSubscriber.new)
     end
   end
 end
