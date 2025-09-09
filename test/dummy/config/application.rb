@@ -16,7 +16,7 @@ require "lapsoss/railtie"
 
 module Dummy
   class Application < Rails::Application
-    config.load_defaults 8.0
+    config.load_defaults Rails::VERSION::STRING.to_f
 
     # Add the parent test directory to the load path for test_helper
     config.before_initialize do
