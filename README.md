@@ -163,6 +163,7 @@ All adapters are pure Ruby implementations with no external SDK dependencies:
 - **Rollbar** - Complete error tracking with grouping
 - **AppSignal** - Error tracking and deploy markers
 - **Insight Hub** (formerly Bugsnag) - Error tracking with breadcrumbs
+- **Telebug** - Sentry-compatible protocol (perfect for self-hosted alternatives)
 
 ## Configuration
 
@@ -183,6 +184,17 @@ Lapsoss.configure do |config|
   config.use_sentry(name: :errors, dsn: ENV['SENTRY_DSN'])
   config.use_rollbar(name: :business_events, access_token: ENV['ROLLBAR_TOKEN'])
   config.use_logger(name: :local_backup) # Local file backup
+end
+```
+
+### Using Sentry-Compatible Services
+
+```ruby
+# Telebug, Glitchtip, or any Sentry-compatible service
+Lapsoss.configure do |config|
+  config.use_telebug(dsn: ENV['TELEBUG_DSN'])
+  # Or use use_sentry with a custom endpoint
+  config.use_sentry(dsn: ENV['SELF_HOSTED_SENTRY_DSN'])
 end
 ```
 
@@ -418,6 +430,26 @@ class MyAdapter < Lapsoss::Adapters::Base
 end
 
 Lapsoss::Registry.register(:my_service, MyAdapter)
+```
+
+### Extending Existing Adapters
+
+For Sentry-compatible services, just extend the SentryAdapter:
+
+```ruby
+class TelebugAdapter < Lapsoss::Adapters::SentryAdapter
+  def initialize(name = :telebug, settings = {})
+    super(name, settings)
+  end
+  
+  private
+  
+  def build_headers(public_key)
+    super(public_key).merge(
+      "X-Telebug-Client" => "lapsoss/#{Lapsoss::VERSION}"
+    )
+  end
+end
 ```
 
 ## Contributing

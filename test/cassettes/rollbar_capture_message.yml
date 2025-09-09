@@ -5292,4 +5292,57 @@ http_interactions:
           "message": "invalid access token"
         }
   recorded_at: Tue, 09 Sep 2025 09:21:11 GMT
+- request:
+    method: post
+    uri: https://api.rollbar.com/api/1/item/
+    body:
+      encoding: UTF-8
+      string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
+        error from Lapsoss"}},"level":"error","timestamp":1757416549,"code_version":"ac020beef0120ee817a1c16ac4f92b77fc64a971","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"ac020beef0120ee817a1c16ac4f92b77fc64a971"}}}'
+    headers:
+      User-Agent:
+      - Lapsoss/0.4.3 Ruby/3.4.5 Rails/8.0.2.1
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - 0.4.3
+      X-Rollbar-Access-Token:
+      - "<ROLLBAR_ACCESS_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.17.9
+      Date:
+      - Tue, 09 Sep 2025 11:15:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '51'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"33-B1+irAWVS0vJXv2TX/BEXA"
+      X-Response-Time:
+      - 3.679ms
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "err": 1,
+          "message": "invalid access token"
+        }
+  recorded_at: Tue, 09 Sep 2025 11:15:49 GMT
 recorded_with: VCR 6.3.1

@@ -2,8 +2,8 @@
 
 require_relative "test_helper"
 
-class LapsossErrorMethodsTest < Minitest::Test
-  def setup
+class LapsossErrorMethodsTest < ActiveSupport::TestCase
+  setup do
     @captured_events = []
     @test_adapter = create_test_adapter(@captured_events)
 
@@ -15,13 +15,7 @@ class LapsossErrorMethodsTest < Minitest::Test
     Lapsoss::Registry.instance.register_adapter(@test_adapter)
   end
 
-  def teardown
-    Lapsoss.instance_variable_set(:@configuration, nil)
-    Lapsoss.instance_variable_set(:@client, nil)
-    Lapsoss::Registry.instance.clear!
-  end
-
-  def test_handle_swallows_errors
+  test "handle swallows errors" do
     result = Lapsoss.handle do
       raise StandardError, "This should be swallowed"
     end

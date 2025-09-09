@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "logger"
 require "active_support/configurable"
 
 module Lapsoss
@@ -82,6 +83,11 @@ module Lapsoss
     # Convenience method for Sentry
     def use_sentry(name: :sentry, **settings)
       register_adapter(name, :sentry, **settings)
+    end
+
+    # Convenience method for Telebug (Sentry-compatible)
+    def use_telebug(name: :telebug, **settings)
+      register_adapter(name, :telebug, **settings)
     end
 
     # Convenience method for AppSignal

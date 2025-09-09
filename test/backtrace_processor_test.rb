@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-require "test_helper"
+require_relative "test_helper"
 require "lapsoss/backtrace_processor"
-require "minitest/mock"
 
-class BacktraceProcessorTest < Minitest::Test
+class BacktraceProcessorTest < ActiveSupport::TestCase
   def setup
     @processor = Lapsoss::BacktraceProcessor.new
     @sample_backtrace = [
@@ -17,14 +16,14 @@ class BacktraceProcessorTest < Minitest::Test
     ]
   end
 
-  def test_process_returns_frame_objects
+  test "process returns frame objects" do
     frames = @processor.process(@sample_backtrace)
 
     assert_equal 6, frames.length
     assert(frames.all?(Lapsoss::BacktraceFrame))
   end
 
-  def test_parses_ruby_backtrace_format
+  test "parses ruby backtrace format" do
     frames = @processor.process(@sample_backtrace)
 
     frame = frames.first
@@ -33,7 +32,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal "authenticate", frame.method_name
   end
 
-  def test_handles_backtrace_without_method_name
+  test "handles backtrace without method name" do
     frames = @processor.process(@sample_backtrace)
 
     last_frame = frames.last
@@ -42,7 +41,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal "<main>", last_frame.method_name
   end
 
-  def test_handles_java_backtrace_format
+  test "handles java backtrace format" do
     java_backtrace = [
       "org.jruby.Ruby.runScript(Ruby.java:123)",
       "org.jruby.Ruby.runScript(Ruby.java)",
@@ -58,17 +57,17 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal "org.jruby.Ruby.runScript", frame.method_name
   end
 
-  def test_handles_empty_backtrace
+  test "handles empty backtrace" do
     frames = @processor.process([])
     assert_equal [], frames
   end
 
-  def test_handles_nil_backtrace
+  test "handles nil backtrace" do
     frames = @processor.process(nil)
     assert_equal [], frames
   end
 
-  def test_in_app_detection
+  test "in app detection" do
     # Mock Bundler for testing
     bundler_module = Module.new do
       def self.bundle_path
@@ -86,7 +85,7 @@ class BacktraceProcessorTest < Minitest::Test
     end
   end
 
-  def test_custom_in_app_patterns
+  test "custom in app patterns" do
     config = Lapsoss::Configuration.new
     config.backtrace_in_app_patterns = [ %r{/app/}, %r{/lib/} ]
     processor = Lapsoss::BacktraceProcessor.new(config)
@@ -104,7 +103,7 @@ class BacktraceProcessorTest < Minitest::Test
     refute frames[2].in_app # doesn't match patterns
   end
 
-  def test_strip_load_path
+  test "strip load path" do
     original_load_path = $LOAD_PATH.dup
     $LOAD_PATH.unshift("/usr/local/lib/ruby/3.4.0")
 
@@ -116,7 +115,7 @@ class BacktraceProcessorTest < Minitest::Test
     $LOAD_PATH.replace(original_load_path)
   end
 
-  def test_exclude_patterns
+  test "exclude patterns" do
     config = Lapsoss::Configuration.new
     config.backtrace_exclude_patterns = [ /monitor\.rb/, /callbacks\.rb/ ]
     processor = Lapsoss::BacktraceProcessor.new(config)
@@ -128,7 +127,7 @@ class BacktraceProcessorTest < Minitest::Test
     refute(frames.any? { |f| f.filename.include?("callbacks.rb") })
   end
 
-  def test_frame_limiting
+  test "frame limiting" do
     config = Lapsoss::Configuration.new
     config.backtrace_max_frames = 3
     processor = Lapsoss::BacktraceProcessor.new(config)
@@ -143,7 +142,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal "file10.rb", frames[2].filename
   end
 
-  def test_process_exception
+  test "process exception" do
     exception = StandardError.new("Test error")
     exception.set_backtrace(@sample_backtrace)
 
@@ -153,23 +152,22 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal "/app/models/user.rb", frames.first.filename
   end
 
-  def test_process_exception_with_cause
+  test "process exception with cause" do
     cause = ArgumentError.new("Cause error")
     cause.set_backtrace([ "/lib/validator.rb:5:in `validate'" ])
 
     exception = StandardError.new("Main error")
     exception.set_backtrace([ "/app/service.rb:10:in `call'" ])
-    # Use Minitest stub to mock the cause method
-    exception.stub :cause, cause do
-      frames = @processor.process_exception(exception, follow_cause: true)
+    # Mock the cause method
+    exception.define_singleton_method(:cause) { cause }
+    frames = @processor.process_exception(exception, follow_cause: true)
 
-      assert_equal 2, frames.length
-      assert_equal "/app/service.rb", frames[0].filename
-      assert_equal "/lib/validator.rb", frames[1].filename
-    end
+    assert_equal 2, frames.length
+    assert_equal "/app/service.rb", frames[0].filename
+    assert_equal "/lib/validator.rb", frames[1].filename
   end
 
-  def test_format_frames_sentry
+  test "format frames sentry" do
     frames = @processor.process(@sample_backtrace[0..0])
     formatted = @processor.format_frames(frames, :sentry)
 
@@ -181,7 +179,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert frame[:in_app]
   end
 
-  def test_format_frames_rollbar
+  test "format frames rollbar" do
     frames = @processor.process(@sample_backtrace[0..0])
     formatted = @processor.format_frames(frames, :rollbar)
 
@@ -192,7 +190,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal "authenticate", frame[:method] # Rollbar uses 'method'
   end
 
-  def test_format_frames_bugsnag
+  test "format frames bugsnag" do
     frames = @processor.process(@sample_backtrace[0..0])
     formatted = @processor.format_frames(frames, :bugsnag)
 
@@ -204,12 +202,12 @@ class BacktraceProcessorTest < Minitest::Test
     assert frame[:inProject] # Bugsnag uses 'inProject'
   end
 
-  def test_clear_cache
+  test "clear cache" do
     # Ensure cache clearing doesn't raise errors
     @processor.clear_cache!
   end
 
-  def test_handles_eval_backtrace
+  test "handles eval backtrace" do
     eval_backtrace = [
       "/app/models/user.rb:42:in `authenticate'",
       "(eval):1:in `eval'",
@@ -233,7 +231,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal "block in <main>", complex_eval_frame.method_name
   end
 
-  def test_handles_c_extension_backtrace
+  test "handles c extension backtrace" do
     c_extension_backtrace = [
       "/app/models/user.rb:42:in `authenticate'",
       "/gems/nokogiri-1.13.0/lib/nokogiri.rb:10:in `parse'",
@@ -252,7 +250,7 @@ class BacktraceProcessorTest < Minitest::Test
     refute c_frame.in_app # C extensions should not be in_app
   end
 
-  def test_handles_rails_engine_backtrace
+  test "handles rails engine backtrace" do
     rails_engine_backtrace = [
       "/app/models/user.rb:42:in `authenticate'",
       "/engines/admin_engine/app/controllers/admin_controller.rb:15:in `index'",
@@ -274,7 +272,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert engine_lib_frame.in_app
   end
 
-  def test_handles_path_based_gem_dependencies
+  test "handles path based gem dependencies" do
     path_gem_backtrace = [
       "/app/models/user.rb:42:in `authenticate'",
       "/usr/src/my_local_gem/lib/my_gem.rb:10:in `process'",
@@ -292,7 +290,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert frames.all?(&:in_app) # All should be considered in_app with custom patterns
   end
 
-  def test_handles_very_long_backtrace
+  test "handles very long backtrace" do
     # Test with a very long backtrace (stack overflow scenario)
     long_backtrace = (1..1000).map { |i| "/app/lib/recursive.rb:#{i}:in `recurse'" }
 
@@ -310,7 +308,7 @@ class BacktraceProcessorTest < Minitest::Test
     assert_equal 1000, frames[49].line_number
   end
 
-  def test_handles_malformed_backtrace_lines
+  test "handles malformed backtrace lines" do
     malformed_backtrace = [
       "/app/models/user.rb:42:in `authenticate'",
       "invalid line format",
