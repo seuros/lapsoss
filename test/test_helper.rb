@@ -36,6 +36,14 @@ VCR.configure do |config|
 
   # Filter Sentry auth headers and AppSignal API keys in URLs
   config.before_record do |interaction|
+    # Filter Sentry organization and project IDs from URLs
+    if interaction.request.uri.match?(%r{https://o\d+\.ingest\.(us|eu)\.sentry\.io/api/\d+/envelope/})
+      interaction.request.uri = interaction.request.uri.gsub(
+        %r{https://o\d+\.ingest\.(us|eu)\.sentry\.io/api/\d+/envelope/},
+        'https://o<ORG_ID>.ingest.\1.sentry.io/api/<PROJECT_ID>/envelope/'
+      )
+    end
+
     # Normalize/remove auth-like headers
     %w[Authorization X-Api-Key X-API-Key X-Auth-Token X-Access-Token X-Rollbar-Access-Token Bugsnag-Api-Key].each do |hdr|
       if interaction.request.headers[hdr]

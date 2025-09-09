@@ -75,10 +75,14 @@ module Lapsoss
       filename, line_number, method_name, function, module_name, block_info = parse_line_components
 
       in_app = determine_app_status(filename)
-      filename = normalize_path(filename) if filename
+
+      # Keep both absolute and normalized paths
+      absolute_path = filename
+      normalized_filename = normalize_path(filename) if filename
 
       BacktraceFrame.new(
-        filename: filename,
+        filename: normalized_filename,
+        absolute_path: absolute_path,
         line_number: line_number,
         method_name: method_name,
         in_app: in_app,

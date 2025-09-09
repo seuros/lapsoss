@@ -122,7 +122,7 @@ module Lapsoss
         end
 
         def user_agent
-          "Lapsoss/#{Lapsoss::VERSION} Ruby/#{RUBY_VERSION} Rails/#{Rails.version if defined?(Rails)}"
+          Base::USER_AGENT
         end
       end
     end

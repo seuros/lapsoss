@@ -3,6 +3,7 @@
 module Lapsoss
   BacktraceFrame = Data.define(
     :filename,
+    :absolute_path,
     :line_number,
     :method_name,
     :in_app,
@@ -19,6 +20,7 @@ module Lapsoss
     def to_h
       {
         filename: filename,
+        absolute_path: absolute_path,
         line_number: line_number,
         method: method_name,
         function: function,
@@ -30,9 +32,13 @@ module Lapsoss
     end
 
     def add_code_context(processor, context_lines = 3)
-      return unless filename && line_number && File.exist?(filename)
+      return unless line_number
 
-      with(code_context: processor.get_code_context(filename, line_number, context_lines))
+      # Use absolute path if available, otherwise try filename
+      path_to_read = absolute_path || filename
+      return unless path_to_read
+
+      with(code_context: processor.get_code_context(path_to_read, line_number, context_lines))
     end
 
     def valid?

@@ -2,6 +2,7 @@
 
 require "active_support/core_ext/object/blank"
 require "uri"
+require "lapsoss/runtime_context"
 
 module Lapsoss
   module Adapters
@@ -80,7 +81,7 @@ module Lapsoss
           content_type: "application/json"
         }
 
-        item_payload = build_envelope_wrapper(event)
+        item_payload = build_sentry_event(event)
 
         # Sentry envelope is newline-delimited JSON
         [
@@ -88,6 +89,88 @@ module Lapsoss
           ActiveSupport::JSON.encode(item_header),
           ActiveSupport::JSON.encode(item_payload)
         ].join("\n")
+      end
+
+      # Build Sentry-compliant event structure
+      def build_sentry_event(event)
+        context = RuntimeContext.current
+        event_id = event.fingerprint.presence || SecureRandom.uuid
+
+        base_event = {
+          event_id: event_id,
+          timestamp: format_timestamp(event.timestamp),
+          platform: "ruby",
+          level: map_level(event.level),
+          environment: event.environment.presence || "production",
+          release: context.release,
+          server_name: context.server_name,
+          modules: context.modules,
+          contexts: context.to_contexts,
+          tags: event.tags.presence,
+          user: event.user_context.presence,
+          extra: event.extra.presence,
+          breadcrumbs: format_breadcrumbs(event.breadcrumbs),
+          sdk: {
+            name: "sentry.ruby",
+            version: Lapsoss::VERSION
+          }
+        }.compact_blank
+
+        # Add event-specific data
+        case event.type
+        when :exception
+          base_event.merge(build_exception_envelope(event))
+        when :message
+          base_event.merge(
+            message: event.message,
+            level: map_level(event.level)
+          )
+        else
+          base_event
+        end
+      end
+
+      def build_exception_envelope(event)
+        {
+          exception: {
+            values: [ {
+              type: event.exception_type,
+              value: event.exception_message,
+              module: nil,
+              thread_id: Thread.current.object_id,
+              stacktrace: build_sentry_stacktrace(event),
+              mechanism: { type: "generic", handled: true }
+            } ]
+          },
+          threads: {
+            values: [ {
+              id: Thread.current.object_id,
+              name: Thread.current.name,
+              crashed: true,
+              current: true
+            } ]
+          }
+        }
+      end
+
+      def build_sentry_stacktrace(event)
+        return nil unless event.has_backtrace?
+
+        frames = event.backtrace_frames.map do |frame|
+          {
+            filename: frame.filename,
+            abs_path: frame.absolute_path || frame.filename,
+            function: frame.method_name || frame.function,
+            lineno: frame.line_number,
+            in_app: frame.in_app,
+            pre_context: frame.code_context&.dig(:pre_context),
+            context_line: frame.code_context&.dig(:context_line),
+            post_context: frame.code_context&.dig(:post_context)
+          }.compact
+        end
+
+        # Sentry expects frames in reverse order (oldest to newest)
+        { frames: frames.reverse }
       end
 
       # Override serialization for Sentry's envelope format

@@ -196,8 +196,7 @@ module Lapsoss
 
     # Get code context around a specific line number using ActiveSupport::Cache
     def get_code_context(filename, line_number, context_lines = 3)
-      return nil unless filename && File.exist?(filename)
-      return nil if File.size(filename) > (@config[:max_file_size] || (1024 * 1024))
+      return nil unless filename
 
       lines = @file_cache.fetch(filename) do
         read_file_safely(filename)
@@ -229,6 +228,9 @@ module Lapsoss
     private
 
     def read_file_safely(filename)
+      # Don't read huge files
+      return [] if File.exist?(filename) && File.size(filename) > (@config[:max_file_size] || (1024 * 1024))
+
       File.readlines(filename, chomp: true)
     rescue StandardError
       []
