@@ -15,8 +15,8 @@ gem "webmock", "~> 3.18"
 # Allow CI to pin a specific Rails version via RAILS_VERSION
 rails_version = ENV["RAILS_VERSION"]
 if rails_version && !rails_version.empty?
-  gem "actionpack", rails_version
-  gem "railties", rails_version
+  gem "actionpack", "~> #{rails_version}"
+  gem "railties", "~> #{rails_version}"
 else
   gem "actionpack", "~> 8.0"
   gem "railties", "~> 8.0"
