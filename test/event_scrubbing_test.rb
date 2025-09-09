@@ -26,38 +26,39 @@ class EventScrubbingTest < ActiveSupport::TestCase
     result = event.scrubbed.to_h
 
     assert_equal "john", result[:context][:user][:username]
-    assert_equal "**SCRUBBED**", result[:context][:user][:password]
-    assert_equal "john@example.com", result[:context][:user][:email]
-    assert_equal "**SCRUBBED**", result[:context][:extra][:api_key]
+    assert_equal "[FILTERED]", result[:context][:user][:password]
+    assert_equal "[FILTERED]", result[:context][:user][:email]  # 'email' is filtered by Rails conventions
+    assert_equal "[FILTERED]", result[:context][:extra][:api_key]
     assert_equal "safe data", result[:context][:extra][:debug_info]
   end
 
   test "event respects custom scrub configuration" do
     Lapsoss.configure do |config|
-      config.scrub_fields = %w[custom_secret]
-      config.whitelist_fields = %w[password]
+      config.scrub_fields = %w[custom_secret special_field]
     end
 
     event = Lapsoss::Event.build(
       type: :message,
       context: {
-        password: "should_not_be_scrubbed",
+        regular_field: "not_scrubbed",
         custom_secret: "should_be_scrubbed",
-        normal_field: "normal_value"
+        special_field: "also_scrubbed",
+        password: "also_scrubbed"  # Rails defaults still apply
       }
     )
 
     result = event.scrubbed.to_h
 
-    assert_equal "should_not_be_scrubbed", result[:context][:password]
-    assert_equal "**SCRUBBED**", result[:context][:custom_secret]
-    assert_equal "normal_value", result[:context][:normal_field]
+    assert_equal "not_scrubbed", result[:context][:regular_field]
+    assert_equal "[FILTERED]", result[:context][:custom_secret]
+    assert_equal "[FILTERED]", result[:context][:special_field]
+    assert_equal "[FILTERED]", result[:context][:password]  # Rails defaults still apply
   end
 
-  test "event handles scrub_all mode" do
+  test "event handles custom scrub fields" do
     Lapsoss.configure do |config|
-      config.scrub_all = true
-      config.whitelist_fields = %w[safe_field]
+      # Use custom fields that ActiveSupport::ParameterFilter can handle
+      config.scrub_fields = %w[username sensitive_data]
     end
 
     event = Lapsoss::Event.build(
@@ -73,9 +74,9 @@ class EventScrubbingTest < ActiveSupport::TestCase
     result = event.scrubbed.to_h
 
     assert_equal "Test message", result[:message]
-    assert_equal "**SCRUBBED**", result[:context][:username]
+    assert_equal "[FILTERED]", result[:context][:username]  # In custom list
     assert_equal "keep_this", result[:context][:safe_field]
-    assert_equal "**SCRUBBED**", result[:context][:sensitive_data]
+    assert_equal "[FILTERED]", result[:context][:sensitive_data]  # In custom list
   end
 
   test "event preserves exception data while scrubbing context" do
@@ -96,7 +97,7 @@ class EventScrubbingTest < ActiveSupport::TestCase
     assert_equal StandardError, result[:exception].class
     assert_equal "Test error", result[:exception].message
     assert result[:exception].respond_to?(:backtrace)
-    assert_equal "**SCRUBBED**", result[:context][:password]
+    assert_equal "[FILTERED]", result[:context][:password]
     assert_equal "safe_id", result[:context][:request_id]
   end
 end

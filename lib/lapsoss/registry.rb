@@ -2,6 +2,7 @@
 
 require "singleton"
 require "concurrent"
+require "active_support/core_ext/string/inflections"
 
 module Lapsoss
   class Registry
@@ -42,7 +43,7 @@ module Lapsoss
       name = if adapter.respond_to?(:name) && adapter.name
                adapter.name.to_sym
       elsif adapter.class.name
-               adapter.class.name.split("::").last.to_sym
+               adapter.class.name.demodulize.underscore.to_sym
       else
                # Generate a unique name if class name is nil (anonymous class)
                :"adapter_#{adapter.object_id}"
@@ -116,13 +117,12 @@ module Lapsoss
     # Resolve adapter type to class
     def resolve_adapter_class(type)
       # Try to get the class by convention: Adapters::{Type}Adapter
-      class_name = "#{type.to_s.split('_').map(&:capitalize).join}Adapter"
+      class_name = "#{type.to_s.camelize}Adapter"
+      full_class_name = "Lapsoss::Adapters::#{class_name}"
 
-      begin
-        Adapters.const_get(class_name)
-      rescue NameError
-        raise AdapterNotFoundError, "Unknown adapter type: #{type}. Expected class: Lapsoss::Adapters::#{class_name}"
-      end
+      full_class_name.constantize
+    rescue NameError
+      raise AdapterNotFoundError, "Unknown adapter type: #{type}. Expected class: #{full_class_name}"
     end
   end
 end

@@ -21,7 +21,7 @@ module Lapsoss
     def initialize
       @adapter_configs = {}
       @async = true
-      @logger = nil
+      @logger = Logger.new(nil) # Default null logger
       @environment = nil
       @enabled = true
       @release = nil
@@ -193,17 +193,8 @@ module Lapsoss
 
     def create_sampling_strategy
       case @sampling_strategy
-      when Symbol
-        case @sampling_strategy
-        when :production
-          Sampling::SamplingFactory.create_production_sampling
-        when :development
-          Sampling::SamplingFactory.create_development_sampling
-        when :user_focused
-          Sampling::SamplingFactory.create_user_focused_sampling
-        else
-          Sampling::UniformSampler.new(@sample_rate)
-        end
+      when Numeric
+        Sampling::UniformSampler.new(@sampling_strategy)
       when Proc
         @sampling_strategy
       when nil
@@ -276,7 +267,7 @@ module Lapsoss
     def validate!
       # Check sample rate is between 0 and 1
       if @sample_rate && (@sample_rate < 0 || @sample_rate > 1)
-        logger&.warn "[Lapsoss] sample_rate should be between 0 and 1, got #{@sample_rate}"
+        logger.warn "sample_rate should be between 0 and 1, got #{@sample_rate}"
       end
 
       # Check callables
@@ -289,21 +280,21 @@ module Lapsoss
 
       # Just log if transport settings look unusual
       if @transport_timeout && @transport_timeout <= 0
-        logger&.warn "[Lapsoss] transport_timeout should be positive, got #{@transport_timeout}"
+        logger.warn "transport_timeout should be positive, got #{@transport_timeout}"
       end
 
       if @transport_max_retries && @transport_max_retries < 0
-        logger&.warn "[Lapsoss] transport_max_retries should be non-negative, got #{@transport_max_retries}"
+        logger.warn "transport_max_retries should be non-negative, got #{@transport_max_retries}"
       end
 
       if @transport_initial_backoff && @transport_max_backoff && @transport_initial_backoff > @transport_max_backoff
-        logger&.warn "[Lapsoss] transport_initial_backoff (#{@transport_initial_backoff}) should be less than transport_max_backoff (#{@transport_max_backoff})"
+        logger.warn "transport_initial_backoff (#{@transport_initial_backoff}) should be less than transport_max_backoff (#{@transport_max_backoff})"
       end
 
       # Validate adapter configurations exist
       @adapter_configs.each do |name, config|
         if config[:type].blank?
-          logger&.warn "[Lapsoss] Adapter '#{name}' has no type specified"
+          logger.warn "Adapter '#{name}' has no type specified"
         end
       end
 

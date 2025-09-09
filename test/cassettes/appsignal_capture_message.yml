@@ -637,7 +637,7 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.0, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -688,7 +688,7 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.3.1, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.0, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1585,4 +1585,1562 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Mon, 08 Sep 2025 20:23:12 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:08:35 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:08:35 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:08:46 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:08:45 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:08:58 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:08:58 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:09:11 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:09:11 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:09:32 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:09:32 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:11:59 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:11:59 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:12:11 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:12:11 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:16:05 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:16:05 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:16:18 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:16:18 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:19:27 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:19:27 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:19:40 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:19:40 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:22:00 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:22:00 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:22:15 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:22:15 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:23:18 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:23:18 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:23:33 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:23:33 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:23:46 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:23:46 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:24:05 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:24:05 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:24:57 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:24:57 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:25:18 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:25:18 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:26:44 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:26:44 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:27:16 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:27:16 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:27:29 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:27:29 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:31:02 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:31:02 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:31:17 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:31:17 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 08 Sep 2025 21:33:58 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 08 Sep 2025 21:33:58 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 07:43:40 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 07:43:40 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 07:45:36 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 07:45:36 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 07:47:14 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 07:47:14 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 07:49:45 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 07:49:44 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 07:53:12 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 07:53:11 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 07:53:53 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 07:53:52 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 07:59:06 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 07:59:06 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 08:01:07 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 08:01:07 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 08:05:48 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 08:05:48 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 08:07:59 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 08:07:59 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 09:13:12 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 09:13:12 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 09:14:41 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 09:14:41 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"action":"log_message","path":"/","exception":{"name":"LogMessage","message":"Critical
+        error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/0.4.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 09:21:09 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 09:21:09 GMT
 recorded_with: VCR 6.3.1

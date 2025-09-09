@@ -19,10 +19,8 @@ module Lapsoss
 
       # Handle adapter errors gracefully
       def handle_adapter_error(adapter, event, error)
-        return unless Lapsoss.configuration.logger
-
         Lapsoss.configuration.logger.error(
-          "[Lapsoss] Adapter '#{adapter.name}' failed to capture event (type: #{event.type}): #{error.message}"
+          "Adapter '#{adapter.name}' failed to capture event (type: #{event.type}): #{error.message}"
         )
 
         # Call error handler if configured

@@ -5,6 +5,7 @@ require_relative "test_helper"
 class FingerprintingTest < ActiveSupport::TestCase
   setup do
     @config = Lapsoss::Configuration.new
+    @config.logger = Logger.new(nil) # Null logger that emits nothing
     @fingerprinter = Lapsoss::Fingerprinter.new
   end
 
@@ -165,8 +166,9 @@ class FingerprintingTest < ActiveSupport::TestCase
     assert_not_equal fingerprint1_no_norm, fingerprint2_no_norm
   end
 
-  test "normalizes file paths when enabled" do
-    fingerprinter = Lapsoss::Fingerprinter.new(normalize_paths: true)
+  test "does not normalize file paths" do
+    # Paths are not our concern - applications should handle their own path normalization
+    fingerprinter = Lapsoss::Fingerprinter.new
 
     error1 = StandardError.new("File /home/user/app/data/file1.txt not found")
     error1.set_backtrace([ "file.rb:10" ])
@@ -181,16 +183,8 @@ class FingerprintingTest < ActiveSupport::TestCase
     fingerprint1 = fingerprinter.generate_fingerprint(event1)
     fingerprint2 = fingerprinter.generate_fingerprint(event2)
 
-    # Both should normalize to the same fingerprint
-    assert_equal fingerprint1, fingerprint2
-
-    # Verify it's actually different from non-normalized
-    fingerprinter_no_norm = Lapsoss::Fingerprinter.new(normalize_paths: false)
-    fingerprint1_no_norm = fingerprinter_no_norm.generate_fingerprint(event1)
-    fingerprint2_no_norm = fingerprinter_no_norm.generate_fingerprint(event2)
-
-    # Without normalization, they should be different
-    assert_not_equal fingerprint1_no_norm, fingerprint2_no_norm
+    # Different paths should produce different fingerprints
+    assert_not_equal fingerprint1, fingerprint2
   end
 
   test "includes environment in fingerprint when configured" do

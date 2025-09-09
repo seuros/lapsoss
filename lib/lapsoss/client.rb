@@ -103,9 +103,7 @@ module Lapsoss
     end
 
     def handle_capture_error(error)
-      return unless @configuration.logger
-
-      @configuration.logger.error("[Lapsoss] Failed to capture event: #{error.message}")
+      @configuration.logger.error("Failed to capture event: #{error.message}")
     end
   end
 end

@@ -25,8 +25,8 @@ module Lapsoss
       self
     end
 
-    def track_releases(provider: nil)
-      @pipeline.use(Middleware::ReleaseTracker, release_provider: provider)
+    def track_releases(release: nil)
+      @pipeline.use(Middleware::ReleaseTracker, release: release)
       self
     end
 

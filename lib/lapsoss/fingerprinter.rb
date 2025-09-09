@@ -4,8 +4,9 @@ require "digest"
 
 module Lapsoss
   class Fingerprinter
-    DEFAULT_PATTERNS = [
-      # User/ID normalization patterns
+    # Base patterns that are always available
+    BASE_PATTERNS = [
+      # Generic error message normalization
       {
         pattern: /User \d+ (not found|invalid|missing)/i,
         fingerprint: "user-lookup-error"
@@ -13,30 +14,6 @@ module Lapsoss
       {
         pattern: /Record \d+ (not found|invalid|missing)/i,
         fingerprint: "record-lookup-error"
-      },
-
-      # URL/Path normalization patterns
-      {
-        pattern: %r{/users/\d+(/.*)?},
-        fingerprint: "users-id-endpoint"
-      },
-      {
-        pattern: %r{/api/v\d+/.*},
-        fingerprint: "api-endpoint"
-      },
-
-      # Database error patterns
-      {
-        pattern: /PG::ConnectionBad|Mysql2::Error|SQLite3::BusyException/,
-        fingerprint: "database-connection-error"
-      },
-      {
-        pattern: /ActiveRecord::RecordNotFound/,
-        fingerprint: "record-not-found"
-      },
-      {
-        pattern: /ActiveRecord::StatementInvalid.*timeout/i,
-        fingerprint: "database-timeout"
       },
 
       # Network error patterns
@@ -49,16 +26,6 @@ module Lapsoss
         fingerprint: "network-connection-error"
       },
 
-      # File system patterns
-      {
-        pattern: %r{Errno::(ENOENT|EACCES).*/tmp/},
-        fingerprint: "tmp-file-error"
-      },
-      {
-        pattern: /No such file or directory.*\.log/,
-        fingerprint: "log-file-missing"
-      },
-
       # Memory/Resource patterns
       {
         pattern: /NoMemoryError|SystemStackError/,
@@ -66,10 +33,44 @@ module Lapsoss
       }
     ].freeze
 
+    # ActiveRecord-specific patterns (only loaded if ActiveRecord is defined)
+    ACTIVERECORD_PATTERNS = [
+      {
+        pattern: /ActiveRecord::RecordNotFound/,
+        fingerprint: "record-not-found"
+      },
+      {
+        pattern: /ActiveRecord::StatementInvalid.*timeout/i,
+        fingerprint: "database-timeout"
+      },
+      {
+        pattern: /ActiveRecord::ConnectionTimeoutError/,
+        fingerprint: "database-connection-timeout"
+      }
+    ].freeze
+
+    # Database adapter patterns (only loaded if adapters are defined)
+    DATABASE_PATTERNS = [
+      {
+        pattern: /PG::ConnectionBad/,
+        fingerprint: "postgres-connection-error",
+        condition: -> { defined?(PG) }
+      },
+      {
+        pattern: /Mysql2::Error/,
+        fingerprint: "mysql-connection-error",
+        condition: -> { defined?(Mysql2) }
+      },
+      {
+        pattern: /SQLite3::BusyException/,
+        fingerprint: "sqlite-busy-error",
+        condition: -> { defined?(SQLite3) }
+      }
+    ].freeze
+
     def initialize(config = {})
       @custom_callback = config[:custom_callback]
-      @patterns = config[:patterns] || DEFAULT_PATTERNS
-      @normalize_paths = config.fetch(:normalize_paths, true)
+      @patterns = build_patterns(config[:patterns])
       @normalize_ids = config.fetch(:normalize_ids, true)
       @include_environment = config.fetch(:include_environment, false)
     end
@@ -90,6 +91,23 @@ module Lapsoss
     end
 
     private
+
+    def build_patterns(custom_patterns)
+      return custom_patterns if custom_patterns
+
+      patterns = BASE_PATTERNS.dup
+
+      # Always include ActiveRecord patterns - they match on string names
+      patterns.concat(ACTIVERECORD_PATTERNS)
+
+      # Add database-specific patterns - they also match on string names
+      DATABASE_PATTERNS.each do |pattern_config|
+        # Skip the condition check - just match on error names
+        patterns << pattern_config.except(:condition)
+      end
+
+      patterns
+    end
 
     def match_patterns(event)
       full_error_text = build_error_text(event)
@@ -170,18 +188,9 @@ module Lapsoss
 
         # Replace numeric IDs with placeholder (after UUIDs and hashes)
         normalized.gsub!(/\b\d{3,}\b/, ":id")
-      end
-
-      if @normalize_paths
-        # Replace absolute file paths with placeholder
-        normalized.gsub!(%r{/[^/\s]+(?:/[^/\s]+)*\.[a-zA-Z0-9]+}, ":filepath")
-        normalized.gsub!(%r{/[^/\s]+(?:/[^/\s]+)+(?:/)?}, ":dirpath")
 
         # Replace timestamps
         normalized.gsub!(/\b\d{4}-\d{2}-\d{2}[T\s]\d{2}:\d{2}:\d{2}/, ":timestamp")
-
-        # Replace URLs with placeholder
-        normalized.gsub!(%r{https?://[^\s]+}, ":url")
       end
 
       # Clean up extra whitespace
@@ -201,13 +210,9 @@ module Lapsoss
 
       line_to_use = app_line || backtrace.first
 
-      if @normalize_paths
-        # Extract just filename:line_number
-        if line_to_use =~ %r{([^/]+):(\d+)}
-          "#{::Regexp.last_match(1)}:#{::Regexp.last_match(2)}"
-        else
-          line_to_use
-        end
+      # Extract just filename:line_number
+      if line_to_use =~ %r{([^/]+):(\d+)}
+        "#{::Regexp.last_match(1)}:#{::Regexp.last_match(2)}"
       else
         line_to_use
       end

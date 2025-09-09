@@ -196,22 +196,81 @@ Lapsoss.configure do |config|
   # Data scrubbing (uses Rails filter_parameters automatically)
   config.scrub_fields = %w[password credit_card ssn] # Or leave nil to use Rails defaults
 
-  # Error filtering
+  # Performance
+  config.async = true # Send errors in background
+
+  # Sampling (see docs/sampling_strategies.md for advanced examples)
+  config.sample_rate = Rails.env.production? ? 0.25 : 1.0
+  
+  # Transport settings
+  config.transport_timeout = 10 # seconds
+  config.transport_max_retries = 3
+end
+```
+
+### Filtering Errors
+
+You decide what errors to track. Lapsoss doesn't make assumptions:
+
+```ruby
+Lapsoss.configure do |config|
+  # Use the before_send callback for simple filtering
   config.before_send = lambda do |event|
     # Return nil to prevent sending
     return nil if event.exception.is_a?(ActiveRecord::RecordNotFound)
     event
   end
-
-  # Sampling
-  config.sample_rate = Rails.env.production? ? 0.25 : 1.0
-
-  # Performance
-  config.async = true # Send errors in background
-  config.transport_timeout = 10 # seconds
-  config.transport_max_retries = 3
+  
+  # Or use the exclusion filter for more complex rules
+  config.exclusion_filter = Lapsoss::ExclusionFilter.new(
+    # Exclude specific exception types
+    excluded_exceptions: [
+      "ActionController::RoutingError",  # Your choice
+      "ActiveRecord::RecordNotFound"     # Your decision
+    ],
+    
+    # Exclude by pattern matching
+    excluded_patterns: [
+      /timeout/i,           # If timeouts are expected in your app
+      /user not found/i     # If these are normal in your workflow
+    ],
+    
+    # Exclude specific error messages
+    excluded_messages: [
+      "No route matches",
+      "Invalid authenticity token"
+    ]
+  )
+  
+  # Add custom exclusion logic
+  config.exclusion_filter.add_exclusion(:custom, lambda do |event|
+    # Your business logic here
+    event.context[:request]&.dig(:user_agent)&.match?(/bot/i)
+  end)
 end
 ```
+
+#### Common Patterns (Your Choice)
+
+```ruby
+# Development/Test exclusions
+if Rails.env.development?
+  config.exclusion_filter.add_exclusion(:exception, "RSpec::Expectations::ExpectationNotMetError")
+  config.exclusion_filter.add_exclusion(:exception, "Minitest::Assertion")
+end
+
+# User input errors (if you don't want to track them)
+config.exclusion_filter.add_exclusion(:exception, "ActiveRecord::RecordInvalid")
+config.exclusion_filter.add_exclusion(:exception, "ActionController::ParameterMissing")
+
+# Bot traffic (if you want to exclude it)
+config.exclusion_filter.add_exclusion(:custom, lambda do |event|
+  request = event.context[:request]
+  request && request[:user_agent]&.match?(/googlebot|bingbot/i)
+end)
+```
+
+Your app, your rules. Lapsoss just provides the mechanism.
 
 ### Data Protection
 
