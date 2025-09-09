@@ -8,6 +8,21 @@ class SentryAdapterTest < ActiveSupport::TestCase
     Lapsoss::Registry.instance.clear!
   end
 
+  test "sentry endpoint format" do
+    adapter = Lapsoss::Adapters::SentryAdapter.new(:sentry,
+      dsn: "https://abc123@sentry.io/456789")
+
+    api_endpoint = adapter.class.api_endpoint
+    api_path = adapter.class.api_path
+
+    assert_equal "https://sentry.io:443", api_endpoint
+    assert_equal "/api/456789/envelope/", api_path
+
+    # Full URL should be endpoint + path
+    full_url = "#{api_endpoint}#{api_path}"
+    assert_equal "https://sentry.io:443/api/456789/envelope/", full_url
+  end
+
   test "captures exception to Sentry" do
     VCR.use_cassette("sentry_capture_exception") do
       Lapsoss.configure do |config|

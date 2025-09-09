@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -60,7 +60,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -106,7 +106,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -152,7 +152,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -198,7 +198,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -244,7 +244,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -291,7 +291,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -334,7 +334,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -381,7 +381,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -428,7 +428,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -475,7 +475,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -522,7 +522,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -569,7 +569,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -616,7 +616,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -663,7 +663,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -710,7 +710,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -757,7 +757,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -804,7 +804,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -851,7 +851,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -898,7 +898,7 @@ http_interactions:
         in <class:InsightHubAdapterTest>","inProject":true}],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -946,7 +946,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -992,7 +992,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1038,7 +1038,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1084,7 +1084,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1130,7 +1130,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1176,7 +1176,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1222,7 +1222,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1268,7 +1268,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1314,7 +1314,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1360,7 +1360,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1406,7 +1406,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1452,7 +1452,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1498,7 +1498,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1544,7 +1544,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1590,7 +1590,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1636,7 +1636,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1682,7 +1682,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1728,7 +1728,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1774,7 +1774,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1820,7 +1820,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1866,7 +1866,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1912,7 +1912,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1958,7 +1958,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2004,7 +2004,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2050,7 +2050,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2096,7 +2096,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2142,7 +2142,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2188,7 +2188,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2234,7 +2234,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2280,7 +2280,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2326,7 +2326,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2372,7 +2372,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2418,7 +2418,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2464,7 +2464,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2510,7 +2510,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2556,7 +2556,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2602,7 +2602,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2648,7 +2648,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2694,7 +2694,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2740,7 +2740,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2786,7 +2786,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2832,7 +2832,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2878,7 +2878,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2924,7 +2924,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2970,7 +2970,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3016,7 +3016,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3062,7 +3062,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3108,7 +3108,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3154,7 +3154,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3200,7 +3200,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3246,7 +3246,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3292,7 +3292,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3338,7 +3338,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3384,7 +3384,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3430,7 +3430,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3476,7 +3476,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3522,7 +3522,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3568,7 +3568,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3614,7 +3614,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3660,7 +3660,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3706,7 +3706,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3752,7 +3752,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3798,7 +3798,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3844,7 +3844,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3890,7 +3890,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3936,7 +3936,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3982,7 +3982,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4028,7 +4028,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4074,7 +4074,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4120,7 +4120,7 @@ http_interactions:
         User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.3
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4154,4 +4154,50 @@ http_interactions:
       encoding: UTF-8
       string: OK
   recorded_at: Tue, 09 Sep 2025 11:15:55 GMT
+- request:
+    method: post
+    uri: https://notify.bugsnag.com/
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
+        Ruby","version":"0.4.5","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[{"errorClass":"StandardError","message":"Error
+        with metadata","stacktrace":[{"file":"vcr/util/variable_args_block_caller.rb","lineNumber":9,"method":"call_block","inProject":false},{"file":"vcr.rb","lineNumber":194,"method":"use_cassette","inProject":false},{"file":"insight_hub_adapter_test.rb","lineNumber":55,"method":"block
+        in \u003cclass:InsightHubAdapterTest\u003e","inProject":true},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}],"breadcrumbs":[],"user":{"id":"456","name":"Test
+        User","email":"<EMAIL>"},"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Bugsnag-Api-Key:
+      - "<BUGSNAG_API_KEY>"
+      Bugsnag-Payload-Version:
+      - '5'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Bugsnag-Event-Id:
+      - 68c0283a0148000d48640000
+      Date:
+      - Tue, 09 Sep 2025 13:14:34 GMT
+      Content-Length:
+      - '2'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: OK
+  recorded_at: Tue, 09 Sep 2025 13:14:34 GMT
 recorded_with: VCR 6.3.1

@@ -13,7 +13,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -54,7 +54,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -95,7 +95,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -136,7 +136,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -177,7 +177,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -218,7 +218,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -259,7 +259,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -303,7 +303,7 @@ http_interactions:
         15:26:06 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -348,7 +348,7 @@ http_interactions:
         15:34:32 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -393,7 +393,7 @@ http_interactions:
         15:40:02 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -438,7 +438,7 @@ http_interactions:
         15:41:52 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -483,7 +483,7 @@ http_interactions:
         16:20:43 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -528,7 +528,7 @@ http_interactions:
         17:03:17 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -573,7 +573,7 @@ http_interactions:
         18:41:21 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -618,7 +618,7 @@ http_interactions:
         23:47:44 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -663,7 +663,7 @@ http_interactions:
         08:25:58 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -704,7 +704,7 @@ http_interactions:
         error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -770,7 +770,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -813,11 +813,11 @@ http_interactions:
         {"platform":"ruby","level":"error","timestamp":1752428866.8660202,"environment":null,"release":null,"tags":{},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-13 17:47:46 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-13 17:47:46 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-13 17:47:46 UTC"}]},"exception":{"values":[{"type":"RuntimeError","value":"Error after breadcrumbs","stacktrace":{"frames":[]}}]}}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -864,11 +864,11 @@ http_interactions:
         {"platform":"ruby","level":"error","timestamp":1752428867.36818,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -917,7 +917,7 @@ http_interactions:
         19:08:26 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -962,7 +962,7 @@ http_interactions:
         19:12:01 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1028,7 +1028,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1073,7 +1073,7 @@ http_interactions:
         19:15:21 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1118,7 +1118,7 @@ http_interactions:
         19:15:50 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1163,7 +1163,7 @@ http_interactions:
         22:15:22 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1208,7 +1208,7 @@ http_interactions:
         22:18:39 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1253,7 +1253,7 @@ http_interactions:
         22:19:02 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1298,7 +1298,7 @@ http_interactions:
         18:59:49 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1343,7 +1343,7 @@ http_interactions:
         19:35:49 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1388,7 +1388,7 @@ http_interactions:
         21:25:40 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1432,7 +1432,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T19:58:18.330Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1476,7 +1476,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T19:58:32.289Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1520,7 +1520,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T19:59:46.666Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1564,7 +1564,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:00:05.959Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1608,7 +1608,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:06:42.293Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1652,7 +1652,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:07:06.051Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1696,7 +1696,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:08:52.017Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1740,7 +1740,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:09:04.978Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1784,7 +1784,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:09:19.473Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1828,7 +1828,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:09:28.308Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1872,7 +1872,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:09:50.495Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1916,7 +1916,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:11:40.130Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1960,7 +1960,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:11:51.489Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2004,7 +2004,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:12:07.923Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2048,7 +2048,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:16:48.489Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2092,7 +2092,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:17:02.033Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2136,7 +2136,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:17:14.985Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2180,7 +2180,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:18:07.755Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2224,7 +2224,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:18:27.902Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2268,7 +2268,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:18:45.185Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2312,7 +2312,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T20:23:12.058Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2356,7 +2356,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:08:35.782Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2400,7 +2400,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:08:45.193Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2444,7 +2444,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:08:58.508Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2488,7 +2488,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:09:11.814Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2532,7 +2532,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:09:32.706Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2576,7 +2576,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:12:00.020Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2620,7 +2620,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:12:12.099Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2664,7 +2664,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:16:03.852Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2708,7 +2708,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:16:17.432Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2752,7 +2752,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:19:27.567Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2796,7 +2796,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:19:41.694Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2840,7 +2840,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:21:59.621Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2884,7 +2884,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:22:15.671Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2928,7 +2928,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:23:18.414Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2972,7 +2972,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:23:34.036Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3016,7 +3016,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:23:46.730Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3060,7 +3060,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:24:04.804Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3104,7 +3104,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:24:57.789Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3148,7 +3148,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:25:17.024Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3192,7 +3192,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:27:15.456Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3236,7 +3236,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:27:28.954Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3280,7 +3280,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:31:02.954Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3324,7 +3324,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:31:17.387Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3368,7 +3368,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-08T21:33:58.847Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3434,7 +3434,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3478,7 +3478,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T07:43:39.467Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3522,7 +3522,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T07:45:36.589Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3566,7 +3566,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T07:47:13.154Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3610,7 +3610,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T07:49:43.656Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3654,7 +3654,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T07:53:11.974Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3698,7 +3698,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T07:53:52.090Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3742,7 +3742,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T07:59:05.611Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3786,7 +3786,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T08:01:07.846Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3830,7 +3830,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T08:05:48.717Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3874,7 +3874,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T08:07:58.705Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3918,7 +3918,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T09:13:13.275Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3962,7 +3962,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T09:14:41.451Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4006,7 +4006,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T09:21:09.951Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4050,7 +4050,7 @@ http_interactions:
         request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T11:15:52.531Z"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.3
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4082,4 +4082,48 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Tue, 09 Sep 2025 11:15:52 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"timestamp":1757423675,"namespace":"backend","error":{"name":"RuntimeError","message":"Error
+        after breadcrumbs","backtrace":[]},"tags":{},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[{"message":"User
+        clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-09-09T13:14:35.777Z"},{"message":"API
+        request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-09-09T13:14:35.777Z"},{"message":"API
+        request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T13:14:35.777Z"}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 13:14:36 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 13:14:36 GMT
 recorded_with: VCR 6.3.1

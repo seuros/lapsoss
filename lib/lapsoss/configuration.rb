@@ -85,9 +85,9 @@ module Lapsoss
       register_adapter(name, :sentry, **settings)
     end
 
-    # Convenience method for Telebug (Sentry-compatible)
-    def use_telebug(name: :telebug, **settings)
-      register_adapter(name, :telebug, **settings)
+    # Convenience method for Telebugs (Sentry-compatible)
+    def use_telebugs(name: :telebugs, **settings)
+      register_adapter(name, :telebugs, **settings)
     end
 
     # Convenience method for AppSignal

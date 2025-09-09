@@ -43,8 +43,22 @@ VCR.configure do |config|
       end
     end
 
+    # Filter User-Agent to avoid version changes
+    if interaction.request.headers["User-Agent"]
+      user_agent = interaction.request.headers["User-Agent"].first
+      # Replace version numbers with placeholder
+      filtered_agent = user_agent.gsub(/lapsoss\/[\d.]+/, "lapsoss/<VERSION>")
+      interaction.request.headers["User-Agent"] = [ filtered_agent ]
+    end
+
+    # Filter X-Lapsoss-Version header
+    if interaction.request.headers["X-Lapsoss-Version"]
+      interaction.request.headers["X-Lapsoss-Version"] = [ "<VERSION>" ]
+    end
+
     if interaction.request.headers["X-Sentry-Auth"]
-      interaction.request.headers["X-Sentry-Auth"] = [ "Sentry sentry_version=7, sentry_client=lapsoss/#{Lapsoss::VERSION}, sentry_key=<FILTERED>" ]
+      # Filter out version number to avoid cassette changes on version bumps
+      interaction.request.headers["X-Sentry-Auth"] = [ "Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>" ]
     end
 
     # Filter AppSignal API keys from query parameters

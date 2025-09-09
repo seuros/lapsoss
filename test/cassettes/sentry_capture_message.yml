@@ -15,11 +15,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
   response:
     status:
       code: 200
@@ -66,11 +66,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
   response:
     status:
       code: 200
@@ -117,11 +117,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
   response:
     status:
       code: 200
@@ -168,11 +168,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
   response:
     status:
       code: 200
@@ -219,11 +219,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
   response:
     status:
       code: 200
@@ -270,11 +270,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
   response:
     status:
       code: 200
@@ -317,11 +317,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752074765.7323399,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[{"message":"User clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-07-09 15:26:04 UTC"},{"message":"API request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-07-09 15:26:04 UTC"},{"message":"API request failed","type":"error","metadata":{"status":500},"timestamp":"2025-07-09 15:26:04 UTC"}]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -368,11 +368,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752075274.0087922,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -419,11 +419,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752075598.187936,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -470,11 +470,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752075717.7054698,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -521,11 +521,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752078040.246499,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -572,11 +572,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752080600.3882308,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -623,11 +623,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752086483.7518778,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -674,11 +674,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752104860.21036,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -725,11 +725,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752130596.734451,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -776,11 +776,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752135955.433471,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -827,11 +827,11 @@ http_interactions:
         {"platform":"ruby","level":"error","timestamp":1752428550.912173,"environment":null,"release":null,"tags":{},"user":{},"extra":{"feature_flags":{"new_checkout":"enabled","dark_mode":"variant_a"}},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error with feature flags","stacktrace":{"frames":[]}}]}}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -878,11 +878,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752428828.720532,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -929,11 +929,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752429235.477281,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -980,11 +980,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752433631.431155,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1031,11 +1031,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752433704.27295,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1082,11 +1082,11 @@ http_interactions:
         {"platform":"ruby","level":"error","timestamp":1752433852.759216,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1133,11 +1133,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752433917.727905,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1184,11 +1184,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752434012.643745,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1235,11 +1235,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752434120.0793111,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1286,11 +1286,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752434149.067945,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1337,11 +1337,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752444926.000145,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1388,11 +1388,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752445122.379046,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1439,11 +1439,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752445141.329411,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1490,11 +1490,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1753642791.750209,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1541,11 +1541,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1753644948.698862,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1592,11 +1592,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1753651542.302114,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1647,9 +1647,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1700,9 +1700,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1753,9 +1753,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1806,9 +1806,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1859,9 +1859,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1912,9 +1912,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1965,9 +1965,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2018,9 +2018,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2071,9 +2071,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2124,9 +2124,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2177,9 +2177,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2230,9 +2230,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2283,9 +2283,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2336,9 +2336,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2389,9 +2389,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2442,9 +2442,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2495,9 +2495,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2548,9 +2548,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2601,9 +2601,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2654,9 +2654,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2707,9 +2707,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2760,9 +2760,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2813,9 +2813,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2866,9 +2866,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2919,9 +2919,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2972,9 +2972,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3025,9 +3025,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3078,9 +3078,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3131,9 +3131,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3184,9 +3184,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3237,9 +3237,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3290,9 +3290,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3343,9 +3343,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3396,9 +3396,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3449,9 +3449,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3502,9 +3502,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3555,9 +3555,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3608,9 +3608,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3661,9 +3661,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3714,9 +3714,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3767,9 +3767,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3820,9 +3820,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3873,9 +3873,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3926,9 +3926,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3979,9 +3979,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4032,9 +4032,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4085,9 +4085,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4138,9 +4138,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4191,9 +4191,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4244,9 +4244,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4297,9 +4297,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4350,9 +4350,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4403,9 +4403,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4456,9 +4456,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4509,9 +4509,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4562,9 +4562,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4615,9 +4615,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4668,9 +4668,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4721,9 +4721,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4774,9 +4774,9 @@ http_interactions:
       Content-Type:
       - application/x-sentry-envelope
       X-Lapsoss-Version:
-      - 0.4.3
+      - "<VERSION>"
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -4812,4 +4812,57 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":"bea7940cea5048b8b74bb6c029a2b255"}'
   recorded_at: Tue, 09 Sep 2025 11:15:57 GMT
+- request:
+    method: post
+    uri: https://o1091485.ingest.us.sentry.io/api/4509620995358720/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"b4959447-28d3-4fb2-bb77-b70e011c8939","sent_at":"2025-09-09T13:14:37Z","sdk":{"name":"lapsoss","version":"0.4.5","packages":[{"name":"lapsoss-ruby","version":"0.4.5"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"id":"cf26c57c-4899-4f14-9da2-1fc799ba5fe1","timestamp":"2025-09-09T13:14:37Z","environment":"production","level":"info","platform":"ruby","sdk":{"name":"lapsoss","version":"0.4.5","packages":[{"name":"lapsoss-ruby","version":"0.4.5"}]},"message":"Test message from Lapsoss","tags":{"source":"activesupport_test"}}
+    headers:
+      User-Agent:
+      - Lapsoss/0.4.5 Ruby/3.4.5 Rails/8.0.2.1
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 13:14:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"b495944728d34fb2bb77b70e011c8939"}'
+  recorded_at: Tue, 09 Sep 2025 13:14:37 GMT
 recorded_with: VCR 6.3.1

@@ -15,11 +15,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.1.0, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
   response:
     status:
       code: 200

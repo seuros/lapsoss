@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -60,7 +60,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -106,7 +106,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -152,7 +152,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -198,7 +198,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -244,7 +244,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -290,7 +290,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -332,7 +332,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -378,7 +378,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -424,7 +424,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -470,7 +470,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -516,7 +516,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -562,7 +562,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -608,7 +608,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -654,7 +654,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -700,7 +700,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -746,7 +746,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -793,11 +793,11 @@ http_interactions:
         {"platform":"ruby","level":"info","timestamp":1752428551.4180212,"environment":null,"release":null,"tags":{"source":"activesupport_test"},"user":{},"extra":{},"breadcrumbs":{"values":[]},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -844,11 +844,11 @@ http_interactions:
         {"platform":"ruby","level":"error","timestamp":1752428551.934689,"environment":null,"release":null,"tags":{"test":true,"environment":"test"},"user":{"id":123,"email":"<EMAIL>"},"extra":{"custom_data":"value"},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"StandardError","value":"Test error from Lapsoss","stacktrace":{"frames":[{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"function":"call_block","module":"VCR::VariableArgsBlockCaller","in_app":false},{"filename":"vcr.rb","lineno":194,"function":"use_cassette","module":"VCR","in_app":false},{"filename":"sentry_adapter_test.rb","lineno":12,"function":"block in <class:SentryAdapterTest>","in_app":true},{"filename":"active_support/executor/test_helper.rb","lineno":5,"function":"run","module":"block in ActiveSupport::Executor::TestHelper","in_app":false},{"filename":"active_support/execution_wrapper.rb","lineno":104,"function":"perform","module":"ActiveSupport::ExecutionWrapper","in_app":false},{"filename":"rails/test_unit/line_filtering.rb","lineno":10,"function":"run","module":"Rails::LineFiltering","in_app":false}]}}]}}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.3, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -894,7 +894,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -940,7 +940,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -986,7 +986,7 @@ http_interactions:
         after breadcrumbs","stacktrace":[],"type":"ruby"}]}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1033,7 +1033,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1078,7 +1078,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1123,7 +1123,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1168,7 +1168,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1213,7 +1213,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1258,7 +1258,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1303,7 +1303,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1348,7 +1348,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1393,7 +1393,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1438,7 +1438,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Bugsnag-Api-Key:
@@ -1483,7 +1483,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1528,7 +1528,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1573,7 +1573,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1618,7 +1618,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1663,7 +1663,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1708,7 +1708,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1753,7 +1753,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1798,7 +1798,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1843,7 +1843,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1888,7 +1888,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1933,7 +1933,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -1978,7 +1978,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2023,7 +2023,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2068,7 +2068,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2113,7 +2113,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2158,7 +2158,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2203,7 +2203,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2248,7 +2248,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2293,7 +2293,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2338,7 +2338,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2383,7 +2383,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2428,7 +2428,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2473,7 +2473,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2518,7 +2518,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2563,7 +2563,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2608,7 +2608,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2653,7 +2653,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2698,7 +2698,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2743,7 +2743,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2788,7 +2788,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2833,7 +2833,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2878,7 +2878,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2923,7 +2923,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -2968,7 +2968,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3013,7 +3013,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3058,7 +3058,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3103,7 +3103,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3148,7 +3148,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3193,7 +3193,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3238,7 +3238,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3283,7 +3283,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3328,7 +3328,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3373,7 +3373,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3418,7 +3418,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3463,7 +3463,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3508,7 +3508,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3553,7 +3553,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3598,7 +3598,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3643,7 +3643,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3688,7 +3688,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3733,7 +3733,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3778,7 +3778,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3823,7 +3823,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3868,7 +3868,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3913,7 +3913,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -3958,7 +3958,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4003,7 +4003,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4048,7 +4048,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4093,7 +4093,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4138,7 +4138,7 @@ http_interactions:
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.3
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Bugsnag-Api-Key:
@@ -4172,4 +4172,49 @@ http_interactions:
       encoding: UTF-8
       string: OK
   recorded_at: Tue, 09 Sep 2025 11:15:56 GMT
+- request:
+    method: post
+    uri: https://notify.bugsnag.com/
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
+        Ruby","version":"0.4.5","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[{"errorClass":"RuntimeError","message":"Error
+        after breadcrumbs","stacktrace":[],"type":"ruby"}],"breadcrumbs":[{"timestamp":"2025-09-09T13:14:34Z","name":"User
+        clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Bugsnag-Api-Key:
+      - "<BUGSNAG_API_KEY>"
+      Bugsnag-Payload-Version:
+      - '5'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Bugsnag-Event-Id:
+      - 68c0283a0147b5595bbc0000
+      Date:
+      - Tue, 09 Sep 2025 13:14:34 GMT
+      Content-Length:
+      - '2'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: OK
+  recorded_at: Tue, 09 Sep 2025 13:14:34 GMT
 recorded_with: VCR 6.3.1

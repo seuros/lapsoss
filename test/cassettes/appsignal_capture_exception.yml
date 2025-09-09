@@ -33,7 +33,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -95,7 +95,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
   response:
@@ -136,7 +136,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Content-Encoding:
@@ -179,7 +179,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Content-Encoding:
@@ -222,7 +222,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Content-Encoding:
@@ -265,7 +265,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Content-Encoding:
@@ -308,7 +308,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Content-Encoding:
@@ -375,7 +375,7 @@ http_interactions:
         15:26:06 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -437,7 +437,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -499,7 +499,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -561,7 +561,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -623,7 +623,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -685,7 +685,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -747,7 +747,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -809,7 +809,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -875,7 +875,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -941,7 +941,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1007,7 +1007,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1050,11 +1050,11 @@ http_interactions:
         {"platform":"ruby","level":"error","timestamp":1752428867.872145,"environment":null,"release":null,"tags":{},"user":{},"extra":{"feature_flags":{"new_checkout":"enabled","dark_mode":"variant_a"}},"breadcrumbs":{"values":[]},"exception":{"values":[{"type":"RuntimeError","value":"Error with feature flags","stacktrace":{"frames":[]}}]}}
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/x-sentry-envelope
       X-Sentry-Auth:
-      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.0, sentry_key=<FILTERED>
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1103,7 +1103,7 @@ http_interactions:
         19:07:09 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1169,7 +1169,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1235,7 +1235,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1301,7 +1301,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1367,7 +1367,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1433,7 +1433,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1499,7 +1499,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1565,7 +1565,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1631,7 +1631,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1697,7 +1697,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1763,7 +1763,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1829,7 +1829,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1895,7 +1895,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1961,7 +1961,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2027,7 +2027,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2093,7 +2093,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2159,7 +2159,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2225,7 +2225,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2291,7 +2291,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2357,7 +2357,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2398,7 +2398,7 @@ http_interactions:
         error from Lapsoss","backtrace":[]},"tags":{"source":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2464,7 +2464,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2530,7 +2530,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2596,7 +2596,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2662,7 +2662,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2728,7 +2728,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2794,7 +2794,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2860,7 +2860,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2926,7 +2926,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -2992,7 +2992,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3058,7 +3058,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.3.1
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3124,7 +3124,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3190,7 +3190,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3256,7 +3256,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3322,7 +3322,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3388,7 +3388,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3454,7 +3454,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3520,7 +3520,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3586,7 +3586,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3652,7 +3652,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3718,7 +3718,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3784,7 +3784,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3850,7 +3850,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3916,7 +3916,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -3982,7 +3982,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4048,7 +4048,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4114,7 +4114,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4180,7 +4180,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4246,7 +4246,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4312,7 +4312,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4378,7 +4378,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4444,7 +4444,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4510,7 +4510,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4576,7 +4576,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4642,7 +4642,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4708,7 +4708,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4774,7 +4774,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4840,7 +4840,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4906,7 +4906,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -4972,7 +4972,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5038,7 +5038,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5104,7 +5104,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5170,7 +5170,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5236,7 +5236,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5302,7 +5302,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5368,7 +5368,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5434,7 +5434,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5500,7 +5500,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.4.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -5532,4 +5532,70 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Tue, 09 Sep 2025 09:21:09 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"timestamp":1757423676,"namespace":"backend","error":{"name":"StandardError","message":"Test
+        error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
+        ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
+        ''VCR#use_cassette''","/path/to/project/lapsoss/test/appsignal_adapter_test.rb:12:in
+        ''block in \u003cclass:AppsignalAdapterTest\u003e''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in
+        ''block (2 levels) in Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in
+        ''Minitest::Test#capture_exceptions''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in
+        ''block in Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368:in
+        ''Minitest::Runnable#time_it''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in
+        ''Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2.1/lib/active_support/executor/test_helper.rb:5:in
+        ''block in ActiveSupport::Executor::TestHelper#run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2.1/lib/active_support/execution_wrapper.rb:104:in
+        ''ActiveSupport::ExecutionWrapper.perform''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2.1/lib/active_support/executor/test_helper.rb:5:in
+        ''ActiveSupport::Executor::TestHelper#run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:1208:in
+        ''Minitest.run_one_method''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:447:in
+        ''Minitest::Runnable.run_one_method''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:434:in
+        ''block (2 levels) in Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:430:in
+        ''Array#each''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:430:in
+        ''block in Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:472:in
+        ''Minitest::Runnable.on_signal''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:459:in
+        ''Minitest::Runnable.with_info_handler''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:429:in
+        ''Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/railties-8.0.2.1/lib/rails/test_unit/line_filtering.rb:10:in
+        ''Rails::LineFiltering#run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:332:in
+        ''block in Minitest.__run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:332:in
+        ''Array#map''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:332:in
+        ''Minitest.__run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:288:in
+        ''Minitest.run''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:86:in
+        ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 09 Sep 2025 13:14:36 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 13:14:36 GMT
 recorded_with: VCR 6.3.1

@@ -37,7 +37,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -112,7 +112,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -187,7 +187,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -275,7 +275,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -364,7 +364,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -415,7 +415,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Content-Encoding:
@@ -468,7 +468,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Content-Encoding:
@@ -521,7 +521,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Content-Encoding:
@@ -574,7 +574,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Content-Encoding:
@@ -627,7 +627,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       Content-Encoding:
@@ -681,7 +681,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -733,7 +733,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -781,7 +781,7 @@ http_interactions:
         error from Lapsoss","uuid":"38b89d9b-80d8-41f9-8682-dca627d72f4a","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -833,7 +833,7 @@ http_interactions:
         error from Lapsoss","uuid":"cf570bbf-433a-4363-a6a5-a152b8c4c68d","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -885,7 +885,7 @@ http_interactions:
         error from Lapsoss","uuid":"5560e848-79ca-4f1f-9775-2ec3440eca96","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -937,7 +937,7 @@ http_interactions:
         error from Lapsoss","uuid":"672a9d1a-2aba-40bd-86a9-2b0fda02f82b","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -989,7 +989,7 @@ http_interactions:
         error from Lapsoss","uuid":"c82ec717-c80c-4270-bcf6-9f549fab426a","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1041,7 +1041,7 @@ http_interactions:
         error from Lapsoss","uuid":"ecbe23a2-9503-48e5-bab2-414d63ff1395","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1093,7 +1093,7 @@ http_interactions:
         error from Lapsoss","uuid":"9a65bb6e-4f4f-45a8-b85b-a81afc56d81d","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1145,7 +1145,7 @@ http_interactions:
         error from Lapsoss","uuid":"e1a9ee49-204b-4bfc-8cb5-65ae17edd6b7","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1197,7 +1197,7 @@ http_interactions:
         error from Lapsoss","uuid":"2a24832b-0c71-4d44-a02e-8b13f3296469","notifier":{"name":"lapsoss","version":"0.1.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.1.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1249,7 +1249,7 @@ http_interactions:
         error from Lapsoss","uuid":"09403b4c-0e63-4d85-bf55-f2ec6f7c6502","notifier":{"name":"lapsoss","version":"0.2.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1301,7 +1301,7 @@ http_interactions:
         error from Lapsoss","uuid":"6d473452-0842-4565-b9dd-b334a1e85cbb","notifier":{"name":"lapsoss","version":"0.2.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1356,7 +1356,7 @@ http_interactions:
         17:47:12 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1398,7 +1398,7 @@ http_interactions:
         error from Lapsoss","uuid":"95479d03-af45-4060-a913-08d79f1cc1fc","notifier":{"name":"lapsoss","version":"0.2.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1450,7 +1450,7 @@ http_interactions:
         error from Lapsoss","uuid":"d17e0b6c-5287-4cad-a4b0-994ba03b0298","notifier":{"name":"lapsoss","version":"0.2.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1502,7 +1502,7 @@ http_interactions:
         error from Lapsoss","uuid":"faefdfac-604c-4d14-a09e-8daea945c6b0","notifier":{"name":"lapsoss","version":"0.2.0"}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1553,7 +1553,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1752433923,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"EXAMPLE_MACHINE","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"EXAMPLE_COMMIT_HASH_1234567890abcdef"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1629,7 +1629,7 @@ http_interactions:
         ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1674,7 +1674,7 @@ http_interactions:
         19:13:28 UTC"}]}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json; charset=UTF-8
       Accept-Encoding:
@@ -1715,7 +1715,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1752434009,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"EXAMPLE_MACHINE","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"EXAMPLE_COMMIT_HASH_1234567890abcdef"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1766,7 +1766,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1752434116,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"EXAMPLE_MACHINE","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"EXAMPLE_COMMIT_HASH_1234567890abcdef"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1817,7 +1817,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1752434147,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"EXAMPLE_MACHINE","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"EXAMPLE_COMMIT_HASH_1234567890abcdef"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1868,7 +1868,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1752444921,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"EXAMPLE_HOST.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"EXAMPLE_COMMIT_HASH_1234567890abcdef"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1919,7 +1919,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1752445117,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"EXAMPLE_HOST.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"EXAMPLE_COMMIT_HASH_1234567890abcdef"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -1970,7 +1970,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1752445144,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"EXAMPLE_HOST.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"EXAMPLE_COMMIT_HASH_1234567890abcdef"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -2021,7 +2021,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1753642793,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cbade817a19bbfb38185b64295c379a42aa7ab45"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -2072,7 +2072,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1753644945,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cbade817a19bbfb38185b64295c379a42aa7ab45"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -2123,7 +2123,7 @@ http_interactions:
         error from Lapsoss"}},"level":"error","timestamp":1753651538,"code_version":null,"platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cbade817a19bbfb38185b64295c379a42aa7ab45"},"person":null,"request":null,"custom":{}}}'
     headers:
       User-Agent:
-      - lapsoss/0.2.0
+      - lapsoss/<VERSION>
       Content-Type:
       - application/json
       X-Rollbar-Access-Token:
@@ -2178,7 +2178,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2231,7 +2231,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2284,7 +2284,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2337,7 +2337,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2390,7 +2390,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2443,7 +2443,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2496,7 +2496,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2549,7 +2549,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2602,7 +2602,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2655,7 +2655,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2708,7 +2708,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2761,7 +2761,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2814,7 +2814,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2867,7 +2867,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2920,7 +2920,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -2973,7 +2973,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3026,7 +3026,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3079,7 +3079,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3132,7 +3132,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3185,7 +3185,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3238,7 +3238,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.3.1
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3291,7 +3291,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3344,7 +3344,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3397,7 +3397,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3450,7 +3450,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3503,7 +3503,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3556,7 +3556,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3609,7 +3609,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3662,7 +3662,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3715,7 +3715,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3768,7 +3768,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3821,7 +3821,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3874,7 +3874,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3927,7 +3927,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -3980,7 +3980,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4033,7 +4033,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4086,7 +4086,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4139,7 +4139,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4192,7 +4192,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4245,7 +4245,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4298,7 +4298,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4351,7 +4351,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4404,7 +4404,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4457,7 +4457,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4510,7 +4510,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4563,7 +4563,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4616,7 +4616,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4669,7 +4669,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4722,7 +4722,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4775,7 +4775,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4828,7 +4828,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4881,7 +4881,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4934,7 +4934,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -4987,7 +4987,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -5040,7 +5040,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -5093,7 +5093,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -5146,7 +5146,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -5199,7 +5199,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -5252,7 +5252,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.0
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -5305,7 +5305,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Lapsoss-Version:
-      - 0.4.3
+      - "<VERSION>"
       X-Rollbar-Access-Token:
       - "<ROLLBAR_ACCESS_TOKEN>"
       Accept-Encoding:
@@ -5345,4 +5345,57 @@ http_interactions:
           "message": "invalid access token"
         }
   recorded_at: Tue, 09 Sep 2025 11:15:49 GMT
+- request:
+    method: post
+    uri: https://api.rollbar.com/api/1/item/
+    body:
+      encoding: UTF-8
+      string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
+        error from Lapsoss"}},"level":"error","timestamp":1757423673,"code_version":"de98b92b74f3eb41f0f3e17d61132e5c8115e992","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"de98b92b74f3eb41f0f3e17d61132e5c8115e992"}}}'
+    headers:
+      User-Agent:
+      - Lapsoss/0.4.5 Ruby/3.4.5 Rails/8.0.2.1
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Rollbar-Access-Token:
+      - "<ROLLBAR_ACCESS_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.17.9
+      Date:
+      - Tue, 09 Sep 2025 13:14:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '51'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"33-B1+irAWVS0vJXv2TX/BEXA"
+      X-Response-Time:
+      - 2.914ms
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "err": 1,
+          "message": "invalid access token"
+        }
+  recorded_at: Tue, 09 Sep 2025 13:14:34 GMT
 recorded_with: VCR 6.3.1
