@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
-        Ruby","version":"0.4.5","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[],"breadcrumbs":[],"context":"production","severity":"error","unhandled":false,"metaData":{}}]}'
+        Ruby","version":"0.4.6","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[],"breadcrumbs":[],"context":"production","severity":"error","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -28,9 +28,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Bugsnag-Event-Id:
-      - 68c041660147bcb046320000
+      - 68c06bae0147c83ca86c0000
       Date:
-      - Tue, 09 Sep 2025 15:01:58 GMT
+      - Tue, 09 Sep 2025 18:02:22 GMT
       Content-Length:
       - '2'
       Content-Type:
@@ -42,14 +42,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: OK
-  recorded_at: Tue, 09 Sep 2025 15:01:58 GMT
+  recorded_at: Tue, 09 Sep 2025 18:02:22 GMT
 - request:
     method: post
     uri: https://notify.bugsnag.com/
     body:
       encoding: UTF-8
       string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
-        Ruby","version":"0.4.5","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[],"breadcrumbs":[],"context":"production","severity":"error","unhandled":false,"metaData":{}}]}'
+        Ruby","version":"0.4.6","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[],"breadcrumbs":[],"context":"production","severity":"error","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -71,9 +71,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Bugsnag-Event-Id:
-      - 68c041960147b366ebff0000
+      - 68c06bc10147fcaccedd0000
       Date:
-      - Tue, 09 Sep 2025 15:02:46 GMT
+      - Tue, 09 Sep 2025 18:02:41 GMT
       Content-Length:
       - '2'
       Content-Type:
@@ -85,5 +85,48 @@ http_interactions:
     body:
       encoding: UTF-8
       string: OK
-  recorded_at: Tue, 09 Sep 2025 15:02:46 GMT
+  recorded_at: Tue, 09 Sep 2025 18:02:41 GMT
+- request:
+    method: post
+    uri: https://notify.bugsnag.com/
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
+        Ruby","version":"0.4.6","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[],"breadcrumbs":[],"context":"production","severity":"error","unhandled":false,"metaData":{}}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Bugsnag-Api-Key:
+      - "<BUGSNAG_API_KEY>"
+      Bugsnag-Payload-Version:
+      - '5'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Bugsnag-Event-Id:
+      - 68c3ff0c01485a9a311e0000
+      Date:
+      - Fri, 12 Sep 2025 11:07:56 GMT
+      Content-Length:
+      - '2'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: OK
+  recorded_at: Fri, 12 Sep 2025 11:07:56 GMT
 recorded_with: VCR 6.3.1

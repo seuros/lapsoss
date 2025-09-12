@@ -3,12 +3,15 @@
 module Lapsoss
   class Scope
     attr_reader :breadcrumbs, :tags, :user, :extra
+    attr_accessor :transaction_name, :transaction_source
 
     def initialize
       @breadcrumbs = []
       @tags = {}
       @user = {}
       @extra = {}
+      @transaction_name = nil
+      @transaction_source = nil
     end
 
     def add_breadcrumb(message, type: :default, **metadata)
@@ -36,6 +39,8 @@ module Lapsoss
       @tags.clear
       @user.clear
       @extra.clear
+      @transaction_name = nil
+      @transaction_source = nil
     end
 
     def set_context(key, value)
@@ -60,6 +65,11 @@ module Lapsoss
 
     def set_extras(extras)
       @extra.merge!(extras)
+    end
+
+    def set_transaction_name(name, source: nil)
+      @transaction_name = name
+      @transaction_source = source if source
     end
   end
 end

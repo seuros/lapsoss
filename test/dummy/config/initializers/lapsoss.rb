@@ -14,6 +14,30 @@ Lapsoss.configure do |config|
   # Configure debug mode for development
   config.debug = Rails.env.development?
 
+  # Configure Telebugs if DSN is available
+  if ENV["TELEBUGS_DSN"].present?
+    config.use_telebugs(
+      name: :telebugs,
+      dsn: ENV["TELEBUGS_DSN"]
+    )
+  end
+
+  # Configure Sentry US if DSN is available
+  if ENV["SENTRY_US_DSN"].present?
+    config.use_sentry(
+      name: :sentry_us,
+      dsn: ENV["SENTRY_US_DSN"]
+    )
+  end
+
+  # Configure Sentry EU if DSN is available
+  if ENV["SENTRY_EU_DSN"].present?
+    config.use_sentry(
+      name: :sentry_eu,
+      dsn: ENV["SENTRY_EU_DSN"]
+    )
+  end
+
   # DRb agent configuration (optional)
   # config.use_agent = true
   # config.agent_uri = 'druby://localhost:9000'

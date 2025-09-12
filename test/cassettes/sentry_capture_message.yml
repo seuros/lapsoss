@@ -6,9 +6,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |-
-        {"event_id":"7a5fc7e6-db8f-42ba-b302-3dc4df1616dd","sent_at":"2025-09-09T15:01:54Z","sdk":{"name":"lapsoss","version":"0.4.5","packages":[{"name":"lapsoss-ruby","version":"0.4.5"}]}}
+        {"event_id":"6a882a2d-f1af-4900-80bd-21b303b661ad","sent_at":"2025-09-09T18:01:24Z","sdk":{"name":"lapsoss","version":"0.4.6","packages":[{"name":"lapsoss-ruby","version":"0.4.6"}]}}
         {"type":"event","content_type":"application/json"}
-        {"event_id":"8c59beb9-e664-4ef3-8f3f-763b64b81552","timestamp":"2025-09-09T15:01:54Z","platform":"ruby","level":"info","environment":"production","release":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7","server_name":"Periscope.local","modules":{"rake":"13.3.0","base64":"0.3.0","benchmark":"0.4.1","bigdecimal":"3.2.3","concurrent-ruby":"1.3.5","connection_pool":"2.5.4","drb":"2.2.3","i18n":"1.14.7","logger":"1.7.0","minitest":"5.25.5","securerandom":"0.4.1","tzinfo":"2.0.6","uri":"1.0.3","activesupport":"8.0.2.1","builder":"3.3.0","erubi":"1.13.1","racc":"1.8.1","nokogiri":"1.18.9","rails-dom-testing":"2.3.0","crass":"1.0.6","loofah":"2.24.1","rails-html-sanitizer":"1.6.2","actionview":"8.0.2.1","rack":"3.2.1","rack-session":"2.1.1","rack-test":"2.2.0","useragent":"0.16.11","actionpack":"8.0.2.1","public_suffix":"6.0.2","addressable":"2.8.7","ast":"2.4.3","fiber-annotation":"0.2.0","fiber-storage":"1.0.1","fiber-local":"1.1.0","json":"2.13.2","console":"1.34.0","io-event":"1.14.0","metrics":"0.14.0","traces":"0.18.1","async":"2.31.0","async-pool":"0.11.0","io-endpoint":"0.15.2","io-stream":"0.10.0","protocol-http":"0.53.0","protocol-http1":"0.35.1","protocol-hpack":"1.5.1","protocol-http2":"0.22.1","async-http":"0.91.0","net-http":"0.6.0","faraday-net_http":"3.4.1","faraday":"2.13.4","async-http-faraday":"0.22.1","bundler":"2.6.9","rexml":"3.4.1","crack":"1.0.0","csv":"3.3.5","date":"3.4.1","dotenv":"3.1.8","erb":"5.0.2","faraday-retry":"2.3.2","ffi":"1.17.2","fileutils":"1.7.3","hashdiff":"1.2.0","io-console":"0.8.1","prettyprint":"0.2.0","pp":"0.6.2","stringio":"3.1.7","psych":"5.2.6","rdoc":"6.14.2","reline":"0.6.2","irb":"1.15.2","language_server-protocol":"3.17.0.5","zeitwerk":"2.7.3","lapsoss":"0.4.5","lint_roller":"1.1.0","rb-fsevent":"0.11.2","rb-inotify":"0.11.1","listen":"3.9.0","mutex_m":"0.3.0","parallel":"1.27.0","parser":"3.3.9.0","prism":"1.4.0","rackup":"2.2.1","thor":"1.4.0","railties":"8.0.2.1","rainbow":"3.1.1","rbs":"3.9.4","regexp_parser":"2.11.2","rubocop-ast":"1.46.0","ruby-progressbar":"1.13.0","unicode-emoji":"4.0.4","unicode-display_width":"3.1.5","rubocop":"1.80.2","rubocop-performance":"1.25.0","rubocop-rails":"2.33.3","rubocop-rails-omakase":"1.1.0","strscan":"3.1.5","terminal-table":"4.0.0","steep":"1.10.0","vcr":"6.3.1","webmock":"3.25.1"},"contexts":{"os":{"name":"darwin24","version":"24.6.0","build":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","kernel_version":"Darwin Periscope.local 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000 arm64","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.5 (2025-07-16 revision 20cda200d3) +YJIT +PRISM [arm64-darwin24]"}},"tags":{"source":"activesupport_test"},"sdk":{"name":"sentry.ruby","version":"0.4.5"},"message":"Test message from Lapsoss"}
+        {"event_id":"f9cafe26-4f56-4b04-adad-ac2c5e9108cf","timestamp":"2025-09-09T18:01:24Z","platform":"ruby","level":"info","environment":"production","release":"cfe509d1e76af8297aa501fceaeb18f378763cdc","server_name":"Periscope.local","contexts":{"os":{"name":"darwin24","version":"24.6.0","build":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","kernel_version":"Darwin Periscope.local 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000 arm64","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.5 (2025-07-16 revision 20cda200d3) +PRISM [arm64-darwin24]"}},"tags":{"source":"activesupport_test"},"sdk":{"name":"lapsoss.ruby","version":"0.4.6"},"message":"Test message from Lapsoss"}
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -30,7 +30,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 09 Sep 2025 15:01:55 GMT
+      - Tue, 09 Sep 2025 18:01:25 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -51,6 +51,6 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"id":"7a5fc7e6db8f42bab3023dc4df1616dd"}'
-  recorded_at: Tue, 09 Sep 2025 15:01:55 GMT
+      string: '{"id":"6a882a2df1af490080bd21b303b661ad"}'
+  recorded_at: Tue, 09 Sep 2025 18:01:25 GMT
 recorded_with: VCR 6.3.1

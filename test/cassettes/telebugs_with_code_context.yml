@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://lapsoss.telebugs.com/api/v1/sentry_errors/api/<PROJECT_ID>/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"58734170-2659-482d-9076-1d2f2f38f31b","sent_at":"2025-09-09T18:01:40Z","sdk":{"name":"lapsoss","version":"0.4.6","packages":[{"name":"lapsoss-ruby","version":"0.4.6"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"event_id":"6f2a421e-bdc8-46dc-afa6-e983a663b693","timestamp":"2025-09-09T18:01:40Z","platform":"ruby","level":"error","environment":"production","release":"cfe509d1e76af8297aa501fceaeb18f378763cdc","server_name":"Periscope.local","contexts":{"os":{"name":"darwin24","version":"24.6.0","build":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","kernel_version":"Darwin Periscope.local 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000 arm64","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.5 (2025-07-16 revision 20cda200d3) +PRISM [arm64-darwin24]"}},"tags":{"has_context":true},"extra":{"test_type":"code_context"},"sdk":{"name":"lapsoss.ruby","version":"0.4.6"},"exception":{"values":[{"type":"ArgumentError","value":"Test error with code context for Telebugs","module":null,"thread_id":568,"stacktrace":{"frames":[{"filename":"minitest.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb","function":"block (2 levels) in Minitest::Runnable.run","lineno":434,"in_app":false},{"filename":"minitest.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb","function":"Minitest::Runnable.run_one_method","lineno":447,"in_app":false},{"filename":"minitest.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb","function":"Minitest.run_one_method","lineno":1208,"in_app":false},{"filename":"minitest/test.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb","function":"Minitest::Test#run","lineno":88,"in_app":false},{"filename":"minitest.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb","function":"Minitest::Runnable#time_it","lineno":368,"in_app":false},{"filename":"minitest/test.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb","function":"block in Minitest::Test#run","lineno":89,"in_app":false},{"filename":"minitest/test.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb","function":"Minitest::Test#capture_exceptions","lineno":190,"in_app":false},{"filename":"minitest/test.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb","function":"block (2 levels) in Minitest::Test#run","lineno":94,"in_app":false,"pre_context":["            self.send hook","          end",""],"context_line":"          self.send self.name","post_context":["        end","","        TEARDOWN_METHODS.each do |hook|"]},{"filename":"test/telebugs_adapter_test.rb","abs_path":"test/telebugs_adapter_test.rb","function":"block in \u003cclass:TelebugsAdapterTest\u003e","lineno":119,"in_app":true,"pre_context":["  end","","  test \"captures exception with code context to Telebugs\" do"],"context_line":"    VCR.use_cassette(\"telebugs_with_code_context\") do","post_context":["      Lapsoss.configure do |config|","        config.use_telebugs(name: :telebugs_context, dsn: ENV.fetch(\"TELEBUGS_DSN\", nil))","        config.backtrace_enable_code_context = true"]},{"filename":"vcr.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb","function":"VCR#use_cassette","lineno":194,"in_app":false,"pre_context":["    cassette = insert_cassette(name, options)","","    begin"],"context_line":"      call_block(block, cassette)","post_context":["    rescue StandardError","      cassette.run_failed!","      raise"]},{"filename":"vcr/util/variable_args_block_caller.rb","abs_path":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb","function":"VCR::VariableArgsBlockCaller#call_block","lineno":9,"in_app":false,"pre_context":["        args = args.first([args.size, block.arity].min)","      end",""],"context_line":"      block.call(*args)","post_context":["    end","  end","end"]},{"filename":"test/telebugs_adapter_test.rb","abs_path":"test/telebugs_adapter_test.rb","function":"block (2 levels) in \u003cclass:TelebugsAdapterTest\u003e","lineno":129,"in_app":true,"pre_context":["      # Create an error with a traceable backtrace from this file","      begin","        # This error should have code context from this file"],"context_line":"        raise ArgumentError, \"Test error with code context for Telebugs\"","post_context":["      rescue ArgumentError =\u003e e","        Lapsoss.capture_exception(e,","                                 tags: { has_context: true },"]}]},"mechanism":{"type":"generic","handled":true}}]},"threads":{"values":[{"id":568,"name":"worker-1","crashed":true,"current":true}]}}
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 09 Sep 2025 18:01:40 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - bypass
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - d117198d-d655-4d0a-8e10-bd35f5aecaef
+      X-Runtime:
+      - '0.025514'
+      X-Xss-Protection:
+      - '0'
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=imv2Qsk7oyGL0KoO7HHyPHxvG4qKyR6CY%2B%2BsR08dhmeZpM1cDwRSDBNZMMs4whz3Zvm83O92AEmUdAWjTlGDlpHBoscdu9VMeqLOIuJOMxULwuYWb2pYMg6sCAGhgys%3D"}]}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 97c8979aae510469-MAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 18:01:40 GMT
+recorded_with: VCR 6.3.1

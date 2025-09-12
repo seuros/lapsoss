@@ -1,0 +1,29 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://example.com/api/2/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"async-event-id","sent_at":"2025-09-10T10:00:00Z","sdk":{"name":"lapsoss","version":"0.4.6"}}
+        {"type":"event","content_type":"application/json"}
+        {"event_id":"async-event-id","timestamp":"2025-09-10T10:00:00Z","platform":"ruby","level":"error","environment":"test","exception":{"values":[{"type":"StandardError","value":"Async integration test error","stacktrace":{"frames":[{"filename":"integration_test.rb","function":"test_multi_provider_async_dispatch","lineno":60}]}}]},"tags":{"mode":"async"},"sdk":{"name":"lapsoss.ruby","version":"0.4.6"}}
+    headers:
+      User-Agent:
+      - lapsoss/0.4.6
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.6, sentry_timestamp=1757550000, sentry_key=async
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"async-event-id"}'
+recorded_at: Wed, 10 Sep 2025 10:00:00 GMT

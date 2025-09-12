@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
-        error from Lapsoss"}},"level":"error","timestamp":1757430116,"code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7"}}}'
+        error from Lapsoss"}},"level":"error","timestamp":1757440962,"code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc"}}}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -28,7 +28,7 @@ http_interactions:
       Server:
       - nginx/1.17.9
       Date:
-      - Tue, 09 Sep 2025 15:01:56 GMT
+      - Tue, 09 Sep 2025 18:02:42 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -40,7 +40,7 @@ http_interactions:
       Etag:
       - W/"33-B1+irAWVS0vJXv2TX/BEXA"
       X-Response-Time:
-      - 1.459ms
+      - 4.783ms
       Via:
       - 1.1 google
       Alt-Svc:
@@ -52,14 +52,14 @@ http_interactions:
           "err": 1,
           "message": "invalid access token"
         }
-  recorded_at: Tue, 09 Sep 2025 15:01:56 GMT
+  recorded_at: Tue, 09 Sep 2025 18:02:42 GMT
 - request:
     method: post
     uri: https://api.rollbar.com/api/1/item/
     body:
       encoding: UTF-8
       string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
-        error from Lapsoss"}},"level":"error","timestamp":1757430162,"code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7"}}}'
+        error from Lapsoss"}},"level":"error","timestamp":1757675280,"code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc"}}}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -81,7 +81,7 @@ http_interactions:
       Server:
       - nginx/1.17.9
       Date:
-      - Tue, 09 Sep 2025 15:02:42 GMT
+      - Fri, 12 Sep 2025 11:08:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -93,7 +93,7 @@ http_interactions:
       Etag:
       - W/"33-B1+irAWVS0vJXv2TX/BEXA"
       X-Response-Time:
-      - 5.268ms
+      - 4.161ms
       Via:
       - 1.1 google
       Alt-Svc:
@@ -105,5 +105,5 @@ http_interactions:
           "err": 1,
           "message": "invalid access token"
         }
-  recorded_at: Tue, 09 Sep 2025 15:02:42 GMT
+  recorded_at: Fri, 12 Sep 2025 11:08:00 GMT
 recorded_with: VCR 6.3.1

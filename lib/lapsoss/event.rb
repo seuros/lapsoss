@@ -16,7 +16,8 @@ module Lapsoss
     :context,
     :environment,
     :fingerprint,
-    :backtrace_frames
+    :backtrace_frames,
+    :transaction     # Controller#action or task name where event occurred
   ) do
     # Factory method with smart defaults
     def self.build(type:, level: :info, **attributes)
@@ -43,7 +44,8 @@ module Lapsoss
         context: context,
         environment: environment,
         fingerprint: fingerprint,
-        backtrace_frames: backtrace_frames
+        backtrace_frames: backtrace_frames,
+        transaction: attributes[:transaction]
       )
     end
 

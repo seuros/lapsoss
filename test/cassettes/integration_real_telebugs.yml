@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dazzling-lederberg.telebugs.com/api/v1/sentry_errors/api/1/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"real-telebugs-event","sent_at":"2025-09-10T10:00:00Z","sdk":{"name":"lapsoss","version":"0.4.6"}}
+        {"type":"event","content_type":"application/json"}
+        {"event_id":"real-telebugs-event","timestamp":"2025-09-10T10:00:00Z","platform":"ruby","level":"error","environment":"test","exception":{"values":[{"type":"StandardError","value":"Real Telebugs integration test at 2025-09-10 10:00:00 +0000","stacktrace":{"frames":[{"filename":"integration_test.rb","function":"test_real_telebugs_dispatch","lineno":141}]}}]},"tags":{"test":"real_network"},"sdk":{"name":"lapsoss.ruby","version":"0.4.6"}}
+    headers:
+      User-Agent:
+      - lapsoss/0.4.6
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.6, sentry_timestamp=1757550000, sentry_key=bae44b3a35acfc3c003ff0dce7c8608a
+      X-Telebugs-Client:
+      - lapsoss/0.4.6
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 10 Sep 2025 10:00:00 GMT
+      Content-Type:
+      - text/html
+      Cache-Control:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: ''
+recorded_at: Wed, 10 Sep 2025 10:00:00 GMT

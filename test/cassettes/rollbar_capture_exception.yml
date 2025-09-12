@@ -12,7 +12,7 @@ http_interactions:
         in \u003cclass:RollbarAdapterTest\u003e","code":"    VCR.use_cassette(\"rollbar_capture_exception\")
         do"},{"filename":"vcr.rb","lineno":194,"method":"VCR#use_cassette","code":"      call_block(block,
         cassette)"},{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"method":"VCR::VariableArgsBlockCaller#call_block","code":"      block.call(*args)"}],"exception":{"class":"StandardError","message":"Test
-        error from Lapsoss","description":"Test error from Lapsoss"}}},"level":"info","timestamp":1757430116,"code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7"}}}'
+        error from Lapsoss","description":"Test error from Lapsoss"}}},"level":"info","timestamp":1757440963,"code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc"}}}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -34,7 +34,7 @@ http_interactions:
       Server:
       - nginx/1.17.9
       Date:
-      - Tue, 09 Sep 2025 15:01:56 GMT
+      - Tue, 09 Sep 2025 18:02:43 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -46,7 +46,7 @@ http_interactions:
       Etag:
       - W/"33-B1+irAWVS0vJXv2TX/BEXA"
       X-Response-Time:
-      - 4.122ms
+      - 1.986ms
       Via:
       - 1.1 google
       Alt-Svc:
@@ -58,7 +58,7 @@ http_interactions:
           "err": 1,
           "message": "invalid access token"
         }
-  recorded_at: Tue, 09 Sep 2025 15:01:56 GMT
+  recorded_at: Tue, 09 Sep 2025 18:02:43 GMT
 - request:
     method: post
     uri: https://api.rollbar.com/api/1/item/
@@ -71,7 +71,7 @@ http_interactions:
         in \u003cclass:RollbarAdapterTest\u003e","code":"    VCR.use_cassette(\"rollbar_capture_exception\")
         do"},{"filename":"vcr.rb","lineno":194,"method":"VCR#use_cassette","code":"      call_block(block,
         cassette)"},{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"method":"VCR::VariableArgsBlockCaller#call_block","code":"      block.call(*args)"}],"exception":{"class":"StandardError","message":"Test
-        error from Lapsoss","description":"Test error from Lapsoss"}}},"level":"info","timestamp":1757430163,"code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"2a2e7750b3507c119fbc41dc5109c88ef0d7aee7"}}}'
+        error from Lapsoss","description":"Test error from Lapsoss"}}},"level":"info","timestamp":1757675279,"code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc"}}}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -93,7 +93,7 @@ http_interactions:
       Server:
       - nginx/1.17.9
       Date:
-      - Tue, 09 Sep 2025 15:02:43 GMT
+      - Fri, 12 Sep 2025 11:08:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -105,7 +105,7 @@ http_interactions:
       Etag:
       - W/"33-B1+irAWVS0vJXv2TX/BEXA"
       X-Response-Time:
-      - 2.219ms
+      - 3.182ms
       Via:
       - 1.1 google
       Alt-Svc:
@@ -117,5 +117,5 @@ http_interactions:
           "err": 1,
           "message": "invalid access token"
         }
-  recorded_at: Tue, 09 Sep 2025 15:02:43 GMT
+  recorded_at: Fri, 12 Sep 2025 11:08:00 GMT
 recorded_with: VCR 6.3.1

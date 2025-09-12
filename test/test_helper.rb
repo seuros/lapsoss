@@ -22,6 +22,7 @@ VCR.configure do |config|
   # Filter sensitive data
   config.filter_sensitive_data("<SENTRY_US_DSN>") { ENV["SENTRY_US_DSN"] || "https://key@us.sentry.io/123" }
   config.filter_sensitive_data("<SENTRY_EU_DSN>") { ENV["SENTRY_EU_DSN"] || "https://key@eu.sentry.io/456" }
+  config.filter_sensitive_data("<TELEBUGS_DSN>") { ENV["TELEBUGS_DSN"] || "https://key@telebugs.com/123" }
   config.filter_sensitive_data("<APPSIGNAL_FRONTEND_API_KEY>") { ENV["APPSIGNAL_FRONTEND_API_KEY"] || "test-api-key" }
   config.filter_sensitive_data("<INSIGHT_HUB_API_KEY>") { ENV["INSIGHT_HUB_API_KEY"] || "test-api-key" }
   config.filter_sensitive_data("<BUGSNAG_API_KEY>") { ENV["BUGSNAG_API_KEY"] || "test-api-key" }
@@ -41,6 +42,14 @@ VCR.configure do |config|
       interaction.request.uri = interaction.request.uri.gsub(
         %r{https://o\d+\.ingest\.(us|eu)\.sentry\.io/api/\d+/envelope/},
         'https://o<ORG_ID>.ingest.\1.sentry.io/api/<PROJECT_ID>/envelope/'
+      )
+    end
+
+    # Filter Telebugs project IDs and API keys from URLs
+    if interaction.request.uri.match?(%r{telebugs\.com/api/v1/sentry_errors})
+      interaction.request.uri = interaction.request.uri.gsub(
+        %r{https://[^/]+\.telebugs\.com/api/v1/sentry_errors/api/\d+/envelope/},
+        "https://lapsoss.telebugs.com/api/v1/sentry_errors/api/<PROJECT_ID>/envelope/"
       )
     end
 
@@ -67,6 +76,11 @@ VCR.configure do |config|
     if interaction.request.headers["X-Sentry-Auth"]
       # Filter out version number to avoid cassette changes on version bumps
       interaction.request.headers["X-Sentry-Auth"] = [ "Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>" ]
+    end
+
+    # Filter Telebugs client header
+    if interaction.request.headers["X-Telebugs-Client"]
+      interaction.request.headers["X-Telebugs-Client"] = [ "lapsoss/<VERSION>" ]
     end
 
     # Filter AppSignal API keys from query parameters

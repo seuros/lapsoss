@@ -1,0 +1,29 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://example.com/api/4/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"pipeline-event-id","sent_at":"2025-09-10T10:00:00Z","sdk":{"name":"lapsoss","version":"0.4.6"}}
+        {"type":"event","content_type":"application/json"}
+        {"event_id":"pipeline-event-id","timestamp":"2025-09-10T10:00:00Z","platform":"ruby","level":"error","environment":"test","exception":{"values":[{"type":"StandardError","value":"Pipeline test error","stacktrace":{"frames":[{"filename":"integration_test.rb","function":"test_pipeline_processing_multi_provider","lineno":165}]}}]},"sdk":{"name":"lapsoss.ruby","version":"0.4.6"}}
+    headers:
+      User-Agent:
+      - lapsoss/0.4.6
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/0.4.6, sentry_timestamp=1757550000, sentry_key=pipeline
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"pipeline-event-id"}'
+recorded_at: Wed, 10 Sep 2025 10:00:00 GMT

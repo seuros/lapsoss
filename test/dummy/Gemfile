@@ -9,8 +9,8 @@ if rails_version && !rails_version.empty?
   gem "actionpack", rails_version
   gem "railties", rails_version
 else
-  gem "actionpack", "~> 8.0.4"
-  gem "railties", "~> 8.0.4"
+  gem "actionpack", "~> 8.0.2"
+  gem "railties", "~> 8.0.2"
 end
 
 # Lapsoss gem (from parent directory)
@@ -19,12 +19,14 @@ gem "lapsoss", path: "../.."
 # Development and test dependencies
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
 end
 
 group :development do
   gem "web-console"
+  gem "listen", "~> 3.5"
 end
 
 # Server

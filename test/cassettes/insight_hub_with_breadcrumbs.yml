@@ -6,8 +6,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
-        Ruby","version":"0.4.5","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[{"errorClass":"RuntimeError","message":"Error
-        after breadcrumbs","stacktrace":[],"type":"ruby"}],"breadcrumbs":[{"timestamp":"2025-09-09T15:01:57Z","name":"User
+        Ruby","version":"0.4.6","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[{"errorClass":"RuntimeError","message":"Error
+        after breadcrumbs","stacktrace":[],"type":"ruby"}],"breadcrumbs":[{"timestamp":"2025-09-09T18:02:42Z","name":"User
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
@@ -30,9 +30,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Bugsnag-Event-Id:
-      - 68c041650147be9735430000
+      - 68c06bc20147ae36542b0000
       Date:
-      - Tue, 09 Sep 2025 15:01:57 GMT
+      - Tue, 09 Sep 2025 18:02:42 GMT
       Content-Length:
       - '2'
       Content-Type:
@@ -44,15 +44,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: OK
-  recorded_at: Tue, 09 Sep 2025 15:01:57 GMT
+  recorded_at: Tue, 09 Sep 2025 18:02:42 GMT
 - request:
     method: post
     uri: https://notify.bugsnag.com/
     body:
       encoding: UTF-8
       string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
-        Ruby","version":"0.4.5","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[{"errorClass":"RuntimeError","message":"Error
-        after breadcrumbs","stacktrace":[],"type":"ruby"}],"breadcrumbs":[{"timestamp":"2025-09-09T15:02:46Z","name":"User
+        Ruby","version":"0.4.6","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"3.4.5"}},"exceptions":[{"errorClass":"RuntimeError","message":"Error
+        after breadcrumbs","stacktrace":[],"type":"ruby"}],"breadcrumbs":[{"timestamp":"2025-09-12T11:07:55Z","name":"User
         clicked button","type":"user","metaData":{"button":"checkout"}}],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
     headers:
       User-Agent:
@@ -75,9 +75,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Bugsnag-Event-Id:
-      - 68c041960147d374ce950000
+      - 68c3ff0b01487067348a0000
       Date:
-      - Tue, 09 Sep 2025 15:02:46 GMT
+      - Fri, 12 Sep 2025 11:07:55 GMT
       Content-Length:
       - '2'
       Content-Type:
@@ -89,5 +89,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: OK
-  recorded_at: Tue, 09 Sep 2025 15:02:46 GMT
+  recorded_at: Fri, 12 Sep 2025 11:07:55 GMT
 recorded_with: VCR 6.3.1

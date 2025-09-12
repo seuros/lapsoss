@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://lapsoss.telebugs.com/api/v1/sentry_errors/api/<PROJECT_ID>/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"38cdad83-dfff-46c9-94ef-ab780e46b243","sent_at":"2025-09-09T18:01:40Z","sdk":{"name":"lapsoss","version":"0.4.6","packages":[{"name":"lapsoss-ruby","version":"0.4.6"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"event_id":"dcf5888a-4669-4b6d-84b3-a6ea4bd28473","timestamp":"2025-09-09T18:01:40Z","platform":"ruby","level":"info","environment":"production","release":"cfe509d1e76af8297aa501fceaeb18f378763cdc","server_name":"Periscope.local","contexts":{"os":{"name":"darwin24","version":"24.6.0","build":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","kernel_version":"Darwin Periscope.local 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000 arm64","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.5 (2025-07-16 revision 20cda200d3) +PRISM [arm64-darwin24]"}},"tags":{"source":"telebugs_test"},"sdk":{"name":"lapsoss.ruby","version":"0.4.6"},"message":"Test message from Lapsoss to Telebugs"}
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 09 Sep 2025 18:01:40 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - bypass
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - a3870372-a0a5-45eb-a65c-ce98bcab9335
+      X-Runtime:
+      - '0.013319'
+      X-Xss-Protection:
+      - '0'
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=wX9yCUsHwU9%2Bw9ySN9o05oxk3shDwIQKqzbibhuh%2BsQI7xEVfKzZbvLakTrTuT5XAJjO%2FrfUR7hbSqQhiBhdQbFUWUXxPjqGC%2FUMdpBpODn9ZmK83HeprYrqQvEi"}]}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 97c8979d0c4824b7-MAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 18:01:40 GMT
+recorded_with: VCR 6.3.1

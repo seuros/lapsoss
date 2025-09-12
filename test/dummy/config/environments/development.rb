@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "active_support/core_ext/integer/time"
+require "fileutils"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -8,8 +9,13 @@ Rails.application.configure do
   # Ensure STDOUT is not buffered for immediate log visibility
   $stdout.sync = true
 
-  # Configure logger to output to STDOUT
-  config.logger = ActiveSupport::Logger.new($stdout)
+  # Configure logging: default to file, allow opting into STDOUT via env
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    config.logger = ActiveSupport::Logger.new($stdout)
+  else
+    FileUtils.mkdir_p(Rails.root.join("log"))
+    config.logger = ActiveSupport::Logger.new(Rails.root.join("log", "development.log"))
+  end
   config.logger.formatter = Logger::Formatter.new
   config.log_level = :debug
 

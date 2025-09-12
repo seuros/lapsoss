@@ -37,6 +37,8 @@ module Lapsoss
     end
 
     def capture_exception(exception, **context)
+      configuration.logger.debug "[LAPSOSS] capture_exception called for #{exception.class}"
+      return unless client
       client.capture_exception(exception, **context)
     end
 

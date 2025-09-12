@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://lapsoss.telebugs.com/api/v1/sentry_errors/api/<PROJECT_ID>/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"9ef360d7-8530-460f-b3c4-2940139eeb61","sent_at":"2025-09-09T18:01:41Z","sdk":{"name":"lapsoss","version":"0.4.6","packages":[{"name":"lapsoss-ruby","version":"0.4.6"}]}}
+        {"type":"event","content_type":"application/json"}
+        {"event_id":"12c19d09-6e0a-4553-9342-7b94a6aa321c","timestamp":"2025-09-09T18:01:41Z","platform":"ruby","level":"error","environment":"production","release":"cfe509d1e76af8297aa501fceaeb18f378763cdc","server_name":"Periscope.local","contexts":{"os":{"name":"darwin24","version":"24.6.0","build":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","kernel_version":"Darwin Periscope.local 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000 arm64","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.5 (2025-07-16 revision 20cda200d3) +PRISM [arm64-darwin24]"}},"breadcrumbs":[{"timestamp":"2025-09-09T18:01:41Z","type":"user","message":"User action","data":{"metadata":{"action":"clicked_button"}}},{"timestamp":"2025-09-09T18:01:41Z","type":"http","message":"API call started","data":{"metadata":{"endpoint":"/api/users"}}},{"timestamp":"2025-09-09T18:01:41Z","type":"error","message":"API call failed","data":{"metadata":{"status":404}}}],"sdk":{"name":"lapsoss.ruby","version":"0.4.6"},"exception":{"values":[{"type":"RuntimeError","value":"Error with breadcrumbs for Telebugs","module":null,"thread_id":616,"stacktrace":null,"mechanism":{"type":"generic","handled":true}}]},"threads":{"values":[{"id":616,"name":"worker-1","crashed":true,"current":true}]}}
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/x-sentry-envelope
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=lapsoss/<VERSION>, sentry_key=<FILTERED>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 09 Sep 2025 18:01:41 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - bypass
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - ccbb5bfb-a8fd-4e3d-9416-a8558b2a071e
+      X-Runtime:
+      - '0.013525'
+      X-Xss-Protection:
+      - '0'
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=AHJQKMmbw9QXdB9bxTqQkR8isiDtTEIxmZ0dun3nwO9lpFKPX7a76si5Kv26K%2FkOjt8JWBpD4ptnrX9GwtqNqn7S7gK%2BudpClaMg%2B7isGNy8l9iIrr21TqkIuauYK%2BM%3D"}]}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 97c897a038bf86c2-MAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 09 Sep 2025 18:01:41 GMT
+recorded_with: VCR 6.3.1

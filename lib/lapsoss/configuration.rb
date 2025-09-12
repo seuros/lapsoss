@@ -59,6 +59,7 @@ module Lapsoss
       # Pipeline settings
       @enable_pipeline = true
       @pipeline_builder = nil
+      @pipeline = nil
       @sampling_strategy = nil
       # Rails error filtering
       @skip_rails_cache_errors = true
@@ -185,7 +186,12 @@ module Lapsoss
     end
 
     def pipeline
-      @pipeline_builder&.pipeline
+      @pipeline || @pipeline_builder&.pipeline
+    end
+
+    def pipeline=(value)
+      validate_callable!(value, "pipeline") if value
+      @pipeline = value
     end
 
     # Sampling configuration

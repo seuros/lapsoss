@@ -110,8 +110,9 @@ module Lapsoss
           user: event.user_context.presence,
           extra: event.extra.presence,
           breadcrumbs: format_breadcrumbs(event.breadcrumbs),
+          transaction: event.transaction,
           sdk: {
-            name: "sentry.ruby",
+            name: "lapsoss.ruby",
             version: Lapsoss::VERSION
           }
         }.compact_blank

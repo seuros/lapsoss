@@ -8,8 +8,13 @@ module Lapsoss
       #
       # @param event [Lapsoss::Event] The event to process.
       def process_event(event)
-        Registry.instance.active.each do |adapter|
+        adapters = Registry.instance.active
+        Lapsoss.configuration.logger.debug("[LAPSOSS ROUTER] Processing event to #{adapters.length} adapters: #{adapters.map(&:name).join(', ')}")
+
+        adapters.each do |adapter|
+          Lapsoss.configuration.logger.info("[LAPSOSS ROUTER] About to call #{adapter.name}.capture")
           adapter.capture(event)
+          Lapsoss.configuration.logger.info("[LAPSOSS ROUTER] Adapter #{adapter.name} completed")
         rescue StandardError => e
           handle_adapter_error(adapter, event, e)
         end

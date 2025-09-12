@@ -27,6 +27,9 @@ module Lapsoss
                             ActiveSupport::TaggedLogging.new(Rails.logger).tagged("Lapsoss")
         end
 
+        # Set debug level in development
+        config.debug = Rails.env.development?
+
         config.release ||= if Rails.application.respond_to?(:version)
                              Rails.application.version.to_s
         else
@@ -50,6 +53,13 @@ module Lapsoss
 
     initializer "lapsoss.rails_error_subscriber", after: "lapsoss.add_middleware" do |app|
       Rails.error.subscribe(Lapsoss::RailsErrorSubscriber.new)
+    end
+
+    initializer "lapsoss.controller_transaction" do
+      ActiveSupport.on_load(:action_controller) do
+        require "lapsoss/rails_controller_transaction"
+        include Lapsoss::RailsControllerTransaction
+      end
     end
   end
 end

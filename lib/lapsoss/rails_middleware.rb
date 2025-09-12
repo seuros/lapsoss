@@ -17,9 +17,10 @@ module Lapsoss
         begin
           @app.call(env)
         rescue Exception => e
-          Rails.logger.tagged("Lapsoss") { Rails.logger.debug "Capturing exception: #{e.class} - #{e.message}" } if Rails.env.test?
+          Rails.logger.info "[LAPSOSS MIDDLEWARE] Capturing exception: #{e.class} - #{e.message}"
           # Capture the exception
-          Lapsoss.capture_exception(e)
+          result = Lapsoss.capture_exception(e)
+          Rails.logger.info "[LAPSOSS MIDDLEWARE] Capture result: #{result.inspect}"
           # Re-raise the exception to maintain Rails error handling
           raise
         end

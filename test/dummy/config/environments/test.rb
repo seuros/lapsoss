@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "fileutils"
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
 # your test database is "scratch space" for the test suite and is wiped
@@ -42,6 +43,13 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
 
-  # Set log level to debug for better visibility during development
+  # Configure logging: default to file (test.log), allow STDOUT via env
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    config.logger = ActiveSupport::Logger.new($stdout)
+  else
+    FileUtils.mkdir_p(Rails.root.join("log"))
+    config.logger = ActiveSupport::Logger.new(Rails.root.join("log", "test.log"))
+  end
+  config.logger.formatter = Logger::Formatter.new
   config.log_level = :debug
 end

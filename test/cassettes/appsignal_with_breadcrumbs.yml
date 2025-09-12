@@ -5,11 +5,11 @@ http_interactions:
     uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
     body:
       encoding: UTF-8
-      string: '{"timestamp":1757430118,"namespace":"backend","error":{"name":"RuntimeError","message":"Error
+      string: '{"timestamp":1757440924,"namespace":"backend","error":{"name":"RuntimeError","message":"Error
         after breadcrumbs","backtrace":[]},"tags":{},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[{"message":"User
-        clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-09-09T15:01:58.782Z"},{"message":"API
-        request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-09-09T15:01:58.782Z"},{"message":"API
-        request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T15:01:58.782Z"}]}'
+        clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-09-09T18:02:04.562Z"},{"message":"API
+        request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-09-09T18:02:04.562Z"},{"message":"API
+        request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T18:02:04.562Z"}]}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 09 Sep 2025 15:01:59 GMT
+      - Tue, 09 Sep 2025 18:02:04 GMT
       Content-Length:
       - '0'
       Connection:
@@ -43,17 +43,17 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Tue, 09 Sep 2025 15:01:59 GMT
+  recorded_at: Tue, 09 Sep 2025 18:02:04 GMT
 - request:
     method: post
     uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
     body:
       encoding: UTF-8
-      string: '{"timestamp":1757430159,"namespace":"backend","error":{"name":"RuntimeError","message":"Error
+      string: '{"timestamp":1757440964,"namespace":"backend","error":{"name":"RuntimeError","message":"Error
         after breadcrumbs","backtrace":[]},"tags":{},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[{"message":"User
-        clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-09-09T15:02:39.997Z"},{"message":"API
-        request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-09-09T15:02:39.997Z"},{"message":"API
-        request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T15:02:39.997Z"}]}'
+        clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-09-09T18:02:44.496Z"},{"message":"API
+        request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-09-09T18:02:44.496Z"},{"message":"API
+        request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-09T18:02:44.496Z"}]}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -71,7 +71,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 09 Sep 2025 15:02:40 GMT
+      - Tue, 09 Sep 2025 18:02:44 GMT
       Content-Length:
       - '0'
       Connection:
@@ -87,5 +87,49 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Tue, 09 Sep 2025 15:02:40 GMT
+  recorded_at: Tue, 09 Sep 2025 18:02:44 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"timestamp":1757675283,"namespace":"backend","error":{"name":"RuntimeError","message":"Error
+        after breadcrumbs","backtrace":[]},"tags":{},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[{"message":"User
+        clicked button","type":"navigation","metadata":{"button":"submit"},"timestamp":"2025-09-12T11:08:03.048Z"},{"message":"API
+        request started","type":"http","metadata":{"url":"/api/test"},"timestamp":"2025-09-12T11:08:03.049Z"},{"message":"API
+        request failed","type":"error","metadata":{"status":500},"timestamp":"2025-09-12T11:08:03.049Z"}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 12 Sep 2025 11:08:03 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 12 Sep 2025 11:08:03 GMT
 recorded_with: VCR 6.3.1
