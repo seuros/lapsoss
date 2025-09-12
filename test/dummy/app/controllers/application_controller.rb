@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
       Rails.logger.warn "[LAPSOSS DEBUG] Telebugs adapter NOT found!"
     end
 
-    raise StandardError, "Test error for Lapsoss at #{Time.now}"
+    raise StandardError, "Test error for Lapsoss"
   end
 
   def health

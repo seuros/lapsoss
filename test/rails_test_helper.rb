@@ -47,7 +47,7 @@ class ActiveSupport::TestCase
       config.async = false # Synchronous for testing
       config.debug = true
       config.capture_request_context = true
-      config.logger = ActiveSupport::TaggedLogging.new(Rails.logger).tagged("Lapsoss") # Ensure logger is set for tests
+      config.logger = Logger.new(StringIO.new) # Use simple logger for tests
     end
 
     yield

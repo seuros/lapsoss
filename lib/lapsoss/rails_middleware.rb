@@ -10,17 +10,21 @@ module Lapsoss
       Lapsoss::Current.with_clean_scope do
         # Add request context to current scope
         if Lapsoss.configuration.capture_request_context
-          Rails.logger.tagged("Lapsoss") { Rails.logger.debug "Adding request context" } if Rails.env.test?
+          Lapsoss.configuration.logger.debug("Adding request context") if Lapsoss.configuration.debug
           add_request_context(env)
         end
 
         begin
           @app.call(env)
         rescue Exception => e
-          Rails.logger.info "[LAPSOSS MIDDLEWARE] Capturing exception: #{e.class} - #{e.message}"
+          if Lapsoss.configuration.debug
+            Lapsoss.configuration.logger.debug("Capturing exception: #{e.class} - #{e.message}")
+          end
           # Capture the exception
           result = Lapsoss.capture_exception(e)
-          Rails.logger.info "[LAPSOSS MIDDLEWARE] Capture result: #{result.inspect}"
+          if Lapsoss.configuration.debug
+            Lapsoss.configuration.logger.debug("Capture result: #{result.inspect}")
+          end
           # Re-raise the exception to maintain Rails error handling
           raise
         end

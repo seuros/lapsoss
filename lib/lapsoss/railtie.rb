@@ -2,13 +2,7 @@
 
 module Lapsoss
   class Railtie < Rails::Railtie
-    if ENV["DEBUG_LAPSOSS"]
-      if Rails.logger.respond_to?(:tagged)
-        Rails.logger.tagged("Lapsoss") { Rails.logger.debug "Railtie loaded" }
-      else
-        Rails.logger.debug "[Lapsoss] Railtie loaded"
-      end
-    end
+    # Debug logging removed - will be handled by the configured logger
     config.lapsoss = ActiveSupport::OrderedOptions.new
 
     initializer "lapsoss.configure" do |_app|
@@ -20,12 +14,8 @@ module Lapsoss
                                  Rails.env
         end
 
-        # Use tagged logger for all Lapsoss logs
-        config.logger ||= if Rails.logger.respond_to?(:tagged)
-                            Rails.logger.tagged("Lapsoss")
-        else
-                            ActiveSupport::TaggedLogging.new(Rails.logger).tagged("Lapsoss")
-        end
+        # Use Rails logger if available
+        config.logger ||= Rails.logger
 
         # Set debug level in development
         config.debug = Rails.env.development?
