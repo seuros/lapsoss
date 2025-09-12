@@ -9,11 +9,12 @@ class RailsRailtieTest < ActiveSupport::TestCase
     assert_instance_of Lapsoss::Configuration, Lapsoss.configuration
   end
 
-  test "railtie adds middleware to rails stack" do
-    middleware_stack = Rails.application.middleware
-    middleware_names = middleware_stack.map(&:name)
+  test "railtie subscribes to rails error reporter" do
+    # Check that Lapsoss::RailsErrorSubscriber is registered
+    subscribers = Rails.error.instance_variable_get(:@subscribers)
+    lapsoss_subscriber = subscribers.find { |s| s.is_a?(Lapsoss::RailsErrorSubscriber) }
 
-    assert_includes middleware_names, "Lapsoss::RailsMiddleware"
+    assert lapsoss_subscriber, "Expected Lapsoss::RailsErrorSubscriber to be registered"
   end
 
   test "railtie sets up proper configuration from initializer" do

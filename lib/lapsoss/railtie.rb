@@ -34,14 +34,8 @@ module Lapsoss
       end
     end
 
-    initializer "lapsoss.add_middleware" do |app|
-      require "lapsoss/rails_middleware"
 
-      # Use config.middleware to ensure it's added during initialization
-      app.config.middleware.use Lapsoss::RailsMiddleware
-    end
-
-    initializer "lapsoss.rails_error_subscriber", after: "lapsoss.add_middleware" do |app|
+    initializer "lapsoss.rails_error_subscriber" do |app|
       Rails.error.subscribe(Lapsoss::RailsErrorSubscriber.new)
     end
 

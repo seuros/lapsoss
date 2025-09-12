@@ -23,17 +23,12 @@ class ActionDispatch::IntegrationTest
     Lapsoss::Registry.instance.clear!
     Lapsoss.instance_variable_set(:@configuration, nil)
     Lapsoss::Current.reset
-
-    # Temporarily disable Rails error subscriber to avoid double capture
-    @original_subscribers = Rails.error.instance_variable_get(:@subscribers).dup
-    Rails.error.instance_variable_get(:@subscribers).reject! { |s| s.is_a?(Lapsoss::RailsErrorSubscriber) }
   end
 
   teardown do
-    # Restore original subscribers
-    if @original_subscribers
-      Rails.error.instance_variable_set(:@subscribers, @original_subscribers)
-    end
+    # Clean up after test
+    Lapsoss::Registry.instance.clear!
+    Lapsoss.instance_variable_set(:@configuration, nil)
   end
 end
 

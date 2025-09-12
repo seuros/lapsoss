@@ -118,4 +118,63 @@ http_interactions:
           "message": "invalid access token"
         }
   recorded_at: Fri, 12 Sep 2025 11:07:59 GMT
+- request:
+    method: post
+    uri: https://api.rollbar.com/api/1/item/
+    body:
+      encoding: UTF-8
+      string: '{"data":{"environment":"production","body":{"trace":{"frames":[{"filename":"active_support/execution_wrapper.rb","lineno":104,"method":"ActiveSupport::ExecutionWrapper.perform"},{"filename":"active_support/executor/test_helper.rb","lineno":5,"method":"block
+        in ActiveSupport::Executor::TestHelper#run"},{"filename":"minitest/test.rb","lineno":88,"method":"Minitest::Test#run"},{"filename":"minitest.rb","lineno":368,"method":"Minitest::Runnable#time_it"},{"filename":"minitest/test.rb","lineno":89,"method":"block
+        in Minitest::Test#run"},{"filename":"minitest/test.rb","lineno":190,"method":"Minitest::Test#capture_exceptions"},{"filename":"minitest/test.rb","lineno":94,"method":"block
+        (2 levels) in Minitest::Test#run","code":"          self.send self.name"},{"filename":"rollbar_adapter_test.rb","lineno":46,"method":"block
+        in \u003cclass:RollbarAdapterTest\u003e","code":"    VCR.use_cassette(\"rollbar_with_user\")
+        do"},{"filename":"vcr.rb","lineno":194,"method":"VCR#use_cassette","code":"      call_block(block,
+        cassette)"},{"filename":"vcr/util/variable_args_block_caller.rb","lineno":9,"method":"VCR::VariableArgsBlockCaller#call_block","code":"      block.call(*args)"}],"exception":{"class":"StandardError","message":"Error
+        with user context","description":"Error with user context"}}},"level":"info","timestamp":1757686405,"code_version":"8b31ddfc381a6a17a3af82fe57dc80a14cc748a0","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"8b31ddfc381a6a17a3af82fe57dc80a14cc748a0"},"person":{"id":"123","username":"testuser","email":"[FILTERED]"}}}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Rollbar-Access-Token:
+      - "<ROLLBAR_ACCESS_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.17.9
+      Date:
+      - Fri, 12 Sep 2025 14:13:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '51'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"33-B1+irAWVS0vJXv2TX/BEXA"
+      X-Response-Time:
+      - 10.377ms
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "err": 1,
+          "message": "invalid access token"
+        }
+  recorded_at: Fri, 12 Sep 2025 14:13:26 GMT
 recorded_with: VCR 6.3.1

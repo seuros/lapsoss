@@ -56,18 +56,13 @@ class RailsIntegrationTest < ActionDispatch::IntegrationTest
     Lapsoss::Registry.instance.clear!
     Lapsoss::Registry.instance.register_adapter(mock_adapter)
 
-    # Temporarily unsubscribe the Rails error subscriber to avoid double capture
-    subscribers = Rails.error.instance_variable_get(:@subscribers)
-    original_subscribers = subscribers.dup
-    subscribers.reject! { |s| s.is_a?(Lapsoss::RailsErrorSubscriber) }
-
     begin
-      # This should raise an exception that gets captured
+      # This should raise an exception that gets captured by Rails.error subscriber
       assert_raises(StandardError) do
         get "/error"
       end
 
-      # Verify the event was captured
+      # Verify the event was captured via Rails.error subscriber
       assert_equal 1, captured_events.size
 
       event = captured_events.first
@@ -75,8 +70,6 @@ class RailsIntegrationTest < ActionDispatch::IntegrationTest
       assert_equal "Test error for Lapsoss", event.message
       assert(event.backtrace.any? { |frame| frame.include?("application_controller.rb") })
     ensure
-      # Restore original subscribers
-      Rails.error.instance_variable_set(:@subscribers, original_subscribers)
       # Clean up Lapsoss state
       Lapsoss.instance_variable_set(:@configuration, nil)
       Lapsoss.instance_variable_set(:@client, nil)
@@ -84,30 +77,12 @@ class RailsIntegrationTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "lapsoss middleware is active" do
-    # Force the application to fully initialize
-    Rails.application.initialize! unless Rails.application.initialized?
+  test "lapsoss rails error subscriber is active" do
+    # Check if our error subscriber is registered with Rails.error
+    subscribers = Rails.error.instance_variable_get(:@subscribers)
+    lapsoss_subscriber = subscribers.find { |s| s.is_a?(Lapsoss::RailsErrorSubscriber) }
 
-    # Get the actual middleware stack
-    middleware_stack = Rails.application.middleware
-
-    # Check if our middleware is present
-    has_lapsoss_middleware = middleware_stack.any? do |middleware|
-      middleware.name == "Lapsoss::RailsMiddleware" ||
-        middleware.klass == Lapsoss::RailsMiddleware ||
-        middleware.klass.to_s == "Lapsoss::RailsMiddleware"
-    end
-
-    # Debug output
-    unless has_lapsoss_middleware
-      puts "\n[DEBUG] Middleware stack:"
-      middleware_stack.each_with_index do |m, i|
-        puts "  #{i}: #{m.name} (#{m.klass})"
-      end
-    end
-
-    assert has_lapsoss_middleware,
-           "Expected Lapsoss::RailsMiddleware to be in middleware stack"
+    assert lapsoss_subscriber, "Expected Lapsoss::RailsErrorSubscriber to be registered with Rails.error"
   end
 
   test "lapsoss configuration is loaded" do

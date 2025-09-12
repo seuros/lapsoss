@@ -23,10 +23,10 @@ Lapsoss.configure do |config|
   # Monday: Using Bugsnag
   config.use_bugsnag(api_key: ENV['BUGSNAG_KEY'])
 
-  # Tuesday: Add Sentry for comparison
-  config.use_sentry(dsn: ENV['SENTRY_DSN'])
+  # Tuesday: Add Telebugs for comparison
+  config.use_telebugs(dsn: ENV['TELEBUGS_DSN'])
 
-  # Wednesday: Drop Bugsnag, keep Sentry
+  # Wednesday: Drop Bugsnag, keep Telebugs
   # Just remove the line. Zero code changes.
 end
 ```
@@ -64,7 +64,7 @@ That's it. No 500-line examples needed.
 
 ## Built for Rails, Not Around It
 
-Lapsoss integrates with Rails' native error reporting API introduced in Rails 7. No monkey-patching, no middleware gymnastics:
+Lapsoss integrates with Rails' native error reporting API introduced in Rails 7. No monkey-patching, no global error handlers:
 
 ```ruby
 # It just works with Rails.error:
@@ -73,6 +73,56 @@ Rails.error.handle(context: {user_id: current_user.id}) do
 end
 # Automatically captured by whatever service you configured
 ```
+
+### Rails Integration Options
+
+**Option 1: Automatic Rails.error Integration (Recommended)**
+```ruby
+# config/initializers/lapsoss.rb  
+Lapsoss.configure do |config|
+  config.use_appsignal(push_api_key: ENV['APPSIGNAL_KEY'])
+end
+
+# That's it! All Rails errors are automatically captured
+# Works with Rails.error.handle, Rails.error.record, Rails.error.report
+# No code changes needed - just configure and go
+```
+
+**Option 2: Add Controller Context (Optional)**
+```ruby
+# app/controllers/application_controller.rb
+class ApplicationController < ActionController::Base
+  include Lapsoss::RailsControllerContext
+end
+
+# Now all errors include controller/action context:
+# { controller: "users", action: "show", controller_class: "UsersController" }
+```
+
+**Option 3: Manual Error Reporting (Your Choice)**
+```ruby
+# In controllers, jobs, or anywhere you want explicit control
+begin
+  process_payment
+rescue => e
+  Lapsoss.capture_exception(e, user_id: current_user.id)
+  # Handle gracefully...
+end
+
+# Or use Rails.error directly with your configured services
+Rails.error.report(e, context: { user_id: current_user.id })
+```
+
+### No Global Patching Philosophy
+
+Unlike other gems, Lapsoss **never** automatically captures all exceptions. You stay in control:
+
+- ✅ **Rails.error integration only** - Uses Rails' official API
+- ✅ **Explicit error handling** - You choose what to capture
+- ✅ **No global hooks** - Your app behavior never changes
+- ✅ **Optional controller context** - Include if you want it
+
+This means your application behaves exactly the same with or without Lapsoss. No surprises, no changed behavior, no conflicts with other gems.
 
 ## Zero-Downtime Vendor Migration
 
@@ -84,21 +134,22 @@ gem 'bugsnag' # Keep your existing gem for now
 # Step 2: Configure dual reporting
 Lapsoss.configure do |config|
   config.use_bugsnag(api_key: ENV['BUGSNAG_KEY'])
-  config.use_sentry(dsn: ENV['SENTRY_DSN'])
+  config.use_telebugs(dsn: ENV['TELEBUGS_DSN'])
 end
 
 # Step 3: Gradually replace Bugsnag calls
 # Old: Bugsnag.notify(e)
 # New: Lapsoss.capture_exception(e)
 
-# Step 4: Remove bugsnag gem when ready
-# Your app keeps running, now on Sentry
+# Step 4: Remove bugsnag gem when ready  
+# Your app keeps running, now on Telebugs
 ```
 
 ## Why Not Just Use Vendor SDKs?
 
 **Vendor SDKs monkey-patch your application:**
 - Sentry patches Net::HTTP, Redis, and 20+ other gems
+- Bugsnag patches ActionController, ActiveJob, and more
 - Each vendor races to patch the same methods
 - Multiple SDKs = multiple layers of patches
 - Your app behavior changes based on load order
@@ -114,8 +165,8 @@ end
 ### GDPR Compliance
 ```ruby
 # Route EU data to EU servers, US data to US servers
-config.use_sentry(name: :us, dsn: ENV['US_DSN'])
-config.use_sentry(name: :eu, dsn: ENV['EU_DSN'])
+config.use_sentry(name: :us, dsn: ENV['US_SENTRY_DSN'])
+config.use_telebugs(name: :eu, dsn: ENV['EU_TELEBUGS_DSN'])
 ```
 
 ### A/B Testing Error Services
@@ -128,8 +179,8 @@ config.use_sentry(name: :candidate, dsn: ENV['SENTRY_DSN'])
 ### High Availability
 ```ruby
 # Multiple providers for redundancy
-config.use_sentry(name: :primary, dsn: ENV['PRIMARY_DSN'])
-config.use_rollbar(name: :backup, access_token: ENV['BACKUP_TOKEN'])
+config.use_telebugs(name: :primary, dsn: ENV['PRIMARY_DSN'])
+config.use_appsignal(name: :backup, push_api_key: ENV['APPSIGNAL_KEY'])
 ```
 
 ## Yes, We Require ActiveSupport
@@ -172,7 +223,7 @@ All adapters are pure Ruby implementations with no external SDK dependencies:
 ```ruby
 # config/initializers/lapsoss.rb
 Lapsoss.configure do |config|
-  config.use_sentry(dsn: ENV["SENTRY_DSN"])
+  config.use_telebugs(dsn: ENV["TELEBUGS_DSN"])
 end
 ```
 
@@ -203,7 +254,7 @@ end
 ```ruby
 Lapsoss.configure do |config|
   # Adapter setup
-  config.use_sentry(dsn: ENV['SENTRY_DSN'])
+  config.use_rollbar(access_token: ENV['ROLLBAR_TOKEN'])
 
   # Data scrubbing (uses Rails filter_parameters automatically)
   config.scrub_fields = %w[password credit_card ssn] # Or leave nil to use Rails defaults
