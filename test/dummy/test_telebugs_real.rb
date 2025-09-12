@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 # Test script to verify Telebugs actually receives events
 
 require_relative "config/environment"
