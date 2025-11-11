@@ -1,5 +1,10 @@
 # Lapsoss - Vendor-Neutral Error Reporting for Rails
 
+[![Ruby CI](https://github.com/seuros/lapsoss/actions/workflows/ci.yml/badge.svg)](https://github.com/seuros/lapsoss/actions/workflows/ci.yml)
+[![Gem Version](https://badge.fury.io/rb/lapsoss.svg)](https://badge.fury.io/rb/lapsoss)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/gem/dt/lapsoss.svg)](https://rubygems.org/gems/lapsoss)
+
 ## The Problem We All Face
 
 You're 6 months into production with Bugsnag. The CFO says "costs are too high, switch to Sentry."
@@ -78,7 +83,7 @@ end
 
 **Option 1: Automatic Rails.error Integration (Recommended)**
 ```ruby
-# config/initializers/lapsoss.rb  
+# config/initializers/lapsoss.rb
 Lapsoss.configure do |config|
   config.use_appsignal(push_api_key: ENV['APPSIGNAL_KEY'])
 end
@@ -141,7 +146,7 @@ end
 # Old: Bugsnag.notify(e)
 # New: Lapsoss.capture_exception(e)
 
-# Step 4: Remove bugsnag gem when ready  
+# Step 4: Remove bugsnag gem when ready
 # Your app keeps running, now on Telebugs
 ```
 
@@ -264,7 +269,7 @@ Lapsoss.configure do |config|
 
   # Sampling (see docs/sampling_strategies.md for advanced examples)
   config.sample_rate = Rails.env.production? ? 0.25 : 1.0
-  
+
   # Transport settings
   config.transport_timeout = 10 # seconds
   config.transport_max_retries = 3
@@ -283,7 +288,7 @@ Lapsoss.configure do |config|
     return nil if event.exception.is_a?(ActiveRecord::RecordNotFound)
     event
   end
-  
+
   # Or use the exclusion filter for more complex rules
   config.exclusion_filter = Lapsoss::ExclusionFilter.new(
     # Exclude specific exception types
@@ -291,20 +296,20 @@ Lapsoss.configure do |config|
       "ActionController::RoutingError",  # Your choice
       "ActiveRecord::RecordNotFound"     # Your decision
     ],
-    
+
     # Exclude by pattern matching
     excluded_patterns: [
       /timeout/i,           # If timeouts are expected in your app
       /user not found/i     # If these are normal in your workflow
     ],
-    
+
     # Exclude specific error messages
     excluded_messages: [
       "No route matches",
       "Invalid authenticity token"
     ]
   )
-  
+
   # Add custom exclusion logic
   config.exclusion_filter.add_exclusion(:custom, lambda do |event|
     # Your business logic here
@@ -393,7 +398,7 @@ class Liberation
     end
     puts "✅ Continued execution after error"
   end
-  
+
   def self.revolt!
     Rails.error.record do
       raise RuntimeError, "Revolution cannot be stopped!"
@@ -464,7 +469,7 @@ end
 
 # These methods mirror Rails.error exactly:
 # - Lapsoss.handle   → Rails.error.handle
-# - Lapsoss.record   → Rails.error.record  
+# - Lapsoss.record   → Rails.error.record
 # - Lapsoss.report   → Rails.error.report
 ```
 
@@ -492,9 +497,9 @@ class TelebugsAdapter < Lapsoss::Adapters::SentryAdapter
   def initialize(name = :telebugs, settings = {})
     super(name, settings)
   end
-  
+
   private
-  
+
   def build_headers(public_key)
     super(public_key).merge(
       "X-Telebugs-Client" => "lapsoss/#{Lapsoss::VERSION}"
