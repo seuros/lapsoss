@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 require "logger"
-require "active_support/configurable"
 
 module Lapsoss
   class Configuration
     include Validators
-    include ActiveSupport::Configurable
 
     attr_accessor :async, :logger, :enabled, :release, :debug,
                   :scrub_fields, :scrub_all, :whitelist_fields, :randomize_scrub_length,
