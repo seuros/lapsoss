@@ -276,6 +276,22 @@ Lapsoss.configure do |config|
 end
 ```
 
+### Pipeline & Sampling (optional)
+
+```ruby
+Lapsoss.configure do |config|
+  # Build a middleware pipeline for every event
+  config.configure_pipeline do |pipeline|
+    pipeline.sample(rate: 0.1) # Drop 90% of events
+
+    pipeline.enhance_user_context(
+      provider: ->(event, _) { current_user&.slice(:id, :email) },
+      privacy_mode: true # keep only ids
+    )
+  end
+end
+```
+
 ### Filtering Errors
 
 You decide what errors to track. Lapsoss doesn't make assumptions:
@@ -349,6 +365,30 @@ Lapsoss automatically integrates with Rails' parameter filtering:
 Rails.application.config.filter_parameters += [:password, :token]
 
 # Lapsoss automatically uses these filters - no additional configuration needed!
+```
+
+Additional controls:
+
+```ruby
+Lapsoss.configure do |config|
+  config.scrub_fields = %w[credit_card ssn api_key]
+  config.scrub_all = true                        # Mask everything by default
+  config.whitelist_fields = %w[user_id request_id] # Keep these fields as-is
+  config.randomize_scrub_length = true           # Avoid fixed "[FILTERED]" marker
+end
+```
+
+### Error Handler Hook
+
+Get a callback when an adapter fails to deliver:
+
+```ruby
+Lapsoss.configure do |config|
+  config.error_handler = lambda do |adapter, event, error|
+    Rails.logger.error("Delivery failed for #{adapter.name}: #{error.message}")
+    Rails.logger.error(event.to_h) if Rails.env.development?
+  end
+end
 ```
 
 ### Custom Fingerprinting

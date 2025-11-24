@@ -53,8 +53,8 @@ module Lapsoss
         debug_log "[TELEBUGS ENDPOINT] Setting endpoint: #{endpoint}"
         debug_log "[TELEBUGS ENDPOINT] Setting API path: #{api_path}"
 
-        self.class.api_endpoint = endpoint
-        self.class.api_path = api_path
+        @api_endpoint = endpoint
+        @api_path = api_path
       end
 
       public
@@ -63,8 +63,8 @@ module Lapsoss
       def capture(event)
         debug_log "[TELEBUGS DEBUG] Capture called for event: #{event.type}"
         debug_log "[TELEBUGS DEBUG] DSN configured: #{@dsn.inspect}"
-        debug_log "[TELEBUGS DEBUG] Endpoint: #{self.class.api_endpoint}"
-        debug_log "[TELEBUGS DEBUG] API Path: #{self.class.api_path}"
+        debug_log "[TELEBUGS DEBUG] Endpoint: #{@api_endpoint}"
+        debug_log "[TELEBUGS DEBUG] API Path: #{@api_path}"
 
         result = super(event)
         debug_log "[TELEBUGS DEBUG] Event sent successfully, response: #{result.inspect}"

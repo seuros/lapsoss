@@ -83,6 +83,24 @@ module Lapsoss
       client.flush(timeout: timeout)
     end
 
+    def call_error_handler(adapter:, event:, error:)
+      handler = configuration.error_handler
+      return unless handler
+
+      case handler.arity
+      when 3
+        handler.call(adapter, event, error)
+      when 2
+        handler.call(event, error)
+      when 1, 0, -1
+        handler.call(error)
+      else
+        handler.call(adapter, event, error)
+      end
+    rescue => handler_error
+      configuration.logger&.error("[LAPSOSS] Error handler failed: #{handler_error.message}")
+    end
+
     delegate :shutdown, to: :client
   end
 end

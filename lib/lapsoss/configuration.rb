@@ -13,7 +13,8 @@ module Lapsoss
                   :backtrace_context_lines, :backtrace_in_app_patterns, :backtrace_exclude_patterns,
                   :backtrace_strip_load_path, :backtrace_max_frames, :backtrace_enable_code_context,
                   :enable_pipeline, :pipeline_builder, :sampling_strategy,
-                  :skip_rails_cache_errors, :force_sync_http, :capture_request_context
+                  :skip_rails_cache_errors, :force_sync_http, :capture_request_context,
+                  :exclusion_filter
     attr_reader :fingerprint_callback, :environment, :before_send, :sample_rate, :error_handler, :transport_timeout,
                 :transport_max_retries, :transport_initial_backoff, :transport_max_backoff, :transport_backoff_multiplier, :transport_ssl_verify, :default_context, :adapter_configs
 
@@ -65,6 +66,8 @@ module Lapsoss
       @force_sync_http = false
       # Capture request context in middleware
       @capture_request_context = true
+      # Exclusion filter
+      @exclusion_filter = nil
     end
 
     # Register a named adapter configuration
