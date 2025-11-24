@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.11](https://github.com/seuros/lapsoss/compare/lapsoss/v0.4.10...lapsoss/v0.4.11) (2025-11-24)
+
+
+### Features
+
+* add adapter endpoint isolation and enhanced scrubbing ([#3](https://github.com/seuros/lapsoss/issues/3)) ([f197e97](https://github.com/seuros/lapsoss/commit/f197e97541742e1c0c9158127221319ebc1eb9ab))
+
 ## [0.4.10](https://github.com/seuros/lapsoss/compare/lapsoss-v0.4.9...lapsoss/v0.4.10) (2025-11-24)
 
 
