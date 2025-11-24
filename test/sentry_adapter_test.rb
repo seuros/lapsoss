@@ -12,8 +12,8 @@ class SentryAdapterTest < ActiveSupport::TestCase
     adapter = Lapsoss::Adapters::SentryAdapter.new(:sentry,
       dsn: "https://abc123@sentry.io/456789")
 
-    api_endpoint = adapter.class.api_endpoint
-    api_path = adapter.class.api_path
+    api_endpoint = adapter.api_endpoint
+    api_path = adapter.api_path
 
     assert_equal "https://sentry.io:443", api_endpoint
     assert_equal "/api/456789/envelope/", api_path

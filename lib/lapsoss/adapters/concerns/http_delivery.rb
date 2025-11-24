@@ -12,8 +12,8 @@ module Lapsoss
         extend ActiveSupport::Concern
 
         included do
-          class_attribute :api_endpoint, instance_writer: false
-          class_attribute :api_path, default: "/", instance_writer: false
+          # Instance-level endpoint configuration for adapter isolation
+          attr_reader :api_endpoint, :api_path
 
           # Memoized git info using AS
           mattr_accessor :git_info_cache, default: {}
@@ -39,7 +39,7 @@ module Lapsoss
             handle_response(response)
           end
         rescue => error
-          handle_delivery_error(error)
+          handle_delivery_error(error, event)
         end
 
         # Common headers for all adapters
@@ -101,7 +101,7 @@ module Lapsoss
           raise DeliveryError.new("Client error: #{message}", response: response)
         end
 
-        def handle_delivery_error(error)
+        def handle_delivery_error(error, event = nil)
           ActiveSupport::Notifications.instrument("error.lapsoss",
             adapter: self.class.name,
             error: error.class.name,
@@ -109,10 +109,22 @@ module Lapsoss
           )
 
           Lapsoss.configuration.logger&.error("[#{self.class.name}] Delivery failed: #{error.message}")
-          Lapsoss.configuration.error_handler&.call(error)
+          Lapsoss.call_error_handler(adapter: self, event: event, error: error)
+          mark_error_handled(error)
 
-          raise error if error.is_a?(DeliveryError)
-          raise DeliveryError.new("Delivery failed: #{error.message}", cause: error)
+          if error.is_a?(DeliveryError)
+            raise error
+          else
+            delivery_error = DeliveryError.new("Delivery failed: #{error.message}", cause: error)
+            mark_error_handled(delivery_error)
+            raise delivery_error
+          end
+        end
+
+        def mark_error_handled(error)
+          error.instance_variable_set(:@lapsoss_error_handled, true)
+        rescue StandardError
+          # If setting the flag fails, we still continue
         end
 
         private

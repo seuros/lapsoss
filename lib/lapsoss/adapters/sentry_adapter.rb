@@ -47,8 +47,8 @@ module Lapsoss
 
       def setup_endpoint
         uri = URI.parse(@settings[:dsn])
-        self.class.api_endpoint = "#{uri.scheme}://#{uri.host}:#{uri.port}"
-        self.class.api_path = build_api_path(uri)
+        @api_endpoint = "#{uri.scheme}://#{uri.host}:#{uri.port}"
+        @api_path = build_api_path(uri)
       end
 
       def build_api_path(uri)

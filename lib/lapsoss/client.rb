@@ -10,15 +10,16 @@ module Lapsoss
       # The Concurrent::FixedThreadPool had issues in Rails development mode
     end
 
-    def capture_exception(exception, **context)
+    def capture_exception(exception, level: :error, **context)
       return nil unless @configuration.enabled
 
+      extra_context = context.delete(:context)
       with_scope(context) do |scope|
         event = Event.build(
           type: :exception,
-          level: :error,
+          level: level,
           exception: exception,
-          context: scope_to_context(scope),
+          context: merge_context(scope_to_context(scope), extra_context),
           transaction: scope.transaction_name
         )
         capture_event(event)
@@ -28,12 +29,13 @@ module Lapsoss
     def capture_message(message, level: :info, **context)
       return nil unless @configuration.enabled
 
+      extra_context = context.delete(:context)
       with_scope(context) do |scope|
         event = Event.build(
           type: :message,
           level: level,
           message: message,
-          context: scope_to_context(scope),
+          context: merge_context(scope_to_context(scope), extra_context),
           transaction: scope.transaction_name
         )
         capture_event(event)
@@ -86,6 +88,11 @@ module Lapsoss
         return nil unless event
       end
 
+      if (filter = @configuration.exclusion_filter) && filter.should_exclude?(event)
+        @configuration.logger.debug("[LAPSOSS] Event excluded by configured exclusion_filter")
+        return nil
+      end
+
       event = run_before_send(event)
       return nil unless event
 
@@ -121,12 +128,23 @@ module Lapsoss
     end
 
     def scope_to_context(scope)
+      defaults = @configuration.default_context
       {
-        tags: scope.tags,
-        user: scope.user,
-        extra: scope.extra,
+        tags: (defaults[:tags] || {}).merge(scope.tags),
+        user: (defaults[:user] || {}).merge(scope.user),
+        extra: (defaults[:extra] || {}).merge(scope.extra),
         breadcrumbs: scope.breadcrumbs
-      }
+      }.tap do |ctx|
+        ctx[:environment] ||= @configuration.environment if @configuration.environment
+      end
+    end
+
+    def merge_context(scope_context, extra_context)
+      return scope_context unless extra_context
+
+      merged = scope_context.dup
+      merged[:context] = (scope_context[:context] || {}).merge(extra_context)
+      merged
     end
 
     def handle_capture_error(error)

@@ -11,11 +11,13 @@ module Lapsoss
       include Concerns::HttpDelivery
 
       self.level_mapping_type = :rollbar
-      self.api_endpoint = "https://api.rollbar.com"
-      self.api_path = "/api/1/item/"
+      DEFAULT_API_ENDPOINT = "https://api.rollbar.com"
+      DEFAULT_API_PATH = "/api/1/item/"
 
       def initialize(name, settings = {})
         super
+        @api_endpoint = DEFAULT_API_ENDPOINT
+        @api_path = DEFAULT_API_PATH
         @access_token = settings[:access_token].presence || ENV["ROLLBAR_ACCESS_TOKEN"]
 
         if @access_token.blank?

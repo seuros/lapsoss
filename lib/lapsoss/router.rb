@@ -29,8 +29,9 @@ module Lapsoss
         )
 
         # Call error handler if configured
-        handler = Lapsoss.configuration.error_handler
-        handler&.call(adapter, event, error)
+        handled = error.instance_variable_defined?(:@lapsoss_error_handled) &&
+                  error.instance_variable_get(:@lapsoss_error_handled)
+        Lapsoss.call_error_handler(adapter: adapter, event: event, error: error) unless handled
       end
     end
   end

@@ -119,6 +119,31 @@ class ScrubberTest < ActiveSupport::TestCase
     assert_equal "[FILTERED]", result[:password]
   end
 
+  test "scrubs everything when scrub_all is enabled with whitelisting" do
+    data = {
+      safe: "keep me",
+      secret: "hide me",
+      nested: { token: "secret", keep: "visible" }
+    }
+
+    scrubber = Lapsoss::Scrubber.new(scrub_all: true, whitelist_fields: %w[safe])
+    result = scrubber.scrub(data)
+
+    assert_equal "keep me", result[:safe]
+    assert_equal "[FILTERED]", result[:secret]
+    assert_equal "[FILTERED]", result[:nested][:token]
+    assert_equal "[FILTERED]", result[:nested][:keep]
+  end
+
+  test "randomizes scrubbed value length when enabled" do
+    scrubber = Lapsoss::Scrubber.new(randomize_scrub_length: true)
+    result = scrubber.scrub(password: "verylongsecret123")
+
+    mask = result[:password]
+    refute_equal "[FILTERED]", mask
+    assert_operator mask.length, :>=, 3
+  end
+
   # ActiveSupport::ParameterFilter doesn't handle circular references
   # This is a known Rails limitation, so we don't test for it
 end
