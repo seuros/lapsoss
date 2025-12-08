@@ -44,6 +44,16 @@ module Lapsoss
             error: "error",
             fatal: "error",
             critical: "error"
+          }.with_indifferent_access,
+
+          openobserve: {
+            debug: "DEBUG",
+            info: "INFO",
+            warning: "WARN",
+            warn: "WARN",
+            error: "ERROR",
+            fatal: "FATAL",
+            critical: "FATAL"
           }.with_indifferent_access
         }.freeze
 

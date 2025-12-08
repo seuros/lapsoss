@@ -27,6 +27,9 @@ VCR.configure do |config|
   config.filter_sensitive_data("<INSIGHT_HUB_API_KEY>") { ENV["INSIGHT_HUB_API_KEY"] || "test-api-key" }
   config.filter_sensitive_data("<BUGSNAG_API_KEY>") { ENV["BUGSNAG_API_KEY"] || "test-api-key" }
   config.filter_sensitive_data("<ROLLBAR_ACCESS_TOKEN>") { ENV["ROLLBAR_ACCESS_TOKEN"] || "test-token" }
+  config.filter_sensitive_data("<OPENOBSERVE_ENDPOINT>") { ENV["OPENOBSERVE_ENDPOINT"] || "http://localhost:5080" }
+  config.filter_sensitive_data("<OPENOBSERVE_USERNAME>") { ENV["OPENOBSERVE_USERNAME"] || "seuros@example.com" }
+  config.filter_sensitive_data("<OPENOBSERVE_PASSWORD>") { ENV["OPENOBSERVE_PASSWORD"] || "ShipItFast!" }
   config.filter_sensitive_data("<AUTHORIZATION>") { ENV["AUTHORIZATION"] }
   config.filter_sensitive_data("<COOKIE>") { ENV["HTTP_COOKIE"] }
 

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<OPENOBSERVE_ENDPOINT>/api/default/errors/_json"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAGoeNmkAA9VX3XPaOBD/V1TnoeSG2nwmwTP3kEtzc31IMpPmeg8J4wh7AU2E5JFk0lzb//1WsgHjQOKbaUvhAYy0u9r9/fZDvv3iRYbNQBs6S72wfXzUb/d7vXZrcNIZdNpNj8McuBd6Hy7/vPLwr5xMQOF/TlMttcYlEHOmpJiBMLieKplksWFS4JYGNWcx4LKijFthPEnTiV25lBdgpjI5V0qqkGQigTETkJCZWyb3YynfkrFURDAeXjJ+xml+3ucYUntAZJ7SZ5bWBFan1TePSMQPRlHr9u0Xb8w4CDqzNuaxCjLDeDCnitERh4iqiY5GXMYPUUw5B+WrEZqgIx2l1ExRJ/gbMdCBhkxJHfgoSnmgp1RBMGMaAibwPM51oLLRU9D1e/5xwNko/zuBmXZrrfwRHXh35Hf9thOp7c44Ezkhoffp7DoMPxXypyj+h5U+c8IHVidXt0QjWEJ64aDpMRHRFJNjTLmGphdLYeCziawEmiTu49R8a6Hxm3XjEE2kCqJCGKEsBAmx2+R39+OPmdKmceueNfsXmoUh9NA8Df0ZE9ZQrgciwWdviIalNlXL+e7i134PvzWr9P1kejbBf5BpRAVTDYyBEs7tQa8e0iuWGu67SRbWtmC+2EbMMRxQZnl8wyLTJNIVi6OsAHsEEya2Ia1AxxmQj4aKhKpl1S28y037KhPRGIsekjfLTWwCGp7xYrD5BDJFFEa2X2AaJzQ1oCK78YyxGtIlwB1CGDa5y1qtbhzbGg+vVtqnufIN6jqJMiPH7RUhRmWb+UBG/TKjjTuv7NwjM1PEL1mScucdkkRuIqpIb4uVDYXceTH6liHaZNnQiLVHrD2ytGfNbWEKjVpykPi1FukLeEQ/a7ZE9HhVgk4dA41GiybZyDuNS54qs1i+zPG1kcnvWnuLo971/U7f7zvBDcc/S41Gh7gJpw9tllwUGmFoM+IAc7jcCWsWqP1o4GPESST5k8Nja0NcV5hK+bAE/PW+V5JYKd2cn16/v/rnMro4v/nr6v1HH2g8xUQhX631r/tFVIWUoiqiZVHotS7aqpC0T5Euu9WLeXhSHclbQtxddC9QeJ0JYe8eB/bSGTFTiqt7dLLH3L1MWc3IfkHK3CCXAqJ8SJRrrdPa37BWmbg9wF7veO/ie3mqlWMuB9qtjrZvw/KLUKToo503O3+ZCQc2nvuabzH3GOIPv+Dbi/vCqbW7vT39tcsq3jGd7v++pn730Oo0vLCItN7NaTcu4gXA+fjqpWE37p0M1vneMWzWJRy7FcSqM3pHUFXd2hlCdtCt+VIZGT/dIRxMWyjbuWfdOi2i7O09vowM/wPlBCX7hhQAAA==
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json
+      Content-Encoding:
+      - gzip
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      Authorization:
+      - "<AUTHORIZATION>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Transfer-Encoding:
+      - chunked
+      X-Api-Node:
+      - bbb966dc81dd
+      Content-Type:
+      - application/json
+      O2-Process-Time:
+      - '1765154410986109'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      - accept-encoding
+      Date:
+      - Mon, 08 Dec 2025 00:40:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":200,"status":[{"name":"errors","successful":1,"failed":0}]}'
+  recorded_at: Mon, 08 Dec 2025 00:40:10 GMT
+recorded_with: VCR 6.3.1

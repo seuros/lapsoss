@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<OPENOBSERVE_ENDPOINT>/api/default/errors/_json"
+    body:
+      encoding: UTF-8
+      string: '[{"_timestamp":1765154410989036,"level":"INFO","logger":"lapsoss","environment":"production","service":"rails","message":"Info
+        message from Lapsoss"}]'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      Authorization:
+      - "<AUTHORIZATION>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      O2-Process-Time:
+      - '1765154410990831'
+      X-Api-Node:
+      - bbb966dc81dd
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      - accept-encoding
+      Date:
+      - Mon, 08 Dec 2025 00:40:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":200,"status":[{"name":"errors","successful":1,"failed":0}]}'
+  recorded_at: Mon, 08 Dec 2025 00:40:10 GMT
+recorded_with: VCR 6.3.1
