@@ -220,6 +220,7 @@ All adapters are pure Ruby implementations with no external SDK dependencies:
 - **AppSignal** - Error tracking and deploy markers
 - **Insight Hub** (formerly Bugsnag) - Error tracking with breadcrumbs
 - **Telebugs** - Sentry-compatible protocol (perfect for self-hosted alternatives)
+- **OpenObserve** - Open-source observability platform (logs, metrics, traces)
 
 ## Configuration
 
@@ -251,6 +252,21 @@ Lapsoss.configure do |config|
   config.use_telebugs(dsn: ENV['TELEBUGS_DSN'])
   # Or use use_sentry with a custom endpoint
   config.use_sentry(dsn: ENV['SELF_HOSTED_SENTRY_DSN'])
+end
+```
+
+### Using OpenObserve
+
+```ruby
+# OpenObserve - open-source observability platform
+Lapsoss.configure do |config|
+  config.use_openobserve(
+    endpoint: ENV['OPENOBSERVE_ENDPOINT'],  # e.g., "http://localhost:5080"
+    username: ENV['OPENOBSERVE_USERNAME'],
+    password: ENV['OPENOBSERVE_PASSWORD'],
+    org: "default",      # optional, defaults to "default"
+    stream: "errors"     # optional, defaults to "errors"
+  )
 end
 ```
 

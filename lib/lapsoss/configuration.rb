@@ -117,6 +117,11 @@ module Lapsoss
       register_adapter(name, :logger, **settings)
     end
 
+    # Convenience method for OpenObserve
+    def use_openobserve(name: :openobserve, **settings)
+      register_adapter(name, :openobserve, **settings)
+    end
+
     # Apply configuration by registering all adapters
     def apply!
       Registry.instance.clear!
