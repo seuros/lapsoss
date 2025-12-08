@@ -78,7 +78,7 @@ module Lapsoss
     end
 
     def random_mask(value)
-      length = [[value.to_s.length, 3].max, 32].min
+      length = [ [ value.to_s.length, 3 ].max, 32 ].min
       "*" * length
     end
 

@@ -221,6 +221,7 @@ All adapters are pure Ruby implementations with no external SDK dependencies:
 - **Insight Hub** (formerly Bugsnag) - Error tracking with breadcrumbs
 - **Telebugs** - Sentry-compatible protocol (perfect for self-hosted alternatives)
 - **OpenObserve** - Open-source observability platform (logs, metrics, traces)
+- **OTLP** - OpenTelemetry Protocol (works with SigNoz, Jaeger, Tempo, Honeycomb, etc.)
 
 ## Configuration
 
@@ -267,6 +268,24 @@ Lapsoss.configure do |config|
     org: "default",      # optional, defaults to "default"
     stream: "errors"     # optional, defaults to "errors"
   )
+end
+```
+
+### Using OTLP (OpenTelemetry Protocol)
+
+```ruby
+# Works with SigNoz, Jaeger, Tempo, Honeycomb, Datadog, etc.
+Lapsoss.configure do |config|
+  config.use_otlp(
+    endpoint: ENV['OTLP_ENDPOINT'],     # e.g., "http://localhost:4318"
+    service_name: "my-rails-app",
+    headers: { "X-Custom-Header" => "value" }  # optional custom headers
+  )
+
+  # Or use convenience helpers for specific services
+  config.use_signoz(signoz_api_key: ENV['SIGNOZ_API_KEY'])
+  config.use_jaeger(endpoint: "http://jaeger:4318")
+  config.use_tempo(endpoint: "http://tempo:4318")
 end
 ```
 

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<OTLP_ENDPOINT>/v1/traces"
+    body:
+      encoding: UTF-8
+      string: '{"resourceSpans":[{"resource":{"attributes":[{"key":"service.name","value":{"stringValue":"rails"}},{"key":"deployment.environment","value":{"stringValue":"production"}},{"key":"telemetry.sdk.name","value":{"stringValue":"lapsoss"}},{"key":"telemetry.sdk.version","value":{"stringValue":"0.4.11"}},{"key":"telemetry.sdk.language","value":{"stringValue":"ruby"}}]},"scopeSpans":[{"scope":{"name":"lapsoss","version":"0.4.11"},"spans":[{"traceId":"af64d6b41d2aab4b000768b900094c7b","spanId":"9101baf7d8e8fa60","name":"StandardError","kind":1,"startTimeUnixNano":"1765156858229969920","endTimeUnixNano":"1765156858229969920","status":{"code":2,"message":"Error
+        with custom headers"},"attributes":[],"events":[{"name":"exception","timeUnixNano":"1765156858229969920","attributes":[{"key":"exception.type","value":{"stringValue":"StandardError"}},{"key":"exception.message","value":{"stringValue":"Error
+        with custom headers"}},{"key":"exception.stacktrace","value":{"stringValue":"/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9
+        in `VCR::VariableArgsBlockCaller#call_block`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194
+        in `VCR#use_cassette`\ntest/otlp_adapter_test.rb:87 in `block in \u003cclass:OtlpAdapterTest\u003e`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94
+        in `block (2 levels) in Minitest::Test#run`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:190
+        in `Minitest::Test#capture_exceptions`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:89
+        in `block in Minitest::Test#run`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:368
+        in `Minitest::Runnable#time_it`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:88
+        in `Minitest::Test#run`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:1208
+        in `Minitest.run_one_method`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:447
+        in `Minitest::Runnable.run_one_method`\n/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest.rb:434
+        in `block (2 levels) in Minitest::Runnable.run`"}}]}]}]}]}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Custom-Header:
+      - custom-value
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 08 Dec 2025 01:20:58 GMT
+      Content-Length:
+      - '21'
+    body:
+      encoding: UTF-8
+      string: '{"partialSuccess":{}}'
+  recorded_at: Mon, 08 Dec 2025 01:20:58 GMT
+recorded_with: VCR 6.3.1

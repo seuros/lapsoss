@@ -122,6 +122,30 @@ module Lapsoss
       register_adapter(name, :openobserve, **settings)
     end
 
+    # Convenience method for OTLP (OpenTelemetry Protocol)
+    # Works with SigNoz, Jaeger, Tempo, Honeycomb, etc.
+    def use_otlp(name: :otlp, **settings)
+      register_adapter(name, :otlp, **settings)
+    end
+
+    # Convenience method for SigNoz (OTLP-compatible)
+    def use_signoz(name: :signoz, **settings)
+      settings[:endpoint] ||= "http://localhost:4318"
+      register_adapter(name, :otlp, **settings)
+    end
+
+    # Convenience method for Jaeger (OTLP-compatible)
+    def use_jaeger(name: :jaeger, **settings)
+      settings[:endpoint] ||= "http://localhost:4318"
+      register_adapter(name, :otlp, **settings)
+    end
+
+    # Convenience method for Grafana Tempo (OTLP-compatible)
+    def use_tempo(name: :tempo, **settings)
+      settings[:endpoint] ||= "http://localhost:4318"
+      register_adapter(name, :otlp, **settings)
+    end
+
     # Apply configuration by registering all adapters
     def apply!
       Registry.instance.clear!
