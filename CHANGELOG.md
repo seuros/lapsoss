@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.12](https://github.com/seuros/lapsoss/compare/lapsoss/v0.4.11...lapsoss/v0.4.12) (2025-12-08)
+
+
+### Features
+
+* add OpenObserve adapter for observability platform integration ([#5](https://github.com/seuros/lapsoss/issues/5)) ([dccab97](https://github.com/seuros/lapsoss/commit/dccab97408e844d9b4ad67bb205d15b001b59f8e))
+* add OTLP adapter for OpenTelemetry Protocol support ([#7](https://github.com/seuros/lapsoss/issues/7)) ([7d96240](https://github.com/seuros/lapsoss/commit/7d96240fd9582564015d5b8a34f84ae97c3b7b48))
+
 ## [0.4.11](https://github.com/seuros/lapsoss/compare/lapsoss/v0.4.10...lapsoss/v0.4.11) (2025-11-24)
 
 
