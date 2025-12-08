@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<OTLP_ENDPOINT>/v1/traces"
+    body:
+      encoding: UTF-8
+      string: '{"resourceSpans":[{"resource":{"attributes":[{"key":"service.name","value":{"stringValue":"lapsoss-test"}},{"key":"deployment.environment","value":{"stringValue":"production"}},{"key":"telemetry.sdk.name","value":{"stringValue":"lapsoss"}},{"key":"telemetry.sdk.version","value":{"stringValue":"0.4.11"}},{"key":"telemetry.sdk.language","value":{"stringValue":"ruby"}}]},"scopeSpans":[{"scope":{"name":"lapsoss","version":"0.4.11"},"spans":[{"traceId":"bbe4950c95e1ebb06acd8cacf6bbb229","spanId":"b2be3e6e6d25d907","name":"message","kind":1,"startTimeUnixNano":"1765156858208641024","endTimeUnixNano":"1765156858208641024","status":{"code":1},"attributes":[{"key":"message","value":{"stringValue":"Info
+        message from Lapsoss"}}]}]}]}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 08 Dec 2025 01:20:58 GMT
+      Content-Length:
+      - '21'
+    body:
+      encoding: UTF-8
+      string: '{"partialSuccess":{}}'
+  recorded_at: Mon, 08 Dec 2025 01:20:58 GMT
+recorded_with: VCR 6.3.1

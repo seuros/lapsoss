@@ -39,7 +39,7 @@ class EventHandlingTest < ActiveSupport::TestCase
   end
 
   test "exclusion filter prevents delivery" do
-    filter = Lapsoss::ExclusionFilter.new(excluded_exceptions: [ArgumentError])
+    filter = Lapsoss::ExclusionFilter.new(excluded_exceptions: [ ArgumentError ])
 
     Lapsoss.configure do |config|
       config.async = false
@@ -55,7 +55,7 @@ class EventHandlingTest < ActiveSupport::TestCase
 
   test "error handler accepts three arguments for delivery failures" do
     calls = []
-    handler = ->(adapter, event, error) { calls << [adapter, event, error] }
+    handler = ->(adapter, event, error) { calls << [ adapter, event, error ] }
 
     failing_adapter = Class.new(Lapsoss::Adapters::Base) do
       include Lapsoss::Adapters::Concerns::EnvelopeBuilder

@@ -30,6 +30,9 @@ VCR.configure do |config|
   config.filter_sensitive_data("<OPENOBSERVE_ENDPOINT>") { ENV["OPENOBSERVE_ENDPOINT"] || "http://localhost:5080" }
   config.filter_sensitive_data("<OPENOBSERVE_USERNAME>") { ENV["OPENOBSERVE_USERNAME"] || "seuros@example.com" }
   config.filter_sensitive_data("<OPENOBSERVE_PASSWORD>") { ENV["OPENOBSERVE_PASSWORD"] || "ShipItFast!" }
+  config.filter_sensitive_data("<OTLP_ENDPOINT>") { ENV["OTLP_ENDPOINT"] || "http://localhost:4318" }
+  config.filter_sensitive_data("<OTLP_API_KEY>") { ENV["OTLP_API_KEY"] || "test-api-key" }
+  config.filter_sensitive_data("<SIGNOZ_API_KEY>") { ENV["SIGNOZ_API_KEY"] || "test-signoz-key" }
   config.filter_sensitive_data("<AUTHORIZATION>") { ENV["AUTHORIZATION"] }
   config.filter_sensitive_data("<COOKIE>") { ENV["HTTP_COOKIE"] }
 
