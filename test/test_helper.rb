@@ -112,6 +112,18 @@ VCR.configure do |config|
         '"apiKey":"<INSIGHT_HUB_API_KEY>"'
       )
 
+      # Normalize timestamps to prevent re-recording
+      interaction.request.body = interaction.request.body.gsub(
+        /"timestamp":\d+/,
+        '"timestamp":1234567890'
+      )
+
+      # Normalize git commit SHAs (code_version, branch, etc.)
+      interaction.request.body = interaction.request.body.gsub(
+        /"code_version":"[a-f0-9]{40}"/,
+        '"code_version":"<GIT_SHA>"'
+      )
+
       # Replace email addresses
       interaction.request.body = interaction.request.body.gsub(/\b[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\b/i, "<EMAIL>")
       # Replace hostnames keys

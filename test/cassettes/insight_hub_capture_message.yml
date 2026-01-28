@@ -172,4 +172,100 @@ http_interactions:
       encoding: UTF-8
       string: OK
   recorded_at: Fri, 12 Sep 2025 14:13:30 GMT
+- request:
+    method: post
+    uri: https://notify.bugsnag.com/
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
+        Ruby","version":"0.4.12","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"4.0.1"}},"exceptions":[],"breadcrumbs":[],"context":"production","severity":"error","unhandled":false,"metaData":{}}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Bugsnag-Api-Key:
+      - "<BUGSNAG_API_KEY>"
+      Bugsnag-Payload-Version:
+      - '5'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For,
+        Bugsnag-Api-Key, Bugsnag-Sent-At, Bugsnag-Payload-Version, Bugsnag-Integrity
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Bugsnag-Event-Id:
+      - 697a36e30166b65aeb550000
+      Date:
+      - Wed, 28 Jan 2026 16:18:43 GMT
+      Content-Length:
+      - '2'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: OK
+  recorded_at: Wed, 28 Jan 2026 16:18:43 GMT
+- request:
+    method: post
+    uri: https://notify.bugsnag.com/
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
+        Ruby","version":"0.4.12","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"4.0.1"}},"exceptions":[],"breadcrumbs":[],"context":"production","severity":"error","unhandled":false,"metaData":{}}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Bugsnag-Api-Key:
+      - "<BUGSNAG_API_KEY>"
+      Bugsnag-Payload-Version:
+      - '5'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For,
+        Bugsnag-Api-Key, Bugsnag-Sent-At, Bugsnag-Payload-Version, Bugsnag-Integrity
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Bugsnag-Event-Id:
+      - 697a37ce0166b8ca759c0000
+      Date:
+      - Wed, 28 Jan 2026 16:22:38 GMT
+      Content-Length:
+      - '2'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: OK
+  recorded_at: Wed, 28 Jan 2026 16:22:38 GMT
 recorded_with: VCR 6.3.1

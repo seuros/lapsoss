@@ -203,8 +203,11 @@ class BacktraceProcessorTest < ActiveSupport::TestCase
   end
 
   test "clear cache" do
+    # Populate cache by processing a backtrace
+    @processor.process(@sample_backtrace)
+
     # Ensure cache clearing doesn't raise errors
-    @processor.clear_cache!
+    assert_nothing_raised { @processor.clear_cache! }
   end
 
   test "handles eval backtrace" do
