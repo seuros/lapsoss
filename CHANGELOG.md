@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.13](https://github.com/seuros/lapsoss/compare/lapsoss/v0.4.12...lapsoss/v0.4.13) (2026-01-28)
+
+
+### Bug Fixes
+
+* resolve test issues and update CI matrix versions ([#8](https://github.com/seuros/lapsoss/issues/8)) ([76c8a96](https://github.com/seuros/lapsoss/commit/76c8a9624417f503b9f5cc71056eeaa87a2aa3a6))
+
 ## [0.4.12](https://github.com/seuros/lapsoss/compare/lapsoss/v0.4.11...lapsoss/v0.4.12) (2025-12-08)
 
 
