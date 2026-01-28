@@ -329,7 +329,9 @@ end
 
 ### Filtering Errors
 
-You decide what errors to track. Lapsoss doesn't make assumptions:
+You decide what errors to track. Lapsoss doesn't make assumptions.
+
+**Execution order:** `exclusion_filter` runs first, then `before_send`.
 
 ```ruby
 Lapsoss.configure do |config|

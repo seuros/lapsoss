@@ -3,6 +3,9 @@
 require_relative "test_helper"
 
 class OpenobserveAdapterTest < ActiveSupport::TestCase
+  # OpenObserve payloads contain dynamic timestamps and trace IDs, so we match only on method/uri
+  VCR_OPTIONS = { match_requests_on: %i[method uri] }.freeze
+
   setup do
     @adapter = Lapsoss::Adapters::OpenobserveAdapter.new(:openobserve,
       endpoint: ENV["OPENOBSERVE_ENDPOINT"] || "http://localhost:5080",
@@ -14,7 +17,7 @@ class OpenobserveAdapterTest < ActiveSupport::TestCase
   end
 
   test "captures exception to OpenObserve" do
-    VCR.use_cassette("openobserve_capture_exception") do
+    VCR.use_cassette("openobserve_capture_exception", VCR_OPTIONS) do
       error = StandardError.new("Test error from Lapsoss")
       error.set_backtrace(caller)
 
@@ -26,7 +29,7 @@ class OpenobserveAdapterTest < ActiveSupport::TestCase
   end
 
   test "captures message to OpenObserve" do
-    VCR.use_cassette("openobserve_capture_message") do
+    VCR.use_cassette("openobserve_capture_message", VCR_OPTIONS) do
       event = Lapsoss::Event.build(type: :message, message: "Info message from Lapsoss", level: :info)
 
       response = @adapter.capture(event)
@@ -35,7 +38,7 @@ class OpenobserveAdapterTest < ActiveSupport::TestCase
   end
 
   test "captures exception with user context" do
-    VCR.use_cassette("openobserve_with_user") do
+    VCR.use_cassette("openobserve_with_user", VCR_OPTIONS) do
       error = RuntimeError.new("Error with user context")
       error.set_backtrace(caller)
 
@@ -51,7 +54,7 @@ class OpenobserveAdapterTest < ActiveSupport::TestCase
   end
 
   test "captures exception with tags and extra data" do
-    VCR.use_cassette("openobserve_with_tags") do
+    VCR.use_cassette("openobserve_with_tags", VCR_OPTIONS) do
       error = ArgumentError.new("Error with tags")
       error.set_backtrace(caller)
 
@@ -68,7 +71,7 @@ class OpenobserveAdapterTest < ActiveSupport::TestCase
   end
 
   test "captures exception with code context" do
-    VCR.use_cassette("openobserve_with_code_context") do
+    VCR.use_cassette("openobserve_with_code_context", VCR_OPTIONS) do
       error = NoMethodError.new("undefined method `foo' for nil:NilClass")
       error.set_backtrace(caller)
 
@@ -122,7 +125,7 @@ class OpenobserveAdapterTest < ActiveSupport::TestCase
   end
 
   test "supports custom org and stream" do
-    VCR.use_cassette("openobserve_custom_stream") do
+    VCR.use_cassette("openobserve_custom_stream", VCR_OPTIONS) do
       adapter = Lapsoss::Adapters::OpenobserveAdapter.new(:openobserve,
         endpoint: ENV["OPENOBSERVE_ENDPOINT"] || "http://localhost:5080",
         username: ENV["OPENOBSERVE_USERNAME"] || "seuros@example.com",

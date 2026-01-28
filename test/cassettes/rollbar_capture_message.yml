@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
-        error from Lapsoss"}},"level":"error","timestamp":1757440962,"code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc"}}}'
+        error from Lapsoss"}},"level":"error","timestamp":1234567890,"code_version":"<GIT_SHA>","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"<GIT_SHA>"}}}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -59,7 +59,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
-        error from Lapsoss"}},"level":"error","timestamp":1757675280,"code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"cfe509d1e76af8297aa501fceaeb18f378763cdc"}}}'
+        error from Lapsoss"}},"level":"error","timestamp":1234567890,"code_version":"<GIT_SHA>","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"<GIT_SHA>"}}}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -112,7 +112,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
-        error from Lapsoss"}},"level":"error","timestamp":1757686406,"code_version":"8b31ddfc381a6a17a3af82fe57dc80a14cc748a0","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"8b31ddfc381a6a17a3af82fe57dc80a14cc748a0"}}}'
+        error from Lapsoss"}},"level":"error","timestamp":1234567890,"code_version":"<GIT_SHA>","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"Periscope.local","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"<GIT_SHA>"}}}'
     headers:
       User-Agent:
       - lapsoss/<VERSION>
@@ -159,4 +159,110 @@ http_interactions:
           "message": "invalid access token"
         }
   recorded_at: Fri, 12 Sep 2025 14:13:26 GMT
+- request:
+    method: post
+    uri: https://api.rollbar.com/api/1/item/
+    body:
+      encoding: UTF-8
+      string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
+        error from Lapsoss"}},"level":"error","timestamp":1234567890,"code_version":"<GIT_SHA>","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"periscope","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"<GIT_SHA>"}}}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Rollbar-Access-Token:
+      - "<ROLLBAR_ACCESS_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.17.9
+      Date:
+      - Wed, 28 Jan 2026 16:18:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '51'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"33-B1+irAWVS0vJXv2TX/BEXA"
+      X-Response-Time:
+      - 9.055ms
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "err": 1,
+          "message": "invalid access token"
+        }
+  recorded_at: Wed, 28 Jan 2026 16:18:44 GMT
+- request:
+    method: post
+    uri: https://api.rollbar.com/api/1/item/
+    body:
+      encoding: UTF-8
+      string: '{"data":{"environment":"production","body":{"message":{"body":"Critical
+        error from Lapsoss"}},"level":"error","timestamp":1234567890,"code_version":"<GIT_SHA>","platform":"ruby","language":"ruby","framework":"rails","server":{"host":"periscope","root":"/path/to/project/lapsoss/test/dummy","branch":"master","code_version":"<GIT_SHA>"}}}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json
+      X-Lapsoss-Version:
+      - "<VERSION>"
+      X-Rollbar-Access-Token:
+      - "<ROLLBAR_ACCESS_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.17.9
+      Date:
+      - Wed, 28 Jan 2026 16:22:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '51'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"33-B1+irAWVS0vJXv2TX/BEXA"
+      X-Response-Time:
+      - 11.838ms
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "err": 1,
+          "message": "invalid access token"
+        }
+  recorded_at: Wed, 28 Jan 2026 16:22:35 GMT
 recorded_with: VCR 6.3.1

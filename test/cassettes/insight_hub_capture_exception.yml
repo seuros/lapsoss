@@ -191,4 +191,110 @@ http_interactions:
       encoding: UTF-8
       string: OK
   recorded_at: Fri, 12 Sep 2025 14:13:29 GMT
+- request:
+    method: post
+    uri: https://notify.bugsnag.com/
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
+        Ruby","version":"0.4.12","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"4.0.1"}},"exceptions":[{"errorClass":"StandardError","message":"Test
+        error from Lapsoss","stacktrace":[{"file":"vcr/util/variable_args_block_caller.rb","lineNumber":9,"method":"call_block","inProject":false,"code":{"9":"      block.call(*args)"}},{"file":"vcr.rb","lineNumber":194,"method":"use_cassette","inProject":false,"code":{"194":"      call_block(block,
+        cassette)"}},{"file":"insight_hub_adapter_test.rb","lineNumber":11,"method":"block
+        in \u003cclass:InsightHubAdapterTest\u003e","inProject":true,"code":{"11":"    VCR.use_cassette(\"insight_hub_capture_exception\")
+        do"}},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false,"code":{"5":"    Rails.application.executor.perform
+        { super }"}},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}],"breadcrumbs":[],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Bugsnag-Api-Key:
+      - "<BUGSNAG_API_KEY>"
+      Bugsnag-Payload-Version:
+      - '5'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For,
+        Bugsnag-Api-Key, Bugsnag-Sent-At, Bugsnag-Payload-Version, Bugsnag-Integrity
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Bugsnag-Event-Id:
+      - 697a36e3016697e460f20000
+      Date:
+      - Wed, 28 Jan 2026 16:18:43 GMT
+      Content-Length:
+      - '2'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: OK
+  recorded_at: Wed, 28 Jan 2026 16:18:43 GMT
+- request:
+    method: post
+    uri: https://notify.bugsnag.com/
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"<INSIGHT_HUB_API_KEY>","payloadVersion":"5","notifier":{"name":"Lapsoss
+        Ruby","version":"0.4.12","url":"https://github.com/yourusername/lapsoss"},"events":[{"app":{"releaseStage":"production","type":"rails"},"device":{"hostname":"<HOSTNAME>","osName":"arm64-darwin24","runtimeVersions":{"ruby":"4.0.1"}},"exceptions":[{"errorClass":"StandardError","message":"Test
+        error from Lapsoss","stacktrace":[{"file":"vcr/util/variable_args_block_caller.rb","lineNumber":9,"method":"call_block","inProject":false,"code":{"9":"      block.call(*args)"}},{"file":"vcr.rb","lineNumber":194,"method":"use_cassette","inProject":false,"code":{"194":"      call_block(block,
+        cassette)"}},{"file":"insight_hub_adapter_test.rb","lineNumber":11,"method":"block
+        in \u003cclass:InsightHubAdapterTest\u003e","inProject":true,"code":{"11":"    VCR.use_cassette(\"insight_hub_capture_exception\")
+        do"}},{"file":"active_support/executor/test_helper.rb","lineNumber":5,"method":"run","inProject":false,"code":{"5":"    Rails.application.executor.perform
+        { super }"}},{"file":"active_support/execution_wrapper.rb","lineNumber":104,"method":"perform","inProject":false},{"file":"rails/test_unit/line_filtering.rb","lineNumber":10,"method":"run","inProject":false}],"type":"ruby"}],"breadcrumbs":[],"context":"production","severity":"info","unhandled":false,"metaData":{}}]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Bugsnag-Api-Key:
+      - "<BUGSNAG_API_KEY>"
+      Bugsnag-Payload-Version:
+      - '5'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For,
+        Bugsnag-Api-Key, Bugsnag-Sent-At, Bugsnag-Payload-Version, Bugsnag-Integrity
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Bugsnag-Event-Id:
+      - 697a37cf0166a1d184400000
+      Date:
+      - Wed, 28 Jan 2026 16:22:39 GMT
+      Content-Length:
+      - '2'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: OK
+  recorded_at: Wed, 28 Jan 2026 16:22:39 GMT
 recorded_with: VCR 6.3.1

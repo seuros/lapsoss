@@ -15,11 +15,13 @@ jobs:
       matrix:
         ruby:
           - "3.3"
-          - "3.4" # Current development version
+          - "3.4"
+          - "4.0"
         rails:
-          - "7.2.0"
-          - "8.0.0"
-          - "8.1.1"
+          - "~> 7.2.0"
+          - "~> 8.0.0"
+          - "~> 8.1.0"
+          - "edge"
 
     steps:
       - uses: actions/checkout@v4

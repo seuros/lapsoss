@@ -5,7 +5,7 @@ http_interactions:
     uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
     body:
       encoding: UTF-8
-      string: '{"timestamp":1757440924,"namespace":"backend","error":{"name":"StandardError","message":"Test
+      string: '{"timestamp":1234567890,"namespace":"backend","error":{"name":"StandardError","message":"Test
         error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
         ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
         ''VCR#use_cassette''","test/appsignal_adapter_test.rb:12:in ''block in \u003cclass:AppsignalAdapterTest\u003e''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in
@@ -66,7 +66,7 @@ http_interactions:
     uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
     body:
       encoding: UTF-8
-      string: '{"timestamp":1757440963,"namespace":"backend","error":{"name":"StandardError","message":"Test
+      string: '{"timestamp":1234567890,"namespace":"backend","error":{"name":"StandardError","message":"Test
         error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
         ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
         ''VCR#use_cassette''","/path/to/project/lapsoss/test/appsignal_adapter_test.rb:12:in
@@ -132,7 +132,7 @@ http_interactions:
     uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
     body:
       encoding: UTF-8
-      string: '{"timestamp":1757675283,"namespace":"backend","error":{"name":"StandardError","message":"Test
+      string: '{"timestamp":1234567890,"namespace":"backend","error":{"name":"StandardError","message":"Test
         error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
         ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
         ''VCR#use_cassette''","/path/to/project/lapsoss/test/appsignal_adapter_test.rb:12:in
@@ -198,7 +198,7 @@ http_interactions:
     uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
     body:
       encoding: UTF-8
-      string: '{"timestamp":1757686411,"namespace":"backend","error":{"name":"StandardError","message":"Test
+      string: '{"timestamp":1234567890,"namespace":"backend","error":{"name":"StandardError","message":"Test
         error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
         ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
         ''VCR#use_cassette''","/path/to/project/lapsoss/test/appsignal_adapter_test.rb:12:in
@@ -264,7 +264,7 @@ http_interactions:
     uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
     body:
       encoding: UTF-8
-      string: '{"timestamp":1765157073,"namespace":"backend","error":{"name":"StandardError","message":"Test
+      string: '{"timestamp":1234567890,"namespace":"backend","error":{"name":"StandardError","message":"Test
         error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
         ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/3.4.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
         ''VCR#use_cassette''","/path/to/project/lapsoss/test/appsignal_adapter_test.rb:12:in
@@ -325,4 +325,136 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Mon, 08 Dec 2025 01:24:34 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"timestamp":1234567890,"namespace":"backend","error":{"name":"StandardError","message":"Test
+        error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/4.0.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
+        ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
+        ''VCR#use_cassette''","/path/to/project/lapsoss/test/appsignal_adapter_test.rb:12:in
+        ''block in \u003cclass:AppsignalAdapterTest\u003e''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:95:in
+        ''block (2 levels) in Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:191:in
+        ''Minitest::Test#capture_exceptions''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:90:in
+        ''block in Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:382:in
+        ''Minitest::Runnable#time_it''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:89:in
+        ''Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/activesupport-8.0.2.1/lib/active_support/executor/test_helper.rb:5:in
+        ''block in ActiveSupport::Executor::TestHelper#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/activesupport-8.0.2.1/lib/active_support/execution_wrapper.rb:104:in
+        ''ActiveSupport::ExecutionWrapper.perform''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/activesupport-8.0.2.1/lib/active_support/executor/test_helper.rb:5:in
+        ''ActiveSupport::Executor::TestHelper#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:1223:in
+        ''Minitest.run_one_method''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:462:in
+        ''Minitest::Runnable.run_one_method''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:449:in
+        ''block (2 levels) in Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:445:in
+        ''Array#each''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:445:in
+        ''block in Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:487:in
+        ''Minitest::Runnable.on_signal''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:474:in
+        ''Minitest::Runnable.with_info_handler''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:444:in
+        ''Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/railties-8.0.2.1/lib/rails/test_unit/line_filtering.rb:10:in
+        ''Rails::LineFiltering#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:346:in
+        ''block in Minitest.__run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:346:in
+        ''Array#map''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:346:in
+        ''Minitest.__run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:301:in
+        ''Minitest.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:85:in
+        ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Jan 2026 16:18:46 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 28 Jan 2026 16:18:46 GMT
+- request:
+    method: post
+    uri: https://appsignal-endpoint.net/errors?api_key=<APPSIGNAL_FRONTEND_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"timestamp":1234567890,"namespace":"backend","error":{"name":"StandardError","message":"Test
+        error from Lapsoss","backtrace":["/path/to/ruby/lib/ruby/gems/4.0.0/gems/vcr-6.3.1/lib/vcr/util/variable_args_block_caller.rb:9:in
+        ''VCR::VariableArgsBlockCaller#call_block''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/vcr-6.3.1/lib/vcr.rb:194:in
+        ''VCR#use_cassette''","/path/to/project/lapsoss/test/appsignal_adapter_test.rb:12:in
+        ''block in \u003cclass:AppsignalAdapterTest\u003e''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:95:in
+        ''block (2 levels) in Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:191:in
+        ''Minitest::Test#capture_exceptions''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:90:in
+        ''block in Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:382:in
+        ''Minitest::Runnable#time_it''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest/test.rb:89:in
+        ''Minitest::Test#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/activesupport-8.0.2.1/lib/active_support/executor/test_helper.rb:5:in
+        ''block in ActiveSupport::Executor::TestHelper#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/activesupport-8.0.2.1/lib/active_support/execution_wrapper.rb:104:in
+        ''ActiveSupport::ExecutionWrapper.perform''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/activesupport-8.0.2.1/lib/active_support/executor/test_helper.rb:5:in
+        ''ActiveSupport::Executor::TestHelper#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:1223:in
+        ''Minitest.run_one_method''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:462:in
+        ''Minitest::Runnable.run_one_method''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:449:in
+        ''block (2 levels) in Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:445:in
+        ''Array#each''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:445:in
+        ''block in Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:487:in
+        ''Minitest::Runnable.on_signal''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:474:in
+        ''Minitest::Runnable.with_info_handler''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:444:in
+        ''Minitest::Runnable.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/railties-8.0.2.1/lib/rails/test_unit/line_filtering.rb:10:in
+        ''Rails::LineFiltering#run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:346:in
+        ''block in Minitest.__run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:346:in
+        ''Array#map''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:346:in
+        ''Minitest.__run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:301:in
+        ''Minitest.run''","/path/to/ruby/lib/ruby/gems/4.0.0/gems/minitest-5.27.0/lib/minitest.rb:85:in
+        ''block in Minitest.autorun''"]},"tags":{"test":"true","environment":"test"},"params":{},"environment":{"hostname":"<HOSTNAME>","app_name":"lapsoss-test","environment":null},"breadcrumbs":[]}'
+    headers:
+      User-Agent:
+      - lapsoss/<VERSION>
+      Content-Type:
+      - application/json; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Jan 2026 16:22:41 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - "*"
+      X-Appsignal-Max-Body:
+      - 500k
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 28 Jan 2026 16:22:41 GMT
 recorded_with: VCR 6.3.1
