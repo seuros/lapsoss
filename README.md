@@ -39,7 +39,7 @@ end
 ## Requirements
 
 - Ruby 3.3+
-- Rails 7.2+
+- Rails 8.0+
 
 ## Installation
 
