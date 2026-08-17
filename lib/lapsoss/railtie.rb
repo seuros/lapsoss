@@ -39,6 +39,22 @@ module Lapsoss
       Rails.error.subscribe(Lapsoss::RailsErrorSubscriber.new)
     end
 
+    initializer "lapsoss.rails_event_subscriber" do
+      # Rails.event structured event reporter is Rails 8.1+
+      if Rails.respond_to?(:event)
+        Rails.event.subscribe(Lapsoss::RailsEventSubscriber.new) do |event|
+          config = Lapsoss.configuration
+          if !config.capture_rails_events
+            false
+          elsif (filter = config.rails_event_filter)
+            !!filter.call(event)
+          else
+            true
+          end
+        end
+      end
+    end
+
     initializer "lapsoss.controller_transaction" do
       ActiveSupport.on_load(:action_controller) do
         require "lapsoss/rails_controller_transaction"

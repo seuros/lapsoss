@@ -14,7 +14,7 @@ module Lapsoss
                   :backtrace_strip_load_path, :backtrace_max_frames, :backtrace_enable_code_context,
                   :enable_pipeline, :pipeline_builder, :sampling_strategy,
                   :skip_rails_cache_errors, :force_sync_http, :capture_request_context,
-                  :exclusion_filter
+                  :exclusion_filter, :capture_rails_events, :rails_event_filter
     attr_reader :fingerprint_callback, :environment, :before_send, :sample_rate, :error_handler, :transport_timeout,
                 :transport_max_retries, :transport_initial_backoff, :transport_max_backoff, :transport_backoff_multiplier, :transport_ssl_verify, :default_context, :adapter_configs
 
@@ -62,6 +62,9 @@ module Lapsoss
       @sampling_strategy = nil
       # Rails error filtering
       @skip_rails_cache_errors = true
+      # Rails.event structured events as breadcrumbs (Rails 8.1+)
+      @capture_rails_events = true
+      @rails_event_filter = nil
       # HTTP client settings
       @force_sync_http = false
       # Capture request context in middleware

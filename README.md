@@ -116,6 +116,51 @@ end
 
 # Or use Rails.error directly with your configured services
 Rails.error.report(e, context: { user_id: current_user.id })
+
+# For "should never happen" paths, Rails.error.unexpected raises in
+# development/test and reports in production - and routes through Lapsoss too
+Rails.error.unexpected("Reached unreachable branch")
+```
+
+### Structured Events as Breadcrumbs (Rails 8.1+)
+
+On Rails 8.1+, Lapsoss automatically subscribes to the structured event reporter
+(`Rails.event`) and records emitted events as breadcrumbs. When an error is
+captured, the recent activity trail is attached to the report - no
+monkey-patching, just Rails' native API:
+
+```ruby
+Rails.event.notify("order.checkout_started", cart_id: cart.id)
+# ... an exception here includes that breadcrumb in the error report
+
+# Tags and context flow into breadcrumb metadata
+Rails.event.tagged(section: "checkout") do
+  Rails.event.notify("payment.authorized", amount: 42_00)
+end
+```
+
+Tune or disable it:
+
+```ruby
+Lapsoss.configure do |config|
+  config.capture_rails_events = false                            # opt out entirely
+  config.rails_event_filter = ->(event) { !event[:name].start_with?("noisy.") }
+end
+```
+
+Rails-side enrichment also composes: context added via `Rails.error.add_middleware`
+(Rails 8.1+) flows into the `context:` Lapsoss receives for free.
+
+### Silencing Capture
+
+Suppress delivery for a block (thread-local) - useful in tests or around
+expected-failure paths. Breadcrumbs and scope still accumulate; only delivery
+is skipped:
+
+```ruby
+Lapsoss.silence do
+  retry_flaky_third_party_call
+end
 ```
 
 ### No Global Patching Philosophy
