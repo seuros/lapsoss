@@ -40,17 +40,14 @@ module Lapsoss
     end
 
     initializer "lapsoss.rails_event_subscriber" do
-      # Rails.event structured event reporter is Rails 8.1+
-      if Rails.respond_to?(:event)
-        Rails.event.subscribe(Lapsoss::RailsEventSubscriber.new) do |event|
-          config = Lapsoss.configuration
-          if !config.capture_rails_events
-            false
-          elsif (filter = config.rails_event_filter)
-            !!filter.call(event)
-          else
-            true
-          end
+      Rails.event.subscribe(Lapsoss::RailsEventSubscriber.new) do |event|
+        config = Lapsoss.configuration
+        if !config.capture_rails_events
+          false
+        elsif (filter = config.rails_event_filter)
+          !!filter.call(event)
+        else
+          true
         end
       end
     end

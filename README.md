@@ -39,7 +39,7 @@ end
 ## Requirements
 
 - Ruby 3.3+
-- Rails 8.0+
+- Rails 8.1+
 
 ## Installation
 
@@ -122,9 +122,9 @@ Rails.error.report(e, context: { user_id: current_user.id })
 Rails.error.unexpected("Reached unreachable branch")
 ```
 
-### Structured Events as Breadcrumbs (Rails 8.1+)
+### Structured Events as Breadcrumbs
 
-On Rails 8.1+, Lapsoss automatically subscribes to the structured event reporter
+Lapsoss automatically subscribes to the structured event reporter
 (`Rails.event`) and records emitted events as breadcrumbs. When an error is
 captured, the recent activity trail is attached to the report - no
 monkey-patching, just Rails' native API:
@@ -149,7 +149,7 @@ end
 ```
 
 Rails-side enrichment also composes: context added via `Rails.error.add_middleware`
-(Rails 8.1+) flows into the `context:` Lapsoss receives for free.
+flows into the `context:` Lapsoss receives for free.
 
 ### Silencing Capture
 

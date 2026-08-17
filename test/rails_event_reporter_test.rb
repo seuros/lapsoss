@@ -4,8 +4,6 @@ require_relative "rails_test_helper"
 
 class RailsEventReporterTest < ActiveSupport::TestCase
   setup do
-    skip "Rails.event structured event reporter requires Rails 8.1+" unless Rails.respond_to?(:event)
-
     Lapsoss.configuration.clear!
     Lapsoss::Registry.instance.clear!
     Lapsoss::Current.reset

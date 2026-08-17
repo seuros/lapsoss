@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = [ 'lib' ]
 
   # Runtime dependencies
-  spec.add_dependency 'activesupport', '>= 8.0', '< 9.0'
+  spec.add_dependency 'activesupport', '>= 8.1', '< 9.0'
   spec.add_dependency 'concurrent-ruby', '>= 1.3.1'
   spec.add_dependency 'faraday', '~> 2.0'
   spec.add_dependency 'faraday-retry', '~> 2.0'
