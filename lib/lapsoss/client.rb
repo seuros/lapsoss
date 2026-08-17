@@ -80,6 +80,11 @@ module Lapsoss
     private
 
     def capture_event(event)
+      if Current.silenced
+        @configuration.logger.debug("[LAPSOSS] Event dropped: capture silenced via Lapsoss.silence")
+        return nil
+      end
+
       @configuration.logger.debug("[LAPSOSS] capture_event called, async: #{@configuration.async}, executor: #{@executor.inspect}")
 
       # Apply pipeline processing if enabled

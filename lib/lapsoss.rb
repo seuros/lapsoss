@@ -69,6 +69,20 @@ module Lapsoss
       capture_exception(exception, **context.merge(handled: handled))
     end
 
+    # Suppress all event capture for the duration of the block (thread-local).
+    # Breadcrumbs and scope still accumulate; only delivery is skipped.
+    def silence
+      previous = Current.silenced
+      Current.silenced = true
+      yield
+    ensure
+      Current.silenced = previous
+    end
+
+    def silenced?
+      Current.silenced
+    end
+
     def add_breadcrumb(message, type: :default, **metadata)
       client.add_breadcrumb(message, type: type, **metadata)
     end

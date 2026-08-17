@@ -5,6 +5,7 @@ require "active_support/all"
 module Lapsoss
   class Current < ActiveSupport::CurrentAttributes
     attribute :scope, default: -> { Scope.new }
+    attribute :silenced, default: false
 
     def self.with_clean_scope
       previous_scope = scope
