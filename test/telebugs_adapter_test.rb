@@ -44,8 +44,8 @@ class TelebugsAdapterTest < ActiveSupport::TestCase
     adapter = Lapsoss::Adapters::TelebugsAdapter.new(:telebugs,
       dsn: "https://key123@example.telebugs.com/api/v1/sentry_errors/99")
 
-    api_endpoint = adapter.class.api_endpoint
-    api_path = adapter.class.api_path
+    api_endpoint = adapter.instance_variable_get(:@api_endpoint)
+    api_path = adapter.instance_variable_get(:@api_path)
 
     assert_equal "https://example.telebugs.com", api_endpoint
     assert_equal "/api/v1/sentry_errors/api/99/envelope/", api_path

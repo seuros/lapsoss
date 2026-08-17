@@ -6,18 +6,6 @@ class ApplicationController < ActionController::Base
   end
 
   def error
-    # Debug: Log active adapters
-    Rails.logger.info "[LAPSOSS DEBUG] Active adapters: #{Lapsoss::Registry.instance.active.map(&:name).join(', ')}"
-    Rails.logger.info "[LAPSOSS DEBUG] Async mode: #{Lapsoss.configuration.async}"
-
-    # Check Telebugs specifically
-    telebugs = Lapsoss::Registry.instance[:telebugs]
-    if telebugs
-      Rails.logger.info "[LAPSOSS DEBUG] Telebugs adapter found: enabled=#{telebugs.enabled?}"
-    else
-      Rails.logger.warn "[LAPSOSS DEBUG] Telebugs adapter NOT found!"
-    end
-
     raise StandardError, "Test error for Lapsoss"
   end
 

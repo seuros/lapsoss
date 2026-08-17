@@ -95,8 +95,11 @@ class SentryCodeContextTest < ActionDispatch::IntegrationTest
 
     assert app_controller_frame, "Should have a frame from application_controller.rb"
 
-    # Verify the frame has the expected line number
-    assert_equal 9, app_controller_frame["lineno"], "Error should be on line 9"
+    # Verify the frame points at the raise in the dummy controller (line computed
+    # from source so debug logging added above it doesn't break the assertion)
+    controller_source = Rails.root.join("app/controllers/application_controller.rb").read
+    expected_line = controller_source.lines.index { |line| line.include?("raise StandardError") } + 1
+    assert_equal expected_line, app_controller_frame["lineno"], "Error should be on line #{expected_line}"
     assert app_controller_frame["function"].include?("error"), "Function should include 'error'"
 
     # **CRITICAL**: Verify code context is present
