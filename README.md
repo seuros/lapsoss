@@ -69,7 +69,7 @@ That's it. No 500-line examples needed.
 
 ## Built for Rails, Not Around It
 
-Lapsoss integrates with Rails' native error reporting API introduced in Rails 7. No monkey-patching, no global error handlers:
+Lapsoss integrates with Rails' native error reporting API (`Rails.error`). No monkey-patching, no global error handlers:
 
 ```ruby
 # It just works with Rails.error:
