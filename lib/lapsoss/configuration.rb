@@ -15,7 +15,8 @@ module Lapsoss
                   :enable_pipeline, :pipeline_builder, :sampling_strategy,
                   :skip_rails_cache_errors, :force_sync_http, :capture_request_context,
                   :exclusion_filter, :capture_rails_events, :rails_event_filter,
-                  :queue_max_events, :queue_max_bytes, :delivery_concurrency
+                  :queue_max_events, :queue_max_bytes, :delivery_concurrency,
+                  :daemon_socket, :daemon_timeout
     attr_reader :fingerprint_callback, :environment, :before_send, :sample_rate, :error_handler, :transport_timeout,
                 :transport_max_retries, :transport_initial_backoff, :transport_max_backoff, :transport_backoff_multiplier, :transport_ssl_verify, :default_context, :adapter_configs
 
@@ -75,6 +76,10 @@ module Lapsoss
       @queue_max_events = 1000
       @queue_max_bytes = 10 * 1024 * 1024
       @delivery_concurrency = 4
+      # An empty environment value opts source-checkout users into legacy embedded delivery.
+      @daemon_socket = ENV.fetch("LAPSOSS_SOCKET", "/run/lapsoss/lapsossd.sock")
+      @daemon_socket = nil if @daemon_socket.empty?
+      @daemon_timeout = 0.1
     end
 
     def initialize_copy(other)
@@ -324,8 +329,20 @@ module Lapsoss
       @fingerprint_callback = value
     end
 
-    # Configuration validation - just log warnings, don't fail
+    # Reject invalid delivery settings; retain advisory legacy transport warnings.
     def validate!
+      if @daemon_socket
+        unless @daemon_socket.is_a?(String) && @daemon_socket.start_with?("/") && !@daemon_socket.include?("\0")
+          raise ArgumentError, "daemon_socket must be an absolute Unix socket path"
+        end
+        unless @daemon_timeout.is_a?(Numeric) && @daemon_timeout.real? &&
+            @daemon_timeout.finite? && @daemon_timeout.positive? && @daemon_timeout <= 2
+          raise ArgumentError, "daemon_timeout must be positive and at most 2 seconds"
+        end
+        unless @adapter_configs.empty?
+          raise ArgumentError, "Configure vendor adapters in lapsossd, not in the daemon client"
+        end
+      end
       %i[queue_max_events queue_max_bytes delivery_concurrency].each do |key|
         value = public_send(key)
         raise ArgumentError, "#{key} must be a positive integer" unless value.is_a?(Integer) && value.positive?

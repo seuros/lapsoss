@@ -52,7 +52,13 @@ jobs:
           gem build lapsoss.gemspec --output /tmp/lapsoss.gem
           gem install /tmp/lapsoss.gem --no-document --install-dir /tmp/lapsoss-install
           cd /tmp
-          GEM_PATH="/tmp/lapsoss-install:$(ruby -e 'puts Gem.path.join(":")')" ruby -e 'require "lapsoss"; Lapsoss.configure { |c| c.async = false; c.use_logger }; abort unless Lapsoss.capture_message("installed gem"); abort unless Lapsoss.shutdown'
+          GEM_PATH="/tmp/lapsoss-install:$(ruby -e 'puts Gem.path.join(":")')" ruby -e 'require "lapsoss"; Lapsoss.configure { |c| c.daemon_socket = "/tmp/absent-lapsossd.sock" }; abort if $LOADED_FEATURES.any? { |f| f.include?("lapsoss_native") }; abort unless Lapsoss.capture_message("installed gem").nil?'
+
+      - name: Daemon integration
+        if: matrix.rails != 'edge'
+        run: |
+          cargo build -p lapsossd --locked -j 2
+          LAPSOSSD_TEST_BIN="$PWD/target/debug/lapsossd" bundle exec rake test_daemon
 
   rust:
     runs-on: ubuntu-latest
@@ -64,6 +70,8 @@ jobs:
       - run: cargo fmt --all --check
       # Deliberately do not install Ruby: the published core must stand alone.
       - run: cargo test -p lapsoss --locked -- --no-capture
+      - run: cargo test -p lapsossd --locked
       - run: cargo clippy -p lapsoss --all-targets --locked
+      - run: cargo clippy -p lapsossd --all-targets --locked
       - run: cargo run -p lapsoss --example embedded --locked
       - run: cargo package -p lapsoss --locked

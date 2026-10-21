@@ -6,10 +6,11 @@ require "active_support"
 require "active_support/concern"
 require "active_support/core_ext/object/deep_dup"
 require "active_support/core_ext/module/delegation"
-require_relative "lapsoss/native"
 
 loader = Zeitwerk::Loader.for_gem
+loader.ignore("#{__dir__}/lapsoss/native.rb")
 loader.do_not_eager_load("#{__dir__}/lapsoss/adapters")
+loader.do_not_eager_load("#{__dir__}/lapsoss/http_client.rb")
 loader.setup
 
 require_relative "lapsoss/railtie" if defined?(Rails::Railtie)
@@ -43,7 +44,10 @@ module Lapsoss
       adapters = candidate.build_adapters
       specs = adapters.select { |adapter| adapter.enabled? || adapter.settings[:dsn].present? }
         .filter_map { |adapter| NativeAdapters.describe(adapter) }
-      Native.validate(specs.to_json, NativeAdapters.transport(candidate).to_json)
+      unless candidate.daemon_socket
+        require_relative "lapsoss/native"
+        Native.validate(specs.to_json, NativeAdapters.transport(candidate).to_json)
+      end
       replacement = Client.new(candidate)
       if @client && !@client.flush(timeout: 2)
         raise Error, "Previous Lapsoss client did not drain; configuration was not replaced"

@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+# The legacy adapter suite still exercises embedded delivery from the checkout.
+ENV["LAPSOSS_SOCKET"] = ""
 require "lapsoss"
+require "lapsoss/native"
 
 require "active_support"
 require "active_support/test_case"

@@ -1,0 +1,676 @@
+# Legacy embedded-delivery guide
+
+This is the historical embedded API, retained for source-checkout compatibility.
+The published Ruby client now uses `lapsossd`. See the [current guide](../README.md)
+and [daemon operations](daemon.md) instead.
+
+To exercise these examples from a checkout, compile the extension and explicitly
+set `config.daemon_socket = nil` before configuring vendor adapters. The published
+client gem does not contain or compile that extension.
+
+[![Ruby CI](https://github.com/seuros/lapsoss/actions/workflows/ci.yml/badge.svg)](https://github.com/seuros/lapsoss/actions/workflows/ci.yml)
+[![Gem Version](https://badge.fury.io/rb/lapsoss.svg)](https://badge.fury.io/rb/lapsoss)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/gem/dt/lapsoss.svg)](https://rubygems.org/gems/lapsoss)
+
+## The Problem We All Face
+
+You're 6 months into production with Bugsnag. The CFO says "costs are too high, switch to Sentry."
+
+The migration estimate? 3 months. Why? Because your entire codebase is littered with:
+- `Bugsnag.notify(exception)`
+- `Bugsnag.leave_breadcrumb("User clicked checkout")`
+- Bugsnag-specific configuration
+- Custom Bugsnag metadata patterns
+
+**This is vendor lock-in through API pollution.**
+
+## The Solution: Write Once, Deploy Anywhere
+
+```ruby
+# Your code never changes:
+Lapsoss.capture_exception(e)
+
+# Switch vendors in config, not code:
+Lapsoss.configure do |config|
+  # Monday: Using Bugsnag
+  config.use_bugsnag(api_key: ENV['BUGSNAG_KEY'])
+
+  # Tuesday: Add Telebugs for comparison
+  config.use_telebugs(dsn: ENV['TELEBUGS_DSN'])
+
+  # Wednesday: Drop Bugsnag, keep Telebugs
+  # Just remove the line. Zero code changes.
+end
+```
+
+## Requirements
+
+- CRuby 4.0+
+- Rails 8.1+
+- A supported platform gem, or Rust 1.99+ for source builds
+
+## Shared Rust dispatcher
+
+Lapsoss 2 uses the **Matryoshka** pattern: Ruby captures application context and
+runs Ruby policies; a required native extension embeds the same delivery library
+that Rust applications can use directly. No daemon or vendor SDK is required.
+
+```toml
+# In a Rust application:
+[dependencies]
+lapsoss = "0.2"
+```
+
+The Rust caller supplies a Tokio runtime. See the
+[crate guide](../ext/lapsoss_native/core/README.md).
+
+## Installation
+
+```ruby
+gem 'lapsoss'
+```
+
+## Usage
+
+```ruby
+# Capture exceptions
+Lapsoss.capture_exception(e)
+
+# Capture messages
+Lapsoss.capture_message("Payment processed", level: :info)
+
+# Add context
+Lapsoss.with_scope(user_id: current_user.id) do
+  process_payment
+end
+
+# Add breadcrumbs
+Lapsoss.add_breadcrumb("User clicked checkout", type: :navigation)
+```
+
+Capture returns an event ID when admitted, or `nil` when suppressed, filtered,
+disabled or rejected. Admission does not guarantee delivery.
+
+```ruby
+Lapsoss.flush(timeout: 2)    # true when prior work and callbacks have settled
+Lapsoss.shutdown(timeout: 2) # stop accepting, drain, cancel at deadline
+```
+
+## Built for Rails, Not Around It
+
+Lapsoss integrates with Rails' native error reporting API (`Rails.error`). No monkey-patching, no global error handlers:
+
+```ruby
+# It just works with Rails.error:
+Rails.error.handle(context: {user_id: current_user.id}) do
+  risky_operation
+end
+# Automatically captured by whatever service you configured
+```
+
+### Rails Integration Options
+
+**Option 1: Automatic Rails.error Integration (Recommended)**
+```ruby
+# config/initializers/lapsoss.rb
+Lapsoss.configure do |config|
+  config.use_appsignal(push_api_key: ENV['APPSIGNAL_KEY'])
+end
+
+# That's it! All Rails errors are automatically captured
+# Works with Rails.error.handle, Rails.error.record, Rails.error.report
+# No code changes needed - just configure and go
+```
+
+**Option 2: Add Controller Context (Optional)**
+```ruby
+# app/controllers/application_controller.rb
+class ApplicationController < ActionController::Base
+  include Lapsoss::RailsControllerContext
+end
+
+# Now all errors include controller/action context:
+# { controller: "users", action: "show", controller_class: "UsersController" }
+```
+
+**Option 3: Manual Error Reporting (Your Choice)**
+```ruby
+# In controllers, jobs, or anywhere you want explicit control
+begin
+  process_payment
+rescue => e
+  Lapsoss.capture_exception(e, user_id: current_user.id)
+  # Handle gracefully...
+end
+
+# Or use Rails.error directly with your configured services
+Rails.error.report(e, context: { user_id: current_user.id })
+
+# For "should never happen" paths, Rails.error.unexpected raises in
+# development/test and reports in production - and routes through Lapsoss too
+Rails.error.unexpected("Reached unreachable branch")
+```
+
+### Structured Events as Breadcrumbs
+
+Lapsoss automatically subscribes to the structured event reporter
+(`Rails.event`) and records emitted events as breadcrumbs. When an error is
+captured, the recent activity trail is attached to the report - no
+monkey-patching, just Rails' native API:
+
+```ruby
+Rails.event.notify("order.checkout_started", cart_id: cart.id)
+# ... an exception here includes that breadcrumb in the error report
+
+# Tags and context flow into breadcrumb metadata
+Rails.event.tagged(section: "checkout") do
+  Rails.event.notify("payment.authorized", amount: 42_00)
+end
+```
+
+Tune or disable it:
+
+```ruby
+Lapsoss.configure do |config|
+  config.capture_rails_events = false                            # opt out entirely
+  config.rails_event_filter = ->(event) { !event[:name].start_with?("noisy.") }
+end
+```
+
+Rails-side enrichment also composes: context added via `Rails.error.add_middleware`
+flows into the `context:` Lapsoss receives for free.
+
+### Silencing Capture
+
+Suppress delivery for a block (thread-local) - useful in tests or around
+expected-failure paths. Breadcrumbs and scope still accumulate; only delivery
+is skipped:
+
+```ruby
+Lapsoss.silence do
+  retry_flaky_third_party_call
+end
+```
+
+### No Global Patching Philosophy
+
+Unlike other gems, Lapsoss **never** automatically captures all exceptions. You stay in control:
+
+- ✅ **Rails.error integration only** - Uses Rails' official API
+- ✅ **Explicit error handling** - You choose what to capture
+- ✅ **No global hooks** - Your app behavior never changes
+- ✅ **Optional controller context** - Include if you want it
+
+This means your application behaves exactly the same with or without Lapsoss. No surprises, no changed behavior, no conflicts with other gems.
+
+## Zero-Downtime Vendor Migration
+
+```ruby
+# Step 1: Add Lapsoss alongside your current setup
+gem 'lapsoss'
+gem 'bugsnag' # Keep your existing gem for now
+
+# Step 2: Configure dual reporting
+Lapsoss.configure do |config|
+  config.use_bugsnag(api_key: ENV['BUGSNAG_KEY'])
+  config.use_telebugs(dsn: ENV['TELEBUGS_DSN'])
+end
+
+# Step 3: Gradually replace Bugsnag calls
+# Old: Bugsnag.notify(e)
+# New: Lapsoss.capture_exception(e)
+
+# Step 4: Remove bugsnag gem when ready
+# Your app keeps running, now on Telebugs
+```
+
+## Why Not Just Use Vendor SDKs?
+
+**Vendor SDKs monkey-patch your application:**
+- Sentry patches Net::HTTP, Redis, and 20+ other gems
+- Bugsnag patches ActionController, ActiveJob, and more
+- Each vendor races to patch the same methods
+- Multiple SDKs = multiple layers of patches
+- Your app behavior changes based on load order
+
+**Lapsoss doesn't patch anything:**
+- Shared Rust delivery implementation, with Ruby-native capture and hooks
+- Uses Rails' error API
+- Your app behavior remains unchanged
+- No competing instrumentation
+
+## Real-World Use Cases
+
+### GDPR Compliance
+```ruby
+# Route EU data to EU servers, US data to US servers
+config.use_sentry(name: :us, dsn: ENV['US_SENTRY_DSN'])
+config.use_telebugs(name: :eu, dsn: ENV['EU_TELEBUGS_DSN'])
+```
+
+### A/B Testing Error Services
+```ruby
+# Run both services, compare effectiveness
+config.use_rollbar(name: :current, access_token: ENV['ROLLBAR_TOKEN'])
+config.use_sentry(name: :candidate, dsn: ENV['SENTRY_DSN'])
+```
+
+### High Availability
+```ruby
+# Multiple providers for redundancy
+config.use_telebugs(name: :primary, dsn: ENV['PRIMARY_DSN'])
+config.use_appsignal(name: :backup, push_api_key: ENV['APPSIGNAL_KEY'])
+```
+
+## Yes, We Require ActiveSupport
+
+This is a Rails gem for Rails applications. We use ActiveSupport because:
+- You already have it (you're using Rails)
+- It provides the exact utilities we need
+- It's better than reimplementing Rails patterns poorly
+
+If you need pure Ruby error tracking, use the vendor SDKs directly for now.
+
+## Who This Is For
+
+- Teams that have been burned by vendor lock-in
+- Apps that need regional data compliance (GDPR)
+- Developers who value clean, maintainable code
+- Rails applications that embrace change
+
+## Who This Is NOT For
+
+- Pure Ruby libraries (use vendor SDKs)
+- Teams happy with their current vendor forever
+- Applications that need APM features
+- Non-Rails applications
+
+## Supported Adapters
+
+All built-in adapters use the shared Rust dispatcher, with no vendor SDK dependencies:
+
+- **Sentry** - Full error tracking support
+- **Rollbar** - Complete error tracking with grouping
+- **AppSignal** - Error tracking and deploy markers
+- **Insight Hub** (formerly Bugsnag) - Error tracking with breadcrumbs
+- **Telebugs** - Sentry-compatible protocol (perfect for self-hosted alternatives)
+- **OpenObserve** - Open-source observability platform (logs, metrics, traces)
+- **OTLP** - OpenTelemetry Protocol (works with SigNoz, Jaeger, Tempo, Honeycomb, etc.)
+
+## Configuration
+
+### Basic Setup
+
+```ruby
+# config/initializers/lapsoss.rb
+Lapsoss.configure do |config|
+  config.use_telebugs(dsn: ENV["TELEBUGS_DSN"])
+end
+```
+
+### Multi-Adapter Setup
+
+```ruby
+Lapsoss.configure do |config|
+  # Named adapters for different purposes
+  config.use_sentry(name: :errors, dsn: ENV['SENTRY_DSN'])
+  config.use_rollbar(name: :business_events, access_token: ENV['ROLLBAR_TOKEN'])
+  config.use_logger(name: :local_backup) # Local file backup
+end
+```
+
+### Using Sentry-Compatible Services
+
+```ruby
+# Telebugs, Glitchtip, or any Sentry-compatible service
+Lapsoss.configure do |config|
+  config.use_telebugs(dsn: ENV['TELEBUGS_DSN'])
+  # Or use use_sentry with a custom endpoint
+  config.use_sentry(dsn: ENV['SELF_HOSTED_SENTRY_DSN'])
+end
+```
+
+### Using OpenObserve
+
+```ruby
+# OpenObserve - open-source observability platform
+Lapsoss.configure do |config|
+  config.use_openobserve(
+    endpoint: ENV['OPENOBSERVE_ENDPOINT'],  # e.g., "http://localhost:5080"
+    username: ENV['OPENOBSERVE_USERNAME'],
+    password: ENV['OPENOBSERVE_PASSWORD'],
+    org: "default",      # optional, defaults to "default"
+    stream: "errors"     # optional, defaults to "errors"
+  )
+end
+```
+
+### Using OTLP (OpenTelemetry Protocol)
+
+```ruby
+# Works with SigNoz, Jaeger, Tempo, Honeycomb, Datadog, etc.
+Lapsoss.configure do |config|
+  config.use_otlp(
+    endpoint: ENV['OTLP_ENDPOINT'],     # e.g., "http://localhost:4318"
+    service_name: "my-rails-app",
+    headers: { "X-Custom-Header" => "value" }  # optional custom headers
+  )
+
+  # Or use convenience helpers for specific services
+  config.use_signoz(signoz_api_key: ENV['SIGNOZ_API_KEY'])
+  config.use_jaeger(endpoint: "http://jaeger:4318")
+  config.use_tempo(endpoint: "http://tempo:4318")
+end
+```
+
+### Advanced Configuration
+
+```ruby
+Lapsoss.configure do |config|
+  # Adapter setup
+  config.use_rollbar(access_token: ENV['ROLLBAR_TOKEN'])
+
+  # Data scrubbing (uses Rails filter_parameters automatically)
+  config.scrub_fields = %w[password credit_card ssn] # Or leave nil to use Rails defaults
+
+  # Performance
+  config.async = true # Bounded native delivery, not a new Ruby thread per error
+
+  # Sampling (see docs/sampling_strategies.md for advanced examples)
+  config.sample_rate = Rails.env.production? ? 0.25 : 1.0
+
+  # Transport settings
+  config.transport_timeout = 10 # seconds
+  config.transport_max_retries = 3
+end
+```
+
+### Pipeline & Sampling (optional)
+
+```ruby
+Lapsoss.configure do |config|
+  # Build a middleware pipeline for every event
+  config.configure_pipeline do |pipeline|
+    pipeline.sample(rate: 0.1) # Drop 90% of events
+
+    pipeline.enhance_user_context(
+      provider: ->(event, _) { current_user&.slice(:id, :email) },
+      privacy_mode: true # keep only ids
+    )
+  end
+end
+```
+
+### Filtering Errors
+
+You decide what errors to track. Lapsoss doesn't make assumptions.
+
+**Execution order:** `exclusion_filter` runs first, then `before_send`.
+
+```ruby
+Lapsoss.configure do |config|
+  # Use the before_send callback for simple filtering
+  config.before_send = lambda do |event|
+    # Return nil to prevent sending
+    return nil if event.exception.is_a?(ActiveRecord::RecordNotFound)
+    event
+  end
+
+  # Or use the exclusion filter for more complex rules
+  config.exclusion_filter = Lapsoss::ExclusionFilter.new(
+    # Exclude specific exception types
+    excluded_exceptions: [
+      "ActionController::RoutingError",  # Your choice
+      "ActiveRecord::RecordNotFound"     # Your decision
+    ],
+
+    # Exclude by pattern matching
+    excluded_patterns: [
+      /timeout/i,           # If timeouts are expected in your app
+      /user not found/i     # If these are normal in your workflow
+    ],
+
+    # Exclude specific error messages
+    excluded_messages: [
+      "No route matches",
+      "Invalid authenticity token"
+    ]
+  )
+
+  # Add custom exclusion logic
+  config.exclusion_filter.add_exclusion(:custom, lambda do |event|
+    # Your business logic here
+    event.context[:request]&.dig(:user_agent)&.match?(/bot/i)
+  end)
+end
+```
+
+#### Common Patterns (Your Choice)
+
+```ruby
+# Development/Test exclusions
+if Rails.env.development?
+  config.exclusion_filter.add_exclusion(:exception, "RSpec::Expectations::ExpectationNotMetError")
+  config.exclusion_filter.add_exclusion(:exception, "Minitest::Assertion")
+end
+
+# User input errors (if you don't want to track them)
+config.exclusion_filter.add_exclusion(:exception, "ActiveRecord::RecordInvalid")
+config.exclusion_filter.add_exclusion(:exception, "ActionController::ParameterMissing")
+
+# Bot traffic (if you want to exclude it)
+config.exclusion_filter.add_exclusion(:custom, lambda do |event|
+  request = event.context[:request]
+  request && request[:user_agent]&.match?(/googlebot|bingbot/i)
+end)
+```
+
+Your app, your rules. Lapsoss just provides the mechanism.
+
+### Data Protection
+
+Lapsoss automatically integrates with Rails' parameter filtering:
+
+```ruby
+# config/initializers/filter_parameter_logging.rb
+Rails.application.config.filter_parameters += [:password, :token]
+
+# Lapsoss automatically uses these filters - no additional configuration needed!
+```
+
+Additional controls:
+
+```ruby
+Lapsoss.configure do |config|
+  config.scrub_fields = %w[credit_card ssn api_key]
+  config.scrub_all = true                        # Mask everything by default
+  config.whitelist_fields = %w[user_id request_id] # Keep these fields as-is
+  config.randomize_scrub_length = true           # Avoid fixed "[FILTERED]" marker
+end
+```
+
+### Error Handler Hook
+
+Get a callback when an adapter fails to deliver:
+
+```ruby
+Lapsoss.configure do |config|
+  config.error_handler = lambda do |adapter, event, error|
+    Rails.logger.error("Delivery failed for #{adapter.name}: #{error.message}")
+    Rails.logger.error(event.to_h) if Rails.env.development?
+  end
+end
+```
+
+### Custom Fingerprinting
+
+Control how errors are grouped:
+
+```ruby
+config.fingerprint_callback = lambda do |event|
+  case event.exception&.class&.name
+  when "ActiveRecord::RecordNotFound"
+    "record-not-found" # Group all together
+  when "Stripe::CardError"
+    "payment-failure"
+  else
+    nil # Use default fingerprinting
+  end
+end
+```
+
+### Transport Reliability
+
+Built-in retry logic with exponential backoff:
+
+```ruby
+config.transport_max_retries = 3
+config.transport_timeout = 10
+config.transport_jitter = true # Prevent thundering herd
+```
+
+## Testing in Rails Console
+
+Want to see Lapsoss in action? Try this in your Rails console:
+
+```ruby
+# Configure Lapsoss with the logger adapter for immediate visibility
+Lapsoss.configure do |config|
+  config.use_logger(name: :console_test)
+  config.async = false  # Synchronous for immediate output
+  config.debug = true   # Verbose logging
+end
+
+# Create a class that demonstrates error handling
+class Liberation
+  def self.liberate!
+    Rails.error.handle do
+      raise StandardError, "Freedom requires breaking chains!"
+    end
+    puts "✅ Continued execution after error"
+  end
+
+  def self.revolt!
+    Rails.error.record do
+      raise RuntimeError, "Revolution cannot be stopped!"
+    end
+    puts "This won't print - error was re-raised"
+  end
+end
+
+# Test error capture (error is swallowed)
+Liberation.liberate!
+# You'll see the error logged but execution continues
+
+# Test error recording (error is re-raised)
+begin
+  Liberation.revolt!
+rescue => e
+  puts "Caught re-raised error: #{e.message}"
+end
+
+# Manual error reporting with context
+begin
+  1 / 0
+rescue => e
+  Rails.error.report(e, context: { user_id: 42, action: "console_test" })
+end
+
+# Check what was captured
+puts "\n🎉 Lapsoss captured all errors through Rails.error!"
+```
+
+You'll see all errors logged to your console with full backtraces and context. This same integration works automatically for all Rails controllers, jobs, and mailers.
+
+## Using Lapsoss Outside Rails
+
+Lapsoss provides the same convenient error handling methods directly, perfect for background jobs, rake tasks, or standalone scripts:
+
+```ruby
+# In your Sidekiq job, rake task, or any Ruby code
+require 'lapsoss'
+
+Lapsoss.configure do |config|
+  config.use_sentry(dsn: ENV['SENTRY_DSN'])
+end
+
+# Handle errors (swallow them)
+result = Lapsoss.handle do
+  risky_operation
+end
+# Returns nil if error occurred, or the block's result
+
+# Handle with fallback
+user = Lapsoss.handle(fallback: User.anonymous) do
+  User.find(id)
+end
+
+# Record errors (re-raise them)
+Lapsoss.record do
+  critical_operation  # Error is captured then re-raised
+end
+
+# Report errors manually
+begin
+  something_dangerous
+rescue => e
+  Lapsoss.report(e, user_id: user.id, context: 'background_job')
+  # Continue processing...
+end
+
+# These methods mirror Rails.error exactly:
+# - Lapsoss.handle   → Rails.error.handle
+# - Lapsoss.record   → Rails.error.record
+# - Lapsoss.report   → Rails.error.report
+```
+
+This means your error handling code works the same way everywhere - in Rails controllers, background jobs, rake tasks, or standalone scripts.
+
+## Creating Custom Adapters
+
+```ruby
+class MyAdapter < Lapsoss::Adapters::Base
+  def capture(event)
+    # Send to your service
+    HttpClient.post("/errors", event.to_h)
+  end
+end
+
+Lapsoss::Registry.register(:my_service, MyAdapter)
+```
+
+### Extending Existing Adapters
+
+For Sentry-compatible services, just extend the SentryAdapter:
+
+```ruby
+class TelebugsAdapter < Lapsoss::Adapters::SentryAdapter
+  def initialize(name = :telebugs, settings = {})
+    super(name, settings)
+  end
+
+  private
+
+  def build_headers(public_key)
+    super(public_key).merge(
+      "X-Telebugs-Client" => "lapsoss/#{Lapsoss::VERSION}"
+    )
+  end
+end
+```
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch
+3. Add tests for your changes
+4. Submit a pull request
+
+## License
+
+MIT License - Because good code should be free
+
+---
+
+Built for Rails developers who refuse to be locked in.

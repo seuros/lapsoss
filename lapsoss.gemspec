@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = [ 'Abdelkader Boudih' ]
   spec.email = [ 'terminale@gmail.com' ]
 
-  spec.summary = 'Modern error reporting with pluggable adapters for Rails applications'
-  spec.description = "Lapsoss provides a clean, adapter-based approach to error reporting that doesn't monkey patch your application. Send errors to any error tracking service or custom backend through a unified API."
+  spec.summary = 'Pure Ruby error capture client for the Lapsoss filtering daemon'
+  spec.description = 'Capture and scrub application errors, then submit them to lapsossd for shared aggregation, filtering, budgets, and vendor-neutral delivery.'
   spec.homepage = 'https://github.com/seuros/lapsoss'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 4.0'
@@ -22,25 +22,20 @@ Gem::Specification.new do |spec|
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   # Specify which files should be added to the gem when it is released.
-  spec.files = Dir.glob('lib/**/*.rb') + Dir.glob('ext/**/*.{rs,rb,toml,md,json}') +
-               %w[ Cargo.toml Cargo.lock README.md LICENSE.txt ] + Dir.glob('docs/**/*.md')
-  spec.extensions = [ 'ext/lapsoss_native/ffi/extconf.rb' ]
-  spec.metadata['cargo_crate_name'] = 'lapsoss_native'
-  spec.metadata['cargo_manifest_path'] = 'ext/lapsoss_native/ffi/Cargo.toml'
+  spec.files = Dir.glob('lib/**/*.rb') +
+               %w[ README.md LICENSE.txt ] + Dir.glob('docs/**/*.md')
   spec.require_paths = [ 'lib' ]
 
   # Runtime dependencies
   spec.add_dependency 'activesupport', '>= 8.1', '< 9.0'
   spec.add_dependency 'concurrent-ruby', '>= 1.3.1'
-  spec.add_dependency 'faraday', '~> 2.0'
-  spec.add_dependency 'faraday-retry', '~> 2.0'
   spec.add_dependency 'zeitwerk', '~> 2.6'
-  spec.add_dependency 'rb_sys', '~> 0.9'
-
-  # Optional async dependencies
-  spec.add_dependency 'async-http-faraday', '~> 0.19', '>= 0.19.0'
 
   # Development dependencies
+  # HTTP dependencies support only legacy embedded adapters in this checkout.
+  spec.add_development_dependency 'faraday', '~> 2.0'
+  spec.add_development_dependency 'faraday-retry', '~> 2.0'
+  spec.add_development_dependency 'async-http-faraday', '~> 0.19', '>= 0.19.0'
   spec.add_development_dependency 'dotenv', '~> 3.0'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rubocop', '~> 1.0'
@@ -49,6 +44,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'vcr', '~> 6.0'
   spec.add_development_dependency 'webmock', '~> 3.18'
   spec.add_development_dependency 'rake-compiler', '~> 1.3'
+  spec.add_development_dependency 'rb_sys', '~> 0.9'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

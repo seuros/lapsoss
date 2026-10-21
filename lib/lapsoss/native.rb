@@ -5,6 +5,6 @@ raise LoadError, "lapsoss requires CRuby 4.0+" unless RUBY_ENGINE == "ruby" && G
 begin
   require "lapsoss/lapsoss_native"
 rescue LoadError => error
-  raise LoadError, "lapsoss requires its native extension. Install a platform gem or run `bundle exec rake compile` " \
-                   "with Rust installed. Original error: #{error.message}"
+  raise LoadError, "Embedded delivery is only available in a source checkout with `bundle exec rake compile`. " \
+                   "The lapsoss gem uses lapsossd; configure daemon_socket instead. Original error: #{error.message}"
 end

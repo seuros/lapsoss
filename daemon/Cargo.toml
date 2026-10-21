@@ -1,0 +1,22 @@
+[package]
+name = "lapsossd"
+version = "0.1.0"
+description = "Local error aggregation and delivery daemon for Lapsoss"
+publish = false
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+lapsoss = { path = "../ext/lapsoss_native/core", version = "=0.2.0" }
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+throttle-machines.workspace = true
+tokio = { workspace = true, features = ["net", "io-util", "signal"] }
+tracing.workspace = true
+tracing-subscriber = { workspace = true, features = ["fmt"] }
+
+[lints]
+workspace = true

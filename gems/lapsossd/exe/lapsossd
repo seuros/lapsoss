@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+binary = File.expand_path('../vendor/lapsossd', __dir__)
+abort 'lapsossd executable is missing; reinstall the matching platform gem' unless File.executable?(binary)
+exec binary, *ARGV

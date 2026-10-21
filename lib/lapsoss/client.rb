@@ -6,39 +6,15 @@ module Lapsoss
   class Client
     def initialize(configuration)
       @configuration = configuration
-      @delivery = Delivery.new(configuration)
+      @delivery = configuration.daemon_socket ? DaemonDelivery.new(configuration) : Delivery.new(configuration)
     end
 
     def capture_exception(exception, level: :error, **context)
-      return nil unless @configuration.enabled
-
-      extra_context = context.delete(:context)
-      with_scope(context) do |scope|
-        event = Event.build(
-          type: :exception,
-          level: level,
-          exception: exception,
-          context: merge_context(scope_to_context(scope), extra_context),
-          transaction: scope.transaction_name
-        )
-        capture_event(event)
-      end
+      capture_in_scope(:exception, level, context, exception: exception)
     end
 
     def capture_message(message, level: :info, **context)
-      return nil unless @configuration.enabled
-
-      extra_context = context.delete(:context)
-      with_scope(context) do |scope|
-        event = Event.build(
-          type: :message,
-          level: level,
-          message: message,
-          context: merge_context(scope_to_context(scope), extra_context),
-          transaction: scope.transaction_name
-        )
-        capture_event(event)
-      end
+      capture_in_scope(:message, level, context, message: message)
     end
 
     def add_breadcrumb(message, type: :default, **metadata)
@@ -82,6 +58,20 @@ module Lapsoss
     end
 
     private
+
+    def capture_in_scope(type, level, context, **attributes)
+      return nil unless @configuration.enabled
+
+      extra_context = context.delete(:context)
+      with_scope(context) do |scope|
+        event = Event.build(
+          type: type, level: level, **attributes,
+          context: merge_context(scope_to_context(scope), extra_context),
+          transaction: scope.transaction_name
+        )
+        capture_event(event)
+      end
+    end
 
     def capture_event(event)
       if Current.silenced

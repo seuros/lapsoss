@@ -2,6 +2,8 @@
 
 # Lapsoss configuration for the dummy application
 Lapsoss.configure do |config|
+  # This fixture exercises the legacy embedded adapter API from the checkout.
+  config.daemon_socket = nil
   # Enable async processing for better performance
   config.async = true
 

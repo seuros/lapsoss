@@ -1150,6 +1150,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "lapsossd"
+version = "0.1.0"
+dependencies = [
+ "lapsoss",
+ "serde",
+ "serde_json",
+ "sha2",
+ "throttle-machines",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2673,6 +2687,12 @@ checksum = "1ad99c4c6d32803332c548b1af0540b357b3f5fc0be8f6c6bfe8b2e6ae784070"
 dependencies = [
  "cfg-if",
 ]
+
+[[package]]
+name = "throttle-machines"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7c0a3fd615d10838ecd927b414dfe8b902ffcd7aab7881781dea7682f82005c5"
 
 [[package]]
 name = "time"
