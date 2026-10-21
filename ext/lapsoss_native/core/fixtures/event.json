@@ -1,0 +1,51 @@
+{
+  "id": "01234567-89ab-4cde-8fab-0123456789ab",
+  "type": "exception",
+  "level": "error",
+  "timestamp": "2026-10-21T12:00:00.123456Z",
+  "message": "payment failed",
+  "exception": {
+    "class": "RuntimeError",
+    "message": "payment failed",
+    "backtrace": ["/app/payment.rb:42:in `charge'"]
+  },
+  "frames": [{
+    "filename": "payment.rb",
+    "absolute_path": "/app/payment.rb",
+    "line_number": 42,
+    "method": "charge",
+    "function": null,
+    "in_app": true,
+    "code_context": {
+      "pre_context": ["begin"],
+      "context_line": "raise 'payment failed'",
+      "post_context": ["end"]
+    }
+  }],
+  "context": {
+    "tags": {"region": "eu"},
+    "user": {"id": 42, "username": "customer"},
+    "extra": {"amount": 7, "request": {"method": "POST"}},
+    "breadcrumbs": [{
+      "timestamp": "2026-10-21T11:59:59Z",
+      "type": "navigation",
+      "message": "checkout",
+      "metadata": {"cart": 5}
+    }],
+    "custom": {"region": "eu"},
+    "params": {"cart": 5}
+  },
+  "environment": "test",
+  "release": "release-123",
+  "fingerprint": "payments",
+  "transaction": "payments#create",
+  "runtime": {
+    "language": "ruby",
+    "sdk_version": "2.0.0",
+    "server_name": "fixture-host",
+    "contexts": {"os": {"name": "fixture-os"}, "runtime": {"version": "4.0"}},
+    "modules": {"rails": "8.1"},
+    "root": "/app",
+    "framework": "rails"
+  }
+}

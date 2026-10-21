@@ -68,38 +68,13 @@ class RailsTransactionTest < ActiveSupport::TestCase
   end
 
   test "transaction is included in Sentry envelope" do
-    # Setup mock HTTP client
-    mock_http = Class.new do
-      attr_reader :captured_payloads
-
-      def initialize
-        @captured_payloads = []
-      end
-
-      def post(path, body:, headers:)
-        lines = body.split("\n")
-        # Sentry envelope format:
-        # Line 0: Envelope header (JSON)
-        # Line 1: Item header (JSON)
-        # Line 2: Item payload (JSON event)
-        if lines.size >= 3
-          event_json = lines[2]
-          @captured_payloads << JSON.parse(event_json)
-        end
-
-        OpenStruct.new(code: 200, body: '{"id":"test-id"}')
-      end
-    end.new
+    http = NativeHTTP.new
 
     # Configure with Sentry adapter
     Lapsoss.configure do |config|
       config.async = false  # Disable async for testing
-      config.use_sentry(name: :sentry_test, dsn: "https://key@o123.ingest.sentry.io/456")
+      config.use_sentry(name: :sentry_test, dsn: http.url.sub("://", "://key@") + "/456")
     end
-
-    # Inject mock HTTP client
-    adapter = Lapsoss::Registry.instance[:sentry_test]
-    adapter.instance_variable_set(:@http_client, mock_http)
 
     # Set transaction in scope
     Lapsoss::Current.scope.set_transaction_name("UsersController#index", source: :view)
@@ -112,11 +87,14 @@ class RailsTransactionTest < ActiveSupport::TestCase
     end
 
     # Verify transaction was included in Sentry payload
-    assert_equal 1, mock_http.captured_payloads.length
-    payload = mock_http.captured_payloads.first
+    assert Lapsoss.flush
+    payload = JSON.parse(http.next_request[:body].lines[2])
 
     assert_equal "UsersController#index", payload["transaction"]
     assert_equal "ruby", payload["platform"]
     assert payload["exception"]
+  ensure
+    Lapsoss.client&.shutdown
+    http&.close
   end
 end

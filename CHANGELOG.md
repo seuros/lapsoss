@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0
+
+* Require CRuby 4.0+ and a Magnus/rb-sys native extension.
+* Embed the independently usable `lapsoss` Rust dispatcher, including all built-in vendors.
+* Bound delivery queues and concurrency; track retries, callbacks, flush and shutdown deadlines.
+* Return event IDs from admitted captures; preserve Ruby policies and custom adapters.
+* Add loopback protocol tests, standalone Rust examples and native release packaging.
+
 ## [1.0.0](https://github.com/seuros/lapsoss/compare/lapsoss/v0.4.12...lapsoss/v1.0.0) (2026-08-17)
 
 

@@ -1,0 +1,65 @@
+name: Native release artifacts
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing gem release tag (for example v2.0.0)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  native:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [x86_64-linux, aarch64-linux, x86_64-linux-musl, arm64-darwin, x86_64-darwin]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag }}
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "4.0"
+          bundler-cache: true
+      - uses: dtolnay/rust-toolchain@1.99.0
+      - run: bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions 4.0 --mount-toolchains --build
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gem-${{ matrix.platform }}
+          path: pkg/*-${{ matrix.platform }}*.gem
+          if-no-files-found: error
+
+  source:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag }}
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "4.0"
+      - run: gem build lapsoss.gemspec --output lapsoss.gem
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gem-source
+          path: lapsoss.gem
+          if-no-files-found: error
+
+  attach:
+    needs: [native, source]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: gem-*
+          merge-multiple: true
+          path: pkg
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: gh release upload "$RELEASE_TAG" pkg/*.gem --repo "$GITHUB_REPOSITORY" --clobber

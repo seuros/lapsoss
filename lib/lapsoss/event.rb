@@ -80,12 +80,12 @@ module Lapsoss
     def breadcrumbs = context[:breadcrumbs] || []
 
     # Apply data scrubbing
-    def scrubbed
+    def scrubbed(configuration: Lapsoss.configuration)
       scrubber = Scrubber.new(
-        scrub_fields: Lapsoss.configuration.scrub_fields,
-        scrub_all: Lapsoss.configuration.scrub_all,
-        whitelist_fields: Lapsoss.configuration.whitelist_fields,
-        randomize_scrub_length: Lapsoss.configuration.randomize_scrub_length
+        scrub_fields: configuration.scrub_fields,
+        scrub_all: configuration.scrub_all,
+        whitelist_fields: configuration.whitelist_fields,
+        randomize_scrub_length: configuration.randomize_scrub_length
       )
 
       with(context: scrubber.scrub(context))

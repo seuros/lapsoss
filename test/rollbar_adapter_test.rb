@@ -5,6 +5,10 @@ require_relative "test_helper"
 class RollbarAdapterTest < ActiveSupport::TestCase
   setup do
     @adapter = Lapsoss::Adapters::RollbarAdapter.new(:rollbar, access_token: "abc123def456")
+    # This suite exercises the explicit Ruby compatibility adapter. Native
+    # protocols are tested against loopback HTTP in NativeDeliveryTest.
+    WebMock.stub_request(:post, "https://api.rollbar.com/api/1/item/")
+      .to_return(status: 401, body: '{"message":"fixture unauthorized"}')
   end
 
   test "captures exception" do

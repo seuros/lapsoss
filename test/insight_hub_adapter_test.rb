@@ -5,6 +5,8 @@ require_relative "test_helper"
 class InsightHubAdapterTest < ActiveSupport::TestCase
   setup do
     @adapter = Lapsoss::Adapters::InsightHubAdapter.new(:insight_hub, api_key: "abc123def456")
+    WebMock.stub_request(:post, "https://notify.bugsnag.com/")
+      .to_return(status: 200, body: "{}")
   end
 
   test "captures exception" do

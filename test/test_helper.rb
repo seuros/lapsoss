@@ -6,16 +6,24 @@ require "lapsoss"
 require "active_support"
 require "active_support/test_case"
 require "active_support/testing/autorun"
-require "dotenv/load"
+# Test credentials are fixtures, never values from a developer's .env.
+%w[APPSIGNAL_FRONTEND_API_KEY APPSIGNAL_PUSH_API_KEY INSIGHT_HUB_API_KEY BUGSNAG_API_KEY ROLLBAR_ACCESS_TOKEN].each do |key|
+  ENV[key] = "fixture-key"
+end
 require "vcr"
 require "webmock"
+require_relative "support/native_http"
+%w[SENTRY_US_DSN SENTRY_EU_DSN TELEBUGS_DSN].each do |key|
+  ENV[key] = NATIVE_HTTP_FIXTURE.dsn
+end
+WebMock.disable_net_connect!(allow_localhost: true)
 
 # Configure VCR
 VCR.configure do |config|
   config.cassette_library_dir = "test/cassettes"
   config.hook_into :webmock
   config.default_cassette_options = {
-    record: ENV["VCR_RECORD_MODE"]&.to_sym || :new_episodes,
+    record: ENV["VCR_RECORD_MODE"]&.to_sym || :none,
     match_requests_on: %i[method uri body]
   }
 
@@ -148,12 +156,19 @@ end
 
 class ActiveSupport::TestCase
   setup do
+    Lapsoss.client&.shutdown(timeout: 0.1)
+    Lapsoss.instance_variable_set(:@client, nil)
     # Clear registry before each test
     Lapsoss::Registry.instance.clear!
     # Reset configuration
     Lapsoss.instance_variable_set(:@configuration, nil)
     # Clear thread-local state
     Lapsoss::Current.reset
+  end
+
+  teardown do
+    Lapsoss.client&.shutdown(timeout: 0.1)
+    Lapsoss.instance_variable_set(:@client, nil)
   end
 
   def with_env(key, value)

@@ -12,6 +12,7 @@ class AppsignalAdapterTest < ActiveSupport::TestCase
     VCR.use_cassette("appsignal_capture_exception") do
       Lapsoss.configure do |config|
         config.use_appsignal(
+          endpoint: NATIVE_HTTP_FIXTURE.url,
           name: :appsignal_test,
           push_api_key: ENV.fetch("APPSIGNAL_PUSH_API_KEY", nil),
           frontend_api_key: ENV.fetch("APPSIGNAL_FRONTEND_API_KEY", nil),
@@ -39,6 +40,7 @@ class AppsignalAdapterTest < ActiveSupport::TestCase
     VCR.use_cassette("appsignal_capture_message") do
       Lapsoss.configure do |config|
         config.use_appsignal(
+          endpoint: NATIVE_HTTP_FIXTURE.url,
           name: :appsignal_msg,
           push_api_key: ENV.fetch("APPSIGNAL_PUSH_API_KEY", nil),
           frontend_api_key: ENV.fetch("APPSIGNAL_FRONTEND_API_KEY", nil),
@@ -61,6 +63,7 @@ class AppsignalAdapterTest < ActiveSupport::TestCase
     VCR.use_cassette("appsignal_with_breadcrumbs") do
       Lapsoss.configure do |config|
         config.use_appsignal(
+          endpoint: NATIVE_HTTP_FIXTURE.url,
           name: :appsignal_bread,
           push_api_key: ENV.fetch("APPSIGNAL_PUSH_API_KEY", nil),
           frontend_api_key: ENV.fetch("APPSIGNAL_FRONTEND_API_KEY", nil),

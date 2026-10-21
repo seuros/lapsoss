@@ -6,8 +6,7 @@ module Lapsoss
   class Client
     def initialize(configuration)
       @configuration = configuration
-      # Note: We're using Thread.new directly for async mode instead of a thread pool
-      # The Concurrent::FixedThreadPool had issues in Rails development mode
+      @delivery = Delivery.new(configuration)
     end
 
     def capture_exception(exception, level: :error, **context)
@@ -46,6 +45,14 @@ module Lapsoss
       current_scope.add_breadcrumb(message, type: type, **metadata)
     end
 
+    # Also used by Router's compatibility entry point; there is only one
+    # processing/admission path, regardless of how an event was captured.
+    def capture(event)
+      return nil unless @configuration.enabled
+
+      capture_event(event)
+    end
+
     def with_scope(context = {})
       original_scope = current_scope
 
@@ -63,18 +70,15 @@ module Lapsoss
     end
 
     def flush(timeout: 2)
-      @configuration.logger.debug("[LAPSOSS] Flush called with timeout: #{timeout}")
-      # Give threads a moment to complete
-      sleep(0.5) if @configuration.async
-
-      # Flush individual adapters if they support it
-      Registry.instance.active.each do |adapter|
-        adapter.flush(timeout: timeout) if adapter.respond_to?(:flush)
-      end
+      @delivery.flush(timeout: timeout)
     end
 
-    def shutdown
-      Registry.instance.shutdown
+    def shutdown(timeout: 2)
+      @delivery.shutdown(timeout: timeout)
+    end
+
+    def statistics
+      @delivery.statistics
     end
 
     private
@@ -101,27 +105,12 @@ module Lapsoss
       event = run_before_send(event)
       return nil unless event
 
-      if @configuration.async
-        @configuration.logger.debug("[LAPSOSS ASYNC] About to process event asynchronously")
+      return nil unless sampled?(event)
 
-        # Use Thread.new for now - the executor pool seems to have issues in Rails dev mode
-        thread = Thread.new do
-          begin
-            @configuration.logger.debug("[LAPSOSS ASYNC] Background thread started")
-            Router.process_event(event)
-            @configuration.logger.debug("[LAPSOSS ASYNC] Background thread completed")
-          rescue => e
-            @configuration.logger.error("[LAPSOSS ASYNC ERROR] Failed in background: #{e.message}")
-            @configuration.logger.error(e.backtrace.join("\n")) if @configuration.debug
-          end
-        end
-
-        thread
-      else
-        @configuration.logger.debug("[LAPSOSS SYNC] Processing event synchronously")
-        Router.process_event(event)
-        nil
-      end
+      event = EventSnapshot.copy(event)
+      @delivery.submit(event.scrubbed(configuration: @configuration))
+    rescue Delivery::ForkError
+      raise
     rescue StandardError => e
       handle_capture_error(e)
     end
@@ -130,6 +119,11 @@ module Lapsoss
       return event unless @configuration.before_send
 
       @configuration.before_send.call(event)
+    end
+
+    def sampled?(event)
+      strategy = @configuration.create_sampling_strategy
+      strategy.respond_to?(:sample?) ? strategy.sample?(event) : strategy.call(event)
     end
 
     def scope_to_context(scope)

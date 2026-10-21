@@ -5,12 +5,14 @@ require "vcr"
 
 class IntegrationTest < Minitest::Test
   def setup
+    Lapsoss.client&.shutdown(timeout: 1)
     Lapsoss::Registry.instance.clear!
     Lapsoss.instance_variable_set(:@configuration, nil)
     Lapsoss.instance_variable_set(:@client, nil)
   end
 
   def teardown
+    Lapsoss.client&.shutdown(timeout: 1)
     Lapsoss::Registry.instance.clear!
     Lapsoss.instance_variable_set(:@configuration, nil)
     Lapsoss.instance_variable_set(:@client, nil)
@@ -34,9 +36,9 @@ class IntegrationTest < Minitest::Test
     # Test exception capture
     exception = StandardError.new("Integration test error")
 
-    # Capture should return nil in sync mode (no thread)
+    # Admission returns an event ID in both modes.
     result = Lapsoss.capture_exception(exception, tags: { test: "integration" })
-    assert_nil result
+    assert_match(/\A[0-9a-f-]{36}\z/, result)
   end
 
   def test_multi_provider_async_dispatch
@@ -49,7 +51,7 @@ class IntegrationTest < Minitest::Test
       config.use_logger(name: :async_logger, level: :info)
       config.use_telebugs(
         name: :async_telebugs,
-        dsn: "https://async@example.com/2"
+        dsn: NATIVE_HTTP_FIXTURE.dsn(2, key: "async")
       )
     end
 
@@ -63,11 +65,8 @@ class IntegrationTest < Minitest::Test
     VCR.use_cassette("integration_multi_provider_async") do
       result = Lapsoss.capture_exception(exception, tags: { mode: "async" })
 
-      # Async mode should return a Thread
-      assert_instance_of Thread, result
-
-      # Wait for thread completion
-      result.join if result.respond_to?(:join)
+      assert_match(/\A[0-9a-f-]{36}\z/, result)
+      assert Lapsoss.flush
     end
   end
 
@@ -86,7 +85,7 @@ class IntegrationTest < Minitest::Test
       exception = StandardError.new("Transaction test error")
 
       result = Lapsoss.capture_exception(exception, tags: { context: "transaction" })
-      assert_nil result # sync mode returns nil
+      assert_match(/\A[0-9a-f-]{36}\z/, result)
     end
   end
 
@@ -110,7 +109,7 @@ class IntegrationTest < Minitest::Test
     ) do
       exception = StandardError.new("Context test error")
       result = Lapsoss.capture_exception(exception)
-      assert_nil result
+      assert_match(/\A[0-9a-f-]{36}\z/, result)
     end
   end
 
@@ -123,7 +122,7 @@ class IntegrationTest < Minitest::Test
       config.use_logger(name: :message_logger, level: :info)
       config.use_telebugs(
         name: :message_telebugs,
-        dsn: "https://message@example.com/3"
+        dsn: NATIVE_HTTP_FIXTURE.dsn(3, key: "message")
       )
     end
 
@@ -134,7 +133,7 @@ class IntegrationTest < Minitest::Test
         tags: { type: "message_test" }
       )
 
-      assert_nil result # sync mode
+      assert_match(/\A[0-9a-f-]{36}\z/, result)
     end
   end
 
@@ -163,12 +162,10 @@ class IntegrationTest < Minitest::Test
     # Should not raise error despite failing adapter
     result = Lapsoss.capture_exception(exception)
 
-    assert_nil result
+    assert_match(/\A[0-9a-f-]{36}\z/, result)
   end
 
-  def test_real_telebugs_dispatch
-    skip("Skipping real network test - set TELEBUGS_DSN to enable") unless ENV["TELEBUGS_DSN"]
-
+  def test_telebugs_fixture_dispatch
     Lapsoss.configure do |config|
       config.async = false
       config.debug = true
@@ -184,7 +181,7 @@ class IntegrationTest < Minitest::Test
     VCR.use_cassette("integration_real_telebugs", record: :once) do
       exception = StandardError.new("Real Telebugs integration test at #{Time.now}")
       result = Lapsoss.capture_exception(exception, tags: { test: "real_network" })
-      assert_nil result
+      assert_match(/\A[0-9a-f-]{36}\z/, result)
     end
   end
 
@@ -204,7 +201,7 @@ class IntegrationTest < Minitest::Test
       config.use_logger(name: :pipeline_logger, level: :info)
       config.use_telebugs(
         name: :pipeline_telebugs,
-        dsn: "https://pipeline@example.com/4"
+        dsn: NATIVE_HTTP_FIXTURE.dsn(4, key: "pipeline")
       )
     end
 
@@ -212,7 +209,7 @@ class IntegrationTest < Minitest::Test
       exception = StandardError.new("Pipeline test error")
       result = Lapsoss.capture_exception(exception)
 
-      assert_nil result
+      assert_match(/\A[0-9a-f-]{36}\z/, result)
       assert_equal 1, processed_events.size
       assert_equal :exception, processed_events.first.type
     end
@@ -237,7 +234,7 @@ class IntegrationTest < Minitest::Test
     # Event that should be sent
     exception1 = StandardError.new("Normal error")
     result1 = Lapsoss.capture_exception(exception1, tags: { normal: true })
-    assert_nil result1
+    assert_match(/\A[0-9a-f-]{36}\z/, result1)
     assert_equal 1, filtered_events.size
 
     # Event that should be filtered out

@@ -10,33 +10,7 @@ class SentryCodeContextTest < ActionDispatch::IntegrationTest
   end
 
   test "captures code context from dummy app controller" do
-    captured_payloads = []
-
-    # Mock the HTTP client to capture the actual payload
-    mock_http_client = Class.new do
-      attr_reader :captured_payloads
-
-      def initialize(captured_payloads)
-        @captured_payloads = captured_payloads
-      end
-
-      def post(path, body:, headers:)
-        # Parse the envelope format
-        lines = body.split("\n")
-
-        # Sentry envelope format:
-        # Line 0: Envelope header (JSON)
-        # Line 1: Item header (JSON)
-        # Line 2: Item payload (JSON event)
-        if lines.size >= 3
-          event_json = lines[2]
-          @captured_payloads << JSON.parse(event_json)
-        end
-
-        # Return a successful response
-        OpenStruct.new(status: 200, code: 200, body: '{"id":"test"}')
-      end
-    end
+    http = NativeHTTP.new
 
     # Configure Lapsoss with a test Sentry DSN
     Lapsoss.configure do |config|
@@ -47,7 +21,7 @@ class SentryCodeContextTest < ActionDispatch::IntegrationTest
       config.backtrace_context_lines = 3
       config.use_sentry(
         name: :sentry_test,
-        dsn: "https://test@sentry.io/123456"
+        dsn: http.url.sub("://", "://test@") + "/123456"
       )
       config.apply! # Apply the configuration
     end
@@ -56,22 +30,15 @@ class SentryCodeContextTest < ActionDispatch::IntegrationTest
     adapter = Lapsoss::Registry.instance[:sentry_test]
     assert adapter, "Adapter should be registered"
 
-    mock_client = mock_http_client.new(captured_payloads)
-    adapter.instance_variable_set(:@http_client, mock_client)
-
     # Trigger an error from the dummy app controller
     # The middleware should capture it
     assert_raises(StandardError) do
       get "/error"
     end
 
-    # Wait briefly for processing
-    sleep(0.2)
-
-    # Verify the payload was captured
-    assert_equal 1, captured_payloads.size, "Expected one event to be captured"
-
-    event = captured_payloads.first
+    assert Lapsoss.flush
+    request = http.next_request
+    event = JSON.parse(request[:body].lines[2])
     assert event, "Event should not be nil"
 
     # Check the exception details
@@ -130,7 +97,9 @@ class SentryCodeContextTest < ActionDispatch::IntegrationTest
     assert post_context_joined.include?("end"),
            "post_context should include the end statement"
 
-    # Success - code context was captured!
+  ensure
+    Lapsoss.client&.shutdown
+    http&.close
   end
 
   test "captures code context with proper formatting" do
