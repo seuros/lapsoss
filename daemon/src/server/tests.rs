@@ -4,26 +4,7 @@
 )]
 
 use super::*;
-use crate::service::DaemonConfig;
-
-struct Directory(PathBuf);
-
-impl Directory {
-    fn new() -> Self {
-        // macOS's default temporary directory can exceed sockaddr_un.sun_path.
-        let path =
-            Path::new("/tmp").join(format!("lapsossd-{}", lapsoss::Event::message("", "").id));
-        std::fs::create_dir_all(&path).unwrap();
-        std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o700)).unwrap();
-        Self(path)
-    }
-}
-
-impl Drop for Directory {
-    fn drop(&mut self) {
-        std::fs::remove_dir_all(&self.0).unwrap();
-    }
-}
+use crate::{service::DaemonConfig, test_support::Directory};
 
 async fn request(path: &Path, value: Value) -> Value {
     let mut stream = UnixStream::connect(path).await.unwrap();
@@ -40,6 +21,7 @@ async fn wire_protocol_aggregates_across_connections_and_isolates_destinations()
     let socket = directory.0.join("daemon.sock");
     let config: DaemonConfig = serde_json::from_value(json!({
         "socket": socket,
+        "storage": { "path": directory.0.join("state.redb") },
         "destinations": [
             { "adapter": { "name": "one", "type": "logger" } },
             { "adapter": { "name": "two", "type": "logger" }, "policy": { "budget_events": 1 } }
@@ -63,12 +45,20 @@ async fn wire_protocol_aggregates_across_connections_and_isolates_destinations()
     });
     let event = Event::message("outage", "error");
     let command = json!({ "command": "submit", "version": 1, "event": event });
+    let acknowledged = request(&socket, command.clone()).await;
     assert_eq!(
-        request(&socket, command.clone()).await["destinations"][0]["outcome"]["decision"],
+        acknowledged["destinations"][0]["outcome"]["decision"],
         "forward"
     );
+    assert_eq!(request(&socket, command).await, acknowledged);
     assert_eq!(
-        request(&socket, command).await["destinations"][0]["outcome"]["decision"],
+        request(
+            &socket,
+            json!({
+                "command": "submit", "version": 1, "event": Event::message("outage", "error")
+            })
+        )
+        .await["destinations"][0]["outcome"]["decision"],
         "aggregate"
     );
     let result = request(

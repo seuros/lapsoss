@@ -10,6 +10,10 @@ Run in the foreground under systemd, Docker, or your process supervisor:
 lapsossd --config /etc/lapsossd.json
 ```
 
+Configuration requires `storage.path` on persistent storage with a private
+`0700` parent directory. Admission ACKs follow durable commits; unfinished
+deliveries replay after restart without resetting counts or budgets.
+
 Build on each target host with `bundle exec rake daemon:build` from the repository
 root. Never relabel an executable built for a different OS or architecture.
 Publishing is manual: `gem push pkg/lapsossd-0.1.0-<platform>.gem`.

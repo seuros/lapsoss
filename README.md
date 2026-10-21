@@ -19,8 +19,8 @@ Rails / Puma / Sidekiq
 - **`lapsoss`**: pure-Ruby capture, Rails integration, context, and scrubbing.
   No native extension, Rust compiler, or vendor credentials in the client.
 - **`lapsossd`**: a platform gem containing a standalone Rust executable.
-  Shared aggregation across local workers, per-destination event budgets, bounded
-  delivery queues, and retries. Run it under your service supervisor.
+  Shared aggregation across local workers, durable counts and event budgets,
+  bounded delivery queues, and retries. Run it under your service supervisor.
 
 The client requires Ruby 4.0+; Rails integration targets Rails 8.1+.
 The daemon currently supports Unix systems. Platform binaries must be built
@@ -64,12 +64,14 @@ survive those client-side policies.
 
 ## Daemon setup
 
-Create a socket directory owned by the same service account as the application,
-with mode `0700`. The socket itself is restricted to `0600`.
+Create socket and durable state directories owned by the application's service
+account, with mode `0700`. Socket and database files are restricted to `0600`.
+Keep state on persistent storage, not `/run` or another temporary filesystem.
 
 ```json
 {
   "socket": "/run/lapsoss/lapsossd.sock",
+  "storage": { "path": "/var/lib/lapsoss/state.redb" },
   "destinations": [
     {
       "adapter": {
@@ -99,10 +101,12 @@ The first admitted occurrence is queued immediately. Duplicates are counted
 without being forwarded until another representative is eligible. Every
 destination has its own policy and budget.
 
-**Initial implementation:** state is memory-only, summaries accompany the next
-eligible event rather than running on a timer, and budgets limit logical event
-admissions—not billing or HTTP retry attempts. See [daemon operations](docs/daemon.md)
-before deploying.
+Admission is acknowledged only after a durable transaction stores the decision,
+counts, budget, and queued payloads. Unfinished jobs replay after restart without
+spending another budget token. Summaries still accompany the next eligible
+event rather than running on a timer. Budgets limit logical admissions—not
+billing or HTTP attempts; ambiguous vendor acknowledgements can cause duplicates.
+See [daemon operations](docs/daemon.md) before deploying.
 
 ## Build and test from a checkout
 

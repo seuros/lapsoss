@@ -16,7 +16,7 @@ async fn main() -> ExitCode {
     }
 }
 
-async fn run() -> Result<(), Box<dyn std::error::Error>> {
+async fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let args: Vec<_> = std::env::args().skip(1).collect();
     match args.as_slice() {
         [flag] if flag == "--version" => {
@@ -39,8 +39,8 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
         .with_max_level(tracing::Level::INFO)
         .try_init()
         .map_err(|_| "cannot initialize daemon logging")?;
-    let service = Service::new(&config)?;
     let server = Server::bind(Path::new(&config.socket))?;
+    let service = Service::new(&config)?;
     // Register both handlers before announcing readiness.
     let mut terminate = tokio::signal::unix::signal(tokio::signal::unix::SignalKind::terminate())?;
     let mut interrupt = tokio::signal::unix::signal(tokio::signal::unix::SignalKind::interrupt())?;

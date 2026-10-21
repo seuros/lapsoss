@@ -3,7 +3,7 @@ use std::{
     os::unix::fs::PermissionsExt,
     path::{Path, PathBuf},
     sync::Arc,
-    time::{Duration, Instant},
+    time::Duration,
 };
 
 use lapsoss::Event;
@@ -12,14 +12,11 @@ use serde_json::{Value, json};
 use tokio::{
     io::{AsyncReadExt, AsyncWriteExt},
     net::{UnixListener, UnixStream},
-    sync::{Mutex, Semaphore},
+    sync::Semaphore,
     task::JoinSet,
 };
 
-use crate::{
-    policy::valid_event,
-    service::{Service, flush},
-};
+use crate::{policy::valid_event, service::Service};
 
 pub const MAX_FRAME_BYTES: usize = 1024 * 1024;
 const IO_TIMEOUT: Duration = Duration::from_secs(2);
@@ -71,9 +68,7 @@ impl Server {
         service: Service,
         shutdown: impl std::future::Future<Output = ()>,
     ) -> io::Result<()> {
-        let service = Arc::new(Mutex::new(service));
         let permits = Arc::new(Semaphore::new(32));
-        let origin = Instant::now();
         let mut clients = JoinSet::new();
         tokio::pin!(shutdown);
         loop {
@@ -90,11 +85,11 @@ impl Server {
                         drop(stream);
                         continue;
                     };
-                    let service = Arc::clone(&service);
+                    let service = service.clone();
                     clients.spawn(async move {
                         let _permit = permit;
                         // A fixed deadline bounds slow readers, writers, and flushes.
-                        if tokio::time::timeout(IO_TIMEOUT, handle(stream, service, origin)).await.is_err() {
+                        if tokio::time::timeout(IO_TIMEOUT, handle(stream, service)).await.is_err() {
                             eprintln!("lapsossd: client deadline exceeded");
                         }
                     });
@@ -103,15 +98,8 @@ impl Server {
         }
         clients.abort_all();
         while clients.join_next().await.is_some() {}
-        let dispatchers = service.lock().await.dispatchers();
-        let deadline = tokio::time::Instant::now() + Duration::from_secs(5);
-        for dispatcher in dispatchers {
-            if !dispatcher
-                .shutdown(deadline.saturating_duration_since(tokio::time::Instant::now()))
-                .await
-            {
-                eprintln!("lapsossd: delivery did not drain before shutdown");
-            }
+        if !service.shutdown(Duration::from_secs(5)).await {
+            eprintln!("lapsossd: shutdown timed out; unfinished jobs remain durable");
         }
         Ok(())
     }
@@ -125,11 +113,7 @@ impl Drop for Server {
     }
 }
 
-async fn handle(
-    mut stream: UnixStream,
-    service: Arc<Mutex<Service>>,
-    origin: Instant,
-) -> io::Result<()> {
+async fn handle(mut stream: UnixStream, service: Service) -> io::Result<()> {
     let length = usize::try_from(stream.read_u32().await?).map_err(io::Error::other)?;
     if length == 0 || length > MAX_FRAME_BYTES {
         return write_response(
@@ -141,17 +125,15 @@ async fn handle(
     let mut bytes = vec![0; length];
     stream.read_exact(&mut bytes).await?;
     let response = match serde_json::from_slice::<Request>(&bytes) {
-        Ok(Request::Submit { version: 1, event }) if valid_event(&event) => service
-            .lock()
-            .await
-            .submit(&event, origin.elapsed().as_secs_f64()),
-        Ok(Request::Statistics { version: 1 }) => service.lock().await.statistics(),
+        Ok(Request::Submit { version: 1, event }) if valid_event(&event) => {
+            service.submit(*event).await
+        }
+        Ok(Request::Statistics { version: 1 }) => service.statistics().await,
         Ok(Request::Flush {
             version: 1,
             timeout_ms,
         }) if timeout_ms <= 1500 => {
-            let dispatchers = service.lock().await.dispatchers();
-            json!({ "ok": flush(dispatchers, Duration::from_millis(u64::from(timeout_ms))).await })
+            json!({ "ok": service.flush(Duration::from_millis(u64::from(timeout_ms))).await })
         }
         _ => json!({ "ok": false, "error": "invalid_request" }),
     };

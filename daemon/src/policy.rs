@@ -1,5 +1,4 @@
-use std::collections::HashMap;
-
+use base64::{Engine as _, engine::general_purpose::URL_SAFE_NO_PAD};
 use lapsoss::Event;
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
@@ -68,7 +67,7 @@ pub struct Outcome {
     pub occurrences: u64,
 }
 
-#[derive(Clone, Debug, Default, Serialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct Statistics {
     pub received: u64,
     pub forwarded: u64,
@@ -82,59 +81,48 @@ pub struct Statistics {
     pub tracked_fingerprints: usize,
 }
 
-struct Group {
-    occurrences: u64,
-    pending: u64,
-    last_seen: f64,
-    last_forward: Option<f64>,
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+pub(crate) struct Group {
+    pub occurrences: u64,
+    pub pending: u64,
+    pub last_forward: Option<f64>,
 }
 
+#[derive(Default, Serialize, Deserialize)]
+pub(crate) struct State {
+    pub statistics: Statistics,
+    budget_count: u64,
+    budget_start: f64,
+}
+
+/// Policy decisions over caller-owned state. The store commits state and
+/// representative payloads together; this layer performs no I/O.
 pub struct Policy {
     config: PolicyConfig,
-    groups: HashMap<[u8; 32], Group>,
-    budget: FixedWindowState,
-    next_sweep: f64,
-    statistics: Statistics,
 }
 
 impl Policy {
-    /// Time must be elapsed monotonic seconds supplied by the host.
-    ///
     /// # Errors
     /// Rejects invalid policy limits.
     pub fn new(config: PolicyConfig) -> Result<Self, &'static str> {
         config.validate()?;
-        Ok(Self {
-            config,
-            groups: HashMap::new(),
-            budget: FixedWindowState {
-                count: 0,
-                window_start: 0.0,
-            },
-            next_sweep: 0.0,
-            statistics: Statistics::default(),
-        })
-    }
-
-    #[must_use]
-    pub fn statistics(&self) -> Statistics {
-        Statistics {
-            tracked_fingerprints: self.groups.len(),
-            ..self.statistics.clone()
-        }
+        Ok(Self { config })
     }
 
     /// Commit budget and representative state only after queue admission.
     /// Suppression is terminal policy success, never a delivery failure.
-    pub fn submit(
-        &mut self,
+    pub(crate) fn submit(
+        &self,
         mut event: Event,
         now: f64,
+        state: &mut State,
+        group: &mut Option<Group>,
         forward: impl FnOnce(Event) -> bool,
     ) -> Outcome {
-        self.statistics.received = self.statistics.received.saturating_add(1);
+        let statistics = &mut state.statistics;
+        statistics.received = statistics.received.saturating_add(1);
         if !valid_event(&event) || !now.is_finite() || now < 0.0 {
-            self.statistics.invalid_rejected = self.statistics.invalid_rejected.saturating_add(1);
+            statistics.invalid_rejected = statistics.invalid_rejected.saturating_add(1);
             return outcome(Decision::Reject, "invalid_event", 0);
         }
         if self.config.excluded_exception_classes.iter().any(|class| {
@@ -143,47 +131,33 @@ impl Policy {
                 .as_ref()
                 .is_some_and(|exception| exception.class == *class)
         }) {
-            self.statistics.excluded = self.statistics.excluded.saturating_add(1);
+            statistics.excluded = statistics.excluded.saturating_add(1);
             return outcome(Decision::Suppress, "excluded_exception", 1);
         }
 
-        // Sweep at most once per minute, including under identity-spray load.
-        if now >= self.next_sweep {
-            let before = self.groups.len();
-            let retention = f64::from(self.config.retention_seconds);
-            self.groups
-                .retain(|_, group| now - group.last_seen < retention);
-            self.statistics.expired_groups = self
-                .statistics
-                .expired_groups
-                .saturating_add(u64::try_from(before - self.groups.len()).unwrap_or(u64::MAX));
-            self.next_sweep = now + 60.0;
-        }
-
-        let key = fingerprint(&event);
-        if !self.groups.contains_key(&key) && self.groups.len() >= self.config.max_fingerprints {
-            self.statistics.capacity_rejected = self.statistics.capacity_rejected.saturating_add(1);
+        if group.is_none() && statistics.tracked_fingerprints >= self.config.max_fingerprints {
+            statistics.capacity_rejected = statistics.capacity_rejected.saturating_add(1);
             return outcome(Decision::Reject, "fingerprint_capacity", 0);
         }
-        let group = self.groups.entry(key).or_insert(Group {
-            occurrences: 0,
-            pending: 0,
-            last_seen: now,
-            last_forward: None,
-        });
+        if group.is_none() {
+            statistics.tracked_fingerprints += 1;
+        }
+        let group = group.get_or_insert_with(Group::default);
         group.occurrences = group.occurrences.saturating_add(1);
         group.pending = group.pending.saturating_add(1);
-        group.last_seen = now;
         if group
             .last_forward
             .is_some_and(|last| now - last < f64::from(self.config.representative_interval_seconds))
         {
-            self.statistics.aggregated = self.statistics.aggregated.saturating_add(1);
+            statistics.aggregated = statistics.aggregated.saturating_add(1);
             return outcome(Decision::Aggregate, "duplicate", group.occurrences);
         }
 
         let budget = FixedWindow::check(
-            self.budget,
+            FixedWindowState {
+                count: state.budget_count,
+                window_start: state.budget_start,
+            },
             now,
             FixedWindowParams {
                 limit: u64::from(self.config.budget_events),
@@ -191,7 +165,7 @@ impl Policy {
             },
         );
         if !budget.allowed {
-            self.statistics.budget_limited = self.statistics.budget_limited.saturating_add(1);
+            statistics.budget_limited = statistics.budget_limited.saturating_add(1);
             return outcome(Decision::Aggregate, "destination_budget", group.occurrences);
         }
 
@@ -205,13 +179,14 @@ impl Policy {
             "suppressed_since_previous_forward": group.pending.saturating_sub(1),
         });
         if !forward(event) {
-            self.statistics.queue_rejected = self.statistics.queue_rejected.saturating_add(1);
+            statistics.queue_rejected = statistics.queue_rejected.saturating_add(1);
             return outcome(Decision::Reject, "delivery_queue_full", group.occurrences);
         }
-        self.budget = budget.state;
+        state.budget_count = budget.state.count;
+        state.budget_start = budget.state.window_start;
         group.last_forward = Some(now);
         group.pending = 0;
-        self.statistics.forwarded = self.statistics.forwarded.saturating_add(1);
+        statistics.forwarded = statistics.forwarded.saturating_add(1);
         outcome(Decision::Forward, "representative", group.occurrences)
     }
 }
@@ -234,7 +209,7 @@ const fn outcome(decision: Decision, reason: &'static str, occurrences: u64) -> 
     }
 }
 
-fn fingerprint(event: &Event) -> [u8; 32] {
+pub(crate) fn fingerprint(event: &Event) -> String {
     // Hash bounded input rather than retaining arbitrary caller-controlled keys.
     // Environment and release isolate deployments even with explicit grouping.
     let grouping = if !event.fingerprint.is_null() && event.fingerprint != json!([]) {
@@ -264,7 +239,11 @@ fn fingerprint(event: &Event) -> [u8; 32] {
         ])
     };
     let identity = json!([event.environment, event.release, grouping]);
-    Sha256::digest(identity.to_string().as_bytes()).into()
+    digest(identity.to_string().as_bytes())
+}
+
+pub(crate) fn digest(bytes: &[u8]) -> String {
+    URL_SAFE_NO_PAD.encode(Sha256::digest(bytes))
 }
 
 #[cfg(test)]

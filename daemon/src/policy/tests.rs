@@ -1,6 +1,48 @@
 #![allow(clippy::unwrap_used, reason = "test setup should fail immediately")]
 
 use super::*;
+use std::collections::HashMap;
+
+// A tiny in-memory host for testing policy independently of disk I/O.
+struct Policy {
+    engine: super::Policy,
+    state: State,
+    groups: HashMap<String, (f64, Group)>,
+    retention: f64,
+}
+
+impl Policy {
+    fn new(config: PolicyConfig) -> Result<Self, &'static str> {
+        let retention = f64::from(config.retention_seconds);
+        Ok(Self {
+            engine: super::Policy::new(config)?,
+            state: State::default(),
+            groups: HashMap::new(),
+            retention,
+        })
+    }
+
+    fn submit(&mut self, event: Event, now: f64, forward: impl FnOnce(Event) -> bool) -> Outcome {
+        let before = self.groups.len();
+        self.groups
+            .retain(|_, (seen, _)| now - *seen < self.retention);
+        self.state.statistics.expired_groups += u64::try_from(before - self.groups.len()).unwrap();
+        self.state.statistics.tracked_fingerprints = self.groups.len();
+        let key = fingerprint(&event);
+        let mut group = self.groups.remove(&key).map(|(_, group)| group);
+        let outcome = self
+            .engine
+            .submit(event, now, &mut self.state, &mut group, forward);
+        if let Some(group) = group {
+            self.groups.insert(key, (now, group));
+        }
+        outcome
+    }
+
+    fn statistics(&self) -> Statistics {
+        self.state.statistics.clone()
+    }
+}
 
 fn policy() -> Policy {
     Policy::new(PolicyConfig::default()).unwrap()

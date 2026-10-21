@@ -9,8 +9,9 @@ projects. Multiple daemons do not coordinate budgets.
 
 The implementation reuses `throttle-machines` for destination event budgets and
 the `lapsoss` Rust delivery core, which uses `chrono-machines` for retry backoff.
-Disk persistence, autonomous summary timers, distributed quotas, and
-behavior-tree policy configuration are not implemented yet.
+Policy state and queued representatives persist in a transactional redb database.
+Autonomous summary timers, distributed quotas, and behavior-tree policy
+configuration are not implemented yet.
 
 ## Configuration
 
@@ -37,8 +38,9 @@ Policy defaults:
 | `excluded_exception_classes` | `[]` | Exact exception class names to suppress |
 
 The optional `queue` object accepts `max_events` (1000), `max_bytes` (10485760),
-and `concurrency_per_adapter` (4), **per destination**. Completion
-acknowledgement must remain automatic. A daemon accepts 1–16 named destinations.
+and `concurrency_per_adapter` (4), **per destination**. Do not set
+`acknowledge_completions`; the durable worker manages it internally. A daemon
+accepts 1–16 unique destination names (1–64 ASCII letters, digits, `_`, or `-`).
 
 The optional `transport` object accepts the shared core's timeout, retry, jitter,
 backoff, and TLS settings. TLS verification is on by default. Explicitly set
@@ -57,9 +59,69 @@ These are **logical event budgets**, not hard billing guarantees:
 - HTTP retry attempts are not separately charged against this policy budget.
 - A vendor can accept a request whose response is lost; retries can then create
   duplicate ingestion.
-- Restarting the daemon resets its in-memory budgets.
+- Restarting preserves budget usage and representative cooldowns.
 - Running two daemons gives two independent budgets.
 - New fingerprints are also subject to the budget; there is no hidden bypass.
+
+## Durable admission and recovery
+
+The required `storage.path` points to a local persistent file, for example
+`/var/lib/lapsoss/state.redb`. Create its parent directory with mode `0700`.
+The daemon creates a `0600` database, refuses symlink files/directories, and
+locks it exclusively. Do not put it in `/run`, `/tmp`, or an ephemeral container
+layer. Provision a persistent volume when using containers.
+
+An admission ACK follows an immediate durable transaction containing all
+destination decisions, counters, budget consumption, queued representatives,
+and the response receipt. No vendor request starts before that commit. A
+storage error stops admission and new dispatch until restart; there is no silent
+memory-only fallback. Durability depends on the filesystem and hardware
+honoring synchronization.
+
+Replaying an identical event with the **same UUID and payload** returns its
+original decision, without counting or spending budget twice. Reusing that
+UUID with a different payload returns `event_id_conflict`. Receipts are bounded:
+
+| Storage setting | Default | Meaning |
+|---|---:|---|
+| `max_receipts` | 100000 | Maximum retained receipts (maximum 1000000); new admissions reject with `receipt_capacity` when full |
+| `receipt_retention_seconds` | 300 | Minimum retention after admission without jobs, or after the final successful delivery |
+| `retry_failed_on_startup` | false | Explicitly retry retained terminal failures on startup |
+| `allow_destination_changes` | false | Explicitly permit new adapter settings for retained jobs |
+
+Unfinished and failed jobs pin their receipt beyond normal retention. After a
+receipt expires, the same UUID can be admitted again: idempotency is not forever.
+An indexed ingress sweep removes up to 256 expired records per admission.
+Groups are also expired on access.
+
+Time is conservative: each process resumes the last committed logical time and
+adds monotonic elapsed time. Downtime, and idle time since the last checkpoint,
+do not advance windows. Restart or wall-clock rollback cannot refill budgets;
+they can delay refill and group expiry.
+
+On restart, unfinished jobs are delivered using their stored representative
+payload, without repeating policy admission. Successful deliveries are removed
+only after a durable completion commit. **Delivery is at-least-once across
+crashes, not exactly-once vendor ingestion.** A crash after vendor acceptance
+but before local completion can resend the same event ID.
+
+Once transport retries are exhausted, jobs remain on disk as terminal failures,
+consume queue capacity, and do not retry indefinitely. Repair the destination,
+then set `retry_failed_on_startup: true` for a controlled restart. Revert the
+flag afterward. Budget and occurrence counts are not charged again.
+
+Changing adapter settings with retained jobs is refused by default. Credential
+rotation or intentional rerouting requires `allow_destination_changes: true`;
+review the change and revert the flag afterward. Stored destinations cannot
+simply be removed or renamed, and queue caps cannot shrink below retained jobs.
+There is no state migration or dead-letter deletion command yet.
+
+Queue payloads, groups, and receipts have logical caps; the database file also
+has page/index overhead and **no absolute file-size quota**. Monitor free disk
+space and `spool.failed`; a full disk stops admission rather than discarding
+acknowledged jobs. The database contains scrubbed event payloads, not encrypted
+payloads. Treat it as sensitive. Stop the daemon before copying the database
+for backup; do not delete it to clear a stale socket.
 
 ## Grouping and aggregation
 
@@ -92,14 +154,14 @@ The next queued representative carries `extra.lapsossd`:
 }
 ```
 
-**There is no background replay or autonomous summary yet.** Suppressed
+**There is no autonomous summary yet.** Suppressed
 payloads are not stored. If no later occurrence arrives, no summary event is
-sent. Idle groups expire during ingress sweeps, at most once a minute.
+sent. Idle groups expire during bounded ingress sweeps or on access.
 Expiry removes their individual counts; cumulative daemon statistics remain.
 
-If queued delivery ultimately fails, it appears in delivery statistics; policy
+If queued delivery ultimately fails, it appears in spool statistics; policy
 admission state is not rolled back. A later event can become a representative
-after the interval. This is not an at-least-once persistent queue.
+after the interval. Failed jobs remain available for explicit redrive.
 
 ## Ruby client behavior
 
@@ -124,7 +186,9 @@ Capture returns an event ID if any destination forwards, aggregates, or
 intentionally suppresses the event. It returns `nil` on communication failure
 or when every destination rejects it. Failures call the configured error handler
 with `adapter: :daemon` and do **not** fall back to direct vendor delivery.
-Automatic reconnect/replay is intentionally absent: a lost ACK is ambiguous.
+Automatic client replay is intentionally absent: a lost ACK is ambiguous to the
+client, although an explicit same-UUID/payload replay can recover the receipt.
+Socket deadlines do not cancel an already-started durable transaction.
 
 `flush` covers earlier admissions serialized through that client and waits for
 the daemon's current delivery watermark. It does not emit suppressed events or
@@ -138,7 +202,7 @@ uses a fresh socket and synchronization primitive.
 Lapsoss.client.statistics
 # { accepted: ..., rejected: ..., daemon: {
 #   "ok" => true, "destinations" => [
-#     { "name" => "sentry", "policy" => {...}, "delivery" => {...} }
+#     { "name" => "sentry", "policy" => {...}, "spool" => {...}, "delivery" => {...} }
 #   ]
 # } }
 ```
@@ -146,7 +210,10 @@ Lapsoss.client.statistics
 Policy statistics distinguish received, forwarded, duplicate aggregation,
 exclusions, budget limiting, fingerprint-capacity rejection, queue rejection,
 and expired groups. Delivery statistics separately track outstanding, delivered,
-failed, and abandoned jobs.
+failed, and abandoned jobs for the current process. Durable `spool` statistics
+report pending/failed jobs, retained payload bytes, and cumulative delivered
+jobs. A successful flush means its pending watermark finished, not that every
+vendor accepted it; terminal failures remain visible in `spool.failed`.
 
 ## Socket security and operations
 
@@ -159,7 +226,9 @@ remove it manually only after confirming no daemon is listening.
 Run in the foreground under systemd or another supervisor. SIGTERM and SIGINT
 stop acceptance, cancel incomplete socket requests, and allow up to five
 seconds for existing delivery jobs to drain. The socket is removed on clean
-exit; a crash or SIGKILL may leave it behind.
+exit; a crash or SIGKILL may leave it behind. Unfinished deliveries stay on disk.
+Filesystem synchronization can still block independently of socket/flush
+deadlines; let your supervisor enforce its own final kill deadline.
 
 Socket requests/responses use a four-byte unsigned big-endian JSON byte length,
 followed by UTF-8 JSON. The maximum request is 1 MiB. Version 1 commands:

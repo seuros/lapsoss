@@ -9,7 +9,9 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
+base64.workspace = true
 lapsoss = { path = "../ext/lapsoss_native/core", version = "=0.2.0" }
+redb.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 sha2.workspace = true
