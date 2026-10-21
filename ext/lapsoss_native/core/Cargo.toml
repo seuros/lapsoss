@@ -1,12 +1,14 @@
 [package]
 name = "lapsoss"
-version = "2.0.0"
+version = "0.2.0"
 description = "Embeddable vendor-neutral error delivery dispatcher"
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
 readme = "README.md"
+# Publish only library source and documentation, not tests, fixtures, or examples.
+include = ["src/*.rs", "README.md"]
 
 [lints]
 workspace = true

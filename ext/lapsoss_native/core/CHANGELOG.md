@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0](https://github.com/seuros/lapsoss/compare/lapsoss-rust-v0.2.0...lapsoss-rust-v2.0.0) (2026-10-21)
+## 0.2.0 (2026-10-21)
 
 
 ### ⚠ BREAKING CHANGES
