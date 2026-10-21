@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 require "zeitwerk"
+require "json"
+require "active_support"
+require "active_support/concern"
+require "active_support/core_ext/object/deep_dup"
 require "active_support/core_ext/module/delegation"
+require_relative "lapsoss/native"
 
 loader = Zeitwerk::Loader.for_gem
 loader.do_not_eager_load("#{__dir__}/lapsoss/adapters")
@@ -26,14 +31,29 @@ module Lapsoss
     attr_reader :client
 
     def configuration
-      @configuration ||= Configuration.new
+      Thread.current[:lapsoss_configuration_candidate] || (@configuration ||= Configuration.new)
     end
 
     def configure
-      yield(configuration)
-      configuration.validate!
-      configuration.apply!
-      @client = Client.new(configuration)
+      candidate = configuration.dup
+      previous_candidate = Thread.current[:lapsoss_configuration_candidate]
+      Thread.current[:lapsoss_configuration_candidate] = candidate
+      yield(candidate)
+      candidate.validate!
+      adapters = candidate.build_adapters
+      specs = adapters.select { |adapter| adapter.enabled? || adapter.settings[:dsn].present? }
+        .filter_map { |adapter| NativeAdapters.describe(adapter) }
+      Native.validate(specs.to_json, NativeAdapters.transport(candidate).to_json)
+      replacement = Client.new(candidate)
+      if @client && !@client.flush(timeout: 2)
+        raise Error, "Previous Lapsoss client did not drain; configuration was not replaced"
+      end
+      @client&.shutdown(timeout: 2)
+      Registry.instance.replace!(adapters)
+      @configuration = candidate
+      @client = replacement
+    ensure
+      Thread.current[:lapsoss_configuration_candidate] = previous_candidate
     end
 
     def capture_exception(exception, **context)
@@ -43,7 +63,7 @@ module Lapsoss
     end
 
     def capture_message(message, level: :info, **context)
-      client.capture_message(message, level: level, **context)
+      client&.capture_message(message, level: level, **context)
     end
 
     # Rails.error-compatible methods for non-Rails environments
@@ -97,8 +117,7 @@ module Lapsoss
       client.flush(timeout: timeout)
     end
 
-    def call_error_handler(adapter:, event:, error:)
-      handler = configuration.error_handler
+    def call_error_handler(adapter:, event:, error:, handler: configuration.error_handler)
       return unless handler
 
       case handler.arity
@@ -117,4 +136,11 @@ module Lapsoss
 
     delegate :shutdown, to: :client
   end
+end
+
+at_exit do
+  Lapsoss.client&.shutdown(timeout: 2)
+rescue StandardError
+  # Reporting must never replace an application's exit status.
+  nil
 end

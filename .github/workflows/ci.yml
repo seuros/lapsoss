@@ -1,10 +1,13 @@
-name: Ruby CI
+name: Ruby and Rust CI
 
 on:
   push:
     branches:
       - master
   pull_request:
+
+env:
+  CARGO_BUILD_WARNINGS: deny
 
 jobs:
   build:
@@ -14,15 +17,13 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
-          - "3.3"
-          - "3.4"
           - "4.0"
         rails:
           - "~> 8.1.0"
           - "edge"
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -37,7 +38,32 @@ jobs:
           gem install bundler
           bundle install --jobs 4 --retry 3
 
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@1.99.0
+
       - name: Run tests
         env:
           RAILS_VERSION: ${{ matrix.rails }}
-        run: bin/rails test
+        run: bundle exec rake test
+
+      - name: Source gem installation
+        if: matrix.rails != 'edge'
+        run: |
+          gem build lapsoss.gemspec --output /tmp/lapsoss.gem
+          gem install /tmp/lapsoss.gem --no-document --install-dir /tmp/lapsoss-install
+          cd /tmp
+          GEM_PATH="/tmp/lapsoss-install:$(ruby -e 'puts Gem.path.join(":")')" ruby -e 'require "lapsoss"; Lapsoss.configure { |c| c.async = false; c.use_logger }; abort unless Lapsoss.capture_message("installed gem"); abort unless Lapsoss.shutdown'
+
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with:
+          components: rustfmt, clippy
+      - run: cargo fmt --all --check
+      # Deliberately do not install Ruby: the published core must stand alone.
+      - run: cargo test -p lapsoss --locked -- --no-capture
+      - run: cargo clippy -p lapsoss --all-targets --locked
+      - run: cargo run -p lapsoss --example embedded --locked
+      - run: cargo package -p lapsoss --locked

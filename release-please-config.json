@@ -3,7 +3,20 @@
     ".": {
       "release-type": "ruby",
       "package-name": "lapsoss",
-      "bump-patch-for-minor-pre-major": true
+      "include-component-in-tag": false,
+      "extra-files": [
+        {
+          "type": "toml",
+          "path": "ext/lapsoss_native/ffi/Cargo.toml",
+          "jsonpath": "$.package.version"
+        }
+      ]
+    },
+    "ext/lapsoss_native/core": {
+      "release-type": "rust",
+      "package-name": "lapsoss",
+      "component": "lapsoss-rust",
+      "include-component-in-tag": true
     }
   }
 }

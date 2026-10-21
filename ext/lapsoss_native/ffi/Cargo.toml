@@ -1,0 +1,23 @@
+[package]
+name = "lapsoss_native"
+version = "2.0.0"
+description = "Ruby bindings for the Lapsoss dispatcher"
+publish = false
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[lints]
+workspace = true
+
+[dependencies]
+lapsoss = { path = "../core", version = "=0.2.0" }
+magnus.workspace = true
+rb-sys.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true

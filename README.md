@@ -1,4 +1,4 @@
-# Lapsoss - Vendor-Neutral Error Reporting for Rails
+# Lapsoss - Vendor-Neutral Error Reporting for Ruby and Rust
 
 [![Ruby CI](https://github.com/seuros/lapsoss/actions/workflows/ci.yml/badge.svg)](https://github.com/seuros/lapsoss/actions/workflows/ci.yml)
 [![Gem Version](https://badge.fury.io/rb/lapsoss.svg)](https://badge.fury.io/rb/lapsoss)
@@ -38,8 +38,24 @@ end
 
 ## Requirements
 
-- Ruby 3.3+
+- CRuby 4.0+
 - Rails 8.1+
+- A supported platform gem, or Rust 1.99+ for source builds
+
+## Shared Rust dispatcher
+
+Lapsoss 2 uses the **Matryoshka** pattern: Ruby captures application context and
+runs Ruby policies; a required native extension embeds the same delivery library
+that Rust applications can use directly. No daemon or vendor SDK is required.
+
+```toml
+# In a Rust application:
+[dependencies]
+lapsoss = "0.2"
+```
+
+The Rust caller supplies a Tokio runtime. See the
+[crate guide](ext/lapsoss_native/core/README.md).
 
 ## Installation
 
@@ -65,7 +81,13 @@ end
 Lapsoss.add_breadcrumb("User clicked checkout", type: :navigation)
 ```
 
-That's it. No 500-line examples needed.
+Capture returns an event ID when admitted, or `nil` when suppressed, filtered,
+disabled or rejected. Admission does not guarantee delivery.
+
+```ruby
+Lapsoss.flush(timeout: 2)    # true when prior work and callbacks have settled
+Lapsoss.shutdown(timeout: 2) # stop accepting, drain, cancel at deadline
+```
 
 ## Built for Rails, Not Around It
 
@@ -205,7 +227,7 @@ end
 - Your app behavior changes based on load order
 
 **Lapsoss doesn't patch anything:**
-- Pure Ruby implementation
+- Shared Rust delivery implementation, with Ruby-native capture and hooks
 - Uses Rails' error API
 - Your app behavior remains unchanged
 - No competing instrumentation
@@ -258,7 +280,7 @@ If you need pure Ruby error tracking, use the vendor SDKs directly for now.
 
 ## Supported Adapters
 
-All adapters are pure Ruby implementations with no external SDK dependencies:
+All built-in adapters use the shared Rust dispatcher, with no vendor SDK dependencies:
 
 - **Sentry** - Full error tracking support
 - **Rollbar** - Complete error tracking with grouping
@@ -345,7 +367,7 @@ Lapsoss.configure do |config|
   config.scrub_fields = %w[password credit_card ssn] # Or leave nil to use Rails defaults
 
   # Performance
-  config.async = true # Send errors in background
+  config.async = true # Bounded native delivery, not a new Ruby thread per error
 
   # Sampling (see docs/sampling_strategies.md for advanced examples)
   config.sample_rate = Rails.env.production? ? 0.25 : 1.0

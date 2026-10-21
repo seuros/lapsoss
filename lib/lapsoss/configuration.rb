@@ -14,7 +14,8 @@ module Lapsoss
                   :backtrace_strip_load_path, :backtrace_max_frames, :backtrace_enable_code_context,
                   :enable_pipeline, :pipeline_builder, :sampling_strategy,
                   :skip_rails_cache_errors, :force_sync_http, :capture_request_context,
-                  :exclusion_filter, :capture_rails_events, :rails_event_filter
+                  :exclusion_filter, :capture_rails_events, :rails_event_filter,
+                  :queue_max_events, :queue_max_bytes, :delivery_concurrency
     attr_reader :fingerprint_callback, :environment, :before_send, :sample_rate, :error_handler, :transport_timeout,
                 :transport_max_retries, :transport_initial_backoff, :transport_max_backoff, :transport_backoff_multiplier, :transport_ssl_verify, :default_context, :adapter_configs
 
@@ -71,6 +72,26 @@ module Lapsoss
       @capture_request_context = true
       # Exclusion filter
       @exclusion_filter = nil
+      @queue_max_events = 1000
+      @queue_max_bytes = 10 * 1024 * 1024
+      @delivery_concurrency = 4
+    end
+
+    def initialize_copy(other)
+      super
+      @adapter_configs = other.adapter_configs.transform_values do |entry|
+        entry.merge(settings: copy_settings(entry[:settings]))
+      end
+      @default_context = other.default_context.deep_dup
+      %i[scrub_fields whitelist_fields fingerprint_patterns backtrace_in_app_patterns backtrace_exclude_patterns].each do |key|
+        instance_variable_set(:"@#{key}", copy_settings(other.instance_variable_get(:"@#{key}")))
+      end
+    end
+
+    def build_adapters
+      @adapter_configs.map do |name, entry|
+        Registry.instance.build(name, entry[:type], **entry[:settings])
+      end
     end
 
     # Register a named adapter configuration
@@ -151,15 +172,9 @@ module Lapsoss
 
     # Apply configuration by registering all adapters
     def apply!
-      Registry.instance.clear!
+      return if Thread.current[:lapsoss_configuration_candidate].equal?(self)
 
-      @adapter_configs.each do |name, config|
-        Registry.instance.register(
-          name,
-          config[:type],
-          **config[:settings]
-        )
-      end
+      Registry.instance.replace!(build_adapters)
     end
 
     # Check if any adapters are configured
@@ -291,15 +306,16 @@ module Lapsoss
     end
 
     def transport_backoff_multiplier=(value)
-      if value
-        validate_type!(value, [ Numeric ], "transport_backoff_multiplier")
-        validate_numeric_range!(value, 1.0..10.0, "transport_backoff_multiplier")
+      unless value.nil? || (value.is_a?(Numeric) && (1.0..10.0).cover?(value))
+        raise ArgumentError, "transport_backoff_multiplier must be between 1 and 10"
       end
       @transport_backoff_multiplier = value
     end
 
     def transport_ssl_verify=(value)
-      validate_boolean!(value, "transport_ssl_verify") if value
+      unless value == true || value == false
+        raise ArgumentError, "transport_ssl_verify must be true or false"
+      end
       @transport_ssl_verify = value
     end
 
@@ -310,6 +326,10 @@ module Lapsoss
 
     # Configuration validation - just log warnings, don't fail
     def validate!
+      %i[queue_max_events queue_max_bytes delivery_concurrency].each do |key|
+        value = public_send(key)
+        raise ArgumentError, "#{key} must be a positive integer" unless value.is_a?(Integer) && value.positive?
+      end
       # Check sample rate is between 0 and 1
       if @sample_rate && (@sample_rate < 0 || @sample_rate > 1)
         logger.warn "sample_rate should be between 0 and 1, got #{@sample_rate}"
@@ -347,6 +367,15 @@ module Lapsoss
     end
 
     private
+
+    def copy_settings(value)
+      case value
+      when Hash then value.transform_values { |child| copy_settings(child) }
+      when Array then value.map { |child| copy_settings(child) }
+      when String then value.dup
+      else value # Logger objects, callbacks and custom settings retain identity.
+      end
+    end
 
     # Adapter config validation moved to inline logging
   end

@@ -6,9 +6,13 @@
 /pkg/
 /spec/reports/
 /tmp/
+/.tmp/
 
 # Build artifacts
 *.gem
+/target/
+*.bundle
+*.so
 
 # Editors/IDEs
 .DS_Store

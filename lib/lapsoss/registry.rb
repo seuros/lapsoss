@@ -27,10 +27,21 @@ module Lapsoss
       # Check if adapter already exists
       raise DuplicateAdapterError, "Adapter '#{name}' already registered" if @adapters.key?(name)
 
-      adapter_class = resolve_adapter_class(type)
-      adapter = adapter_class.new(name, settings)
+      adapter = build(name, type, **settings)
       @adapters[name] = adapter
       adapter
+    end
+
+    def build(name, type, **settings)
+      resolve_adapter_class(type).new(name.to_sym, settings)
+    end
+
+    # Called only after the previous delivery client has drained.
+    def replace!(adapters)
+      previous = @adapters
+      @adapters = Concurrent::Map.new
+      adapters.each { |adapter| @adapters[adapter.name.to_sym] = adapter }
+      previous.each_value { |adapter| adapter.shutdown if adapter.respond_to?(:shutdown) }
     end
 
     # Register an adapter instance directly (for testing)

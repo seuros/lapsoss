@@ -131,7 +131,7 @@ class LapsossTest < ActiveSupport::TestCase
     Lapsoss.capture_message("Test message for before_send")
     sleep 0.1
 
-    assert_includes output.string, "filtered: true"
+    assert_includes output.string, '"filtered":true'
   end
 
   test "error handler is called on adapter failure" do
