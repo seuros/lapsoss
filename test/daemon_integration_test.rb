@@ -37,42 +37,59 @@ class DaemonIntegrationTest < Minitest::Test
   end
 
   def test_duplicates_do_not_reach_vendor_http_ingestion
-    skip "Set LAPSOSSD_TEST_BIN to a built lapsossd executable" unless ENV["LAPSOSSD_TEST_BIN"]
-
-    vendor = TCPServer.new("127.0.0.1", 0)
-    received = Queue.new
-    worker = Thread.new do
-      peer = vendor.accept
-      begin
-        Timeout.timeout(3) do
-          received << read_vendor_request(peer)
-          peer.write("HTTP/1.1 200 OK\r\nContent-Length: 2\r\nConnection: close\r\n\r\n{}")
-        end
-      ensure
-        peer.close
+    with_vendor do |vendor, received|
+      destination = {
+        adapter: { name: "sentry", type: "sentry", settings: {
+          dsn: "http://fixture@127.0.0.1:#{vendor.addr[1]}/123", compress_threshold: 1_000_000
+        } },
+        policy: { budget_events: 1 }
+      }
+      with_daemon(destination) do
+        100.times { assert Lapsoss.capture_message("same outage", level: :error) }
+        assert Lapsoss.flush
+        stats = Lapsoss.client.statistics.dig(:daemon, "destinations", 0)
+        assert_equal 1, stats.dig("delivery", "delivered")
+        assert_equal 0, stats.dig("delivery", "failed")
+        assert_equal 99, stats.dig("policy", "aggregated")
+        assert_equal 1, received.size
+        first_line, body = received.pop
+        assert_includes first_line, "/api/123/envelope/"
+        assert_includes body, "same outage"
       end
     end
-    destination = {
-      adapter: { name: "sentry", type: "sentry", settings: {
-        dsn: "http://fixture@127.0.0.1:#{vendor.addr[1]}/123", compress_threshold: 1_000_000
-      } },
-      policy: { budget_events: 1 }
-    }
-    with_daemon(destination) do
-      100.times { assert Lapsoss.capture_message("same outage", level: :error) }
-      assert Lapsoss.flush
-      stats = Lapsoss.client.statistics.dig(:daemon, "destinations", 0)
-      assert_equal 1, stats.dig("delivery", "delivered")
-      assert_equal 0, stats.dig("delivery", "failed")
-      assert_equal 99, stats.dig("policy", "aggregated")
-      assert_equal 1, received.size
-      first_line, body = received.pop
-      assert_includes first_line, "/api/123/envelope/"
-      assert_includes body, "same outage"
+  end
+
+  def test_timer_reports_a_quiet_storm_without_another_capture
+    with_vendor do |vendor, received|
+      destination = {
+        adapter: { name: "sentry", type: "sentry", settings: {
+          dsn: "http://fixture@127.0.0.1:#{vendor.addr[1]}/123", compress_threshold: 1_000_000
+        } },
+        policy: { timed_summaries: true, representative_interval_seconds: 1, budget_events: 2 }
+      }
+      with_daemon(destination) do
+        original_id = Lapsoss.capture_message("quiet storm", level: :warning)
+        5.times { assert Lapsoss.capture_message("quiet storm", level: :warning) }
+        original = JSON.parse(Timeout.timeout(5) { received.pop }.last.lines.last)
+        summary = JSON.parse(Timeout.timeout(5) { received.pop }.last.lines.last)
+        assert_equal original_id.delete("-"), original.fetch("event_id")
+        refute_equal original.fetch("event_id"), summary.fetch("event_id")
+        assert_equal "warning", summary.fetch("level")
+        counts = summary.fetch("extra").fetch("lapsossd")
+        assert counts.fetch("summary")
+        assert_equal 6, counts.fetch("occurrences")
+        assert_equal 5, counts.fetch("suppressed_since_previous_forward")
+        assert_equal original_id, counts.fetch("example_event_id")
+        assert Lapsoss.flush
+        stats = Lapsoss.client.statistics.dig(:daemon, "destinations", 0)
+        assert_equal 6, stats.dig("policy", "received")
+        assert_equal 2, stats.dig("policy", "forwarded")
+        assert_equal 1, stats.dig("policy", "summaries")
+        assert_equal 2, stats.dig("spool", "delivered")
+        sleep 1.2
+        assert_empty received, "An idle group must not produce heartbeat summaries"
+      end
     end
-  ensure
-    vendor&.close
-    worker&.join(4)
   end
 
   def test_crash_recovery_preserves_acknowledged_event_counts_and_budget
@@ -156,6 +173,32 @@ class DaemonIntegrationTest < Minitest::Test
   end
 
   private
+
+  def with_vendor
+    skip "Set LAPSOSSD_TEST_BIN to a built lapsossd executable" unless ENV["LAPSOSSD_TEST_BIN"]
+
+    vendor = TCPServer.new("127.0.0.1", 0)
+    received = Queue.new
+    worker = Thread.new do
+      loop do
+        peer = vendor.accept
+        begin
+          Timeout.timeout(5) do
+            received << read_vendor_request(peer)
+            peer.write("HTTP/1.1 200 OK\r\nContent-Length: 2\r\nConnection: close\r\n\r\n{}")
+          end
+        ensure
+          peer.close
+        end
+      end
+    rescue IOError, Errno::EBADF
+      raise unless vendor.closed?
+    end
+    yield vendor, received
+  ensure
+    vendor&.close
+    worker&.join(6)
+  end
 
   def read_vendor_request(peer)
     first_line = peer.gets

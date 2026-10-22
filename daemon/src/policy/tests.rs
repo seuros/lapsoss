@@ -204,6 +204,14 @@ fn invalid_configuration_is_rejected() {
         })
         .is_err()
     );
+    assert!(
+        Policy::new(PolicyConfig {
+            timed_summaries: true,
+            retention_seconds: 60,
+            ..PolicyConfig::default()
+        })
+        .is_err()
+    );
 }
 
 #[test]

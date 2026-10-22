@@ -75,11 +75,14 @@ struct Job {
     event: Event,
     bytes: usize,
     failed: bool,
+    summary: bool,
 }
+
+pub type Delivery = (String, String, Event);
 
 pub struct Admission {
     pub response: Value,
-    pub jobs: Vec<(String, String, Event)>,
+    pub jobs: Vec<Delivery>,
 }
 
 pub struct Store {
@@ -105,6 +108,7 @@ impl Store {
         let (db, initialized_file) = open_database(Path::new(&config.path))?;
         let tx = db.begin_write()?;
         tx.open_table(EXPIRY)?;
+        tx.open_table(summaries::SCHEDULE)?;
         match get::<u32>(&tx, "schema")? {
             Some(1) => {}
             Some(_) => return Err("unsupported storage schema; refusing to reset state".into()),
@@ -269,35 +273,15 @@ impl Store {
                 &mut meta.policy,
                 &mut group,
                 |event| {
-                    let Ok(bytes) = serde_json::to_vec(&event) else {
-                        return false;
-                    };
-                    if meta.events >= self.queue.max_events
-                        || bytes.len() > self.queue.max_bytes.saturating_sub(meta.bytes)
-                    {
-                        return false;
-                    }
-                    representative = Some((event, bytes.len()));
-                    true
+                    representative = self.stage(event, meta.events, meta.bytes);
+                    representative.is_some()
                 },
             );
-            if let Some((event, bytes)) = representative {
-                let job_key = format!("job/{name}/{}", event.id);
-                put(
-                    tx,
-                    &job_key,
-                    &Job {
-                        event: event.clone(),
-                        bytes,
-                        failed: false,
-                    },
-                )?;
-                meta.events += 1;
-                meta.bytes += bytes;
-                jobs.push((name.clone(), job_key, event));
+            if let Some(job) = enqueue(tx, name, &mut meta, representative, false)? {
+                jobs.push(job);
             }
             if let Some(group) = group {
-                timed(
+                summaries::save_group(
                     tx,
                     &group_key,
                     now_ms.saturating_add(u64::from(*retention) * 1000),
@@ -312,7 +296,7 @@ impl Store {
         Ok(Admission { response, jobs })
     }
 
-    pub fn pending(&self) -> Result<Vec<(String, String, Event)>> {
+    pub fn pending(&self) -> Result<Vec<Delivery>> {
         let tx = self.db.begin_write()?;
         entries(&tx, "job/")?
             .into_iter()
@@ -350,20 +334,22 @@ impl Store {
                     .checked_sub(job.bytes)
                     .ok_or("invalid queue bytes")?;
                 meta.delivered = meta.delivered.saturating_add(1);
-                let receipt_key = format!("receipt/{}", job.event.id);
-                let mut receipt: Timed<Receipt> =
-                    get(&tx, &receipt_key)?.ok_or("missing receipt")?;
-                receipt.value.jobs = receipt
-                    .value
-                    .jobs
-                    .checked_sub(1)
-                    .ok_or("invalid receipt job count")?;
-                let expires = if receipt.value.jobs == 0 {
-                    self.receipt_expiry(milliseconds(ledger.clock)?)
-                } else {
-                    u64::MAX
-                };
-                timed(&tx, &receipt_key, expires, receipt.value)?;
+                if !job.summary {
+                    let receipt_key = format!("receipt/{}", job.event.id);
+                    let mut receipt: Timed<Receipt> =
+                        get(&tx, &receipt_key)?.ok_or("missing receipt")?;
+                    receipt.value.jobs = receipt
+                        .value
+                        .jobs
+                        .checked_sub(1)
+                        .ok_or("invalid receipt job count")?;
+                    let expires = if receipt.value.jobs == 0 {
+                        self.receipt_expiry(milliseconds(ledger.clock)?)
+                    } else {
+                        u64::MAX
+                    };
+                    timed(&tx, &receipt_key, expires, receipt.value)?;
+                }
             } else {
                 job.failed = true;
                 put(&tx, key, &job)?;
@@ -396,6 +382,38 @@ impl Store {
     fn receipt_expiry(&self, now_ms: u64) -> u64 {
         now_ms.saturating_add(u64::from(self.config.receipt_retention_seconds) * 1000)
     }
+
+    fn stage(&self, event: Event, events: usize, bytes: usize) -> Option<(Event, usize)> {
+        let size = serde_json::to_vec(&event).ok()?.len();
+        (events < self.queue.max_events && size <= self.queue.max_bytes.saturating_sub(bytes))
+            .then_some((event, size))
+    }
+}
+
+fn enqueue(
+    tx: &WriteTransaction,
+    name: &str,
+    meta: &mut Destination,
+    representative: Option<(Event, usize)>,
+    summary: bool,
+) -> Result<Option<Delivery>> {
+    let Some((event, bytes)) = representative else {
+        return Ok(None);
+    };
+    let key = format!("job/{name}/{}", event.id);
+    put(
+        tx,
+        &key,
+        &Job {
+            event: event.clone(),
+            bytes,
+            failed: false,
+            summary,
+        },
+    )?;
+    meta.events += 1;
+    meta.bytes += bytes;
+    Ok(Some((name.to_owned(), key, event)))
 }
 
 fn open_database(path: &Path) -> Result<(Database, bool)> {
@@ -480,6 +498,9 @@ fn cleanup(tx: &WriteTransaction, now_ms: u64, ledger: &mut Ledger) -> Result<()
 }
 
 fn expire(tx: &WriteTransaction, key: &str, time: u64, ledger: &mut Ledger) -> Result<()> {
+    if key.starts_with("group/") {
+        summaries::unschedule(tx, key)?;
+    }
     tx.open_table(EXPIRY)?.remove((time, key))?;
     tx.open_table(DATA)?.remove(key)?;
     if key.starts_with("receipt/") {
@@ -505,6 +526,8 @@ fn expire(tx: &WriteTransaction, key: &str, time: u64, ledger: &mut Ledger) -> R
     }
     Ok(())
 }
+
+mod summaries;
 
 fn commit(mut tx: WriteTransaction) -> Result<()> {
     tx.set_durability(Durability::Immediate)?;

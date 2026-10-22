@@ -10,8 +10,8 @@ projects. Multiple daemons do not coordinate budgets.
 The implementation reuses `throttle-machines` for destination event budgets and
 the `lapsoss` Rust delivery core, which uses `chrono-machines` for retry backoff.
 Policy state and queued representatives persist in a transactional redb database.
-Autonomous summary timers, distributed quotas, and behavior-tree policy
-configuration are not implemented yet.
+Optional durable summary timers report quiet error storms. Distributed quotas
+and behavior-tree policy configuration are not implemented yet.
 
 ## Configuration
 
@@ -30,11 +30,12 @@ Policy defaults:
 
 | Setting | Default | Meaning |
 |---|---:|---|
+| `timed_summaries` | false | Queue compact summary messages without waiting for another occurrence |
 | `representative_interval_seconds` | 60 | Minimum interval between queued representatives of a fingerprint |
 | `budget_events` | 100 | Maximum queued representatives per destination window |
 | `budget_window_seconds` | 60 | Monotonic fixed-window duration |
 | `max_fingerprints` | 4096 | Hard cap on tracked groups per destination (maximum 65536) |
-| `retention_seconds` | 3600 | Idle retention; must cover the representative interval |
+| `retention_seconds` | 3600 | Idle retention; must cover the representative interval, or strictly exceed it with timed summaries |
 | `excluded_exception_classes` | `[]` | Exact exception class names to suppress |
 
 The optional `queue` object accepts `max_events` (1000), `max_bytes` (10485760),
@@ -97,7 +98,7 @@ Groups are also expired on access.
 Time is conservative: each process resumes the last committed logical time and
 adds monotonic elapsed time. Downtime, and idle time since the last checkpoint,
 do not advance windows. Restart or wall-clock rollback cannot refill budgets;
-they can delay refill and group expiry.
+they can delay refill, summary deadlines, and group expiry.
 
 On restart, unfinished jobs are delivered using their stored representative
 payload, without repeating policy admission. Successful deliveries are removed
@@ -154,10 +155,51 @@ The next queued representative carries `extra.lapsossd`:
 }
 ```
 
-**There is no autonomous summary yet.** Suppressed
-payloads are not stored. If no later occurrence arrives, no summary event is
-sent. Idle groups expire during bounded ingress sweeps or on access.
-Expiry removes their individual counts; cumulative daemon statistics remain.
+By default, suppressed payloads are not stored and no timer emits summaries.
+If no later occurrence arrives, no summary event is sent. Idle groups expire
+during bounded sweeps or on access. Expiry removes their individual counts;
+cumulative daemon statistics remain.
+
+### Timed summaries (opt-in)
+
+Set `"timed_summaries": true` in a destination's policy. A group with pending
+counts becomes eligible after `representative_interval_seconds` since its last
+queued representative, or since its first observation if none was queued.
+Once pending counts are drained, the timer stops: there are no empty heartbeats.
+
+Summaries are **additional billable vendor events**, admitted under the same
+destination budget and queue limits as live representatives. An exhausted
+budget defers the summary until its window reopens; a full queue defers it for
+another check. Neither deferral clears pending counts or spends a token.
+Live ingress that queues a representative first cancels the pending summary.
+If a group expires before capacity becomes available, its pending counts expire
+with it. Timers do not keep idle groups alive indefinitely.
+
+Each summary is a compact `message` event with a fresh UUID and timestamp,
+the example's severity, and `extra.lapsossd.summary: true`. Its
+`suppressed_since_previous_forward` includes **all** pending observations: the
+summary itself is not another occurrence. `occurrences` remains the cumulative
+group count. `group` identifies the daemon fingerprint, and `example_event_id`
+identifies the stored example (which may never have reached the vendor).
+
+The bounded example retains at most 256 Unicode characters each of message,
+environment, and release, and 16 of severity; it retains no user, request,
+breadcrumbs, or stack. Examples are capped by `max_fingerprints`, not queue
+payload bytes, so allow additional database space per tracked group. Enabling
+summaries for existing groups takes effect on their next eligible observation.
+
+Summary fingerprints use the daemon group hash. Original events keep their
+original fingerprints; a vendor may show summaries as a **separate issue**
+rather than merge them with the original exception. Summary context is not a
+replacement for the original error payload.
+
+The worker checks an indexed schedule approximately every 100 ms, processing
+up to 64 due groups per pass. This is best-effort timing, not a delivery deadline.
+Queueing a summary atomically commits the updated budget, cleared pending
+count, and payload. Pending schedules and queued summaries survive restart;
+replay and explicit failure redrive keep the same summary UUID without spending
+another token. Disabling the feature or excluding the example's exception class
+stops unqueued summaries; already committed jobs still deliver.
 
 If queued delivery ultimately fails, it appears in spool statistics; policy
 admission state is not rolled back. A later event can become a representative
@@ -191,7 +233,7 @@ client, although an explicit same-UUID/payload replay can recover the receipt.
 Socket deadlines do not cancel an already-started durable transaction.
 
 `flush` covers earlier admissions serialized through that client and waits for
-the daemon's current delivery watermark. It does not emit suppressed events or
+the daemon's current delivery watermark. It does not force future summary timers or
 prove vendor success. Its daemon-side wait is capped at 1.5 seconds.
 `shutdown` closes only the Ruby client, not the shared daemon.
 
@@ -209,7 +251,10 @@ Lapsoss.client.statistics
 
 Policy statistics distinguish received, forwarded, duplicate aggregation,
 exclusions, budget limiting, fingerprint-capacity rejection, queue rejection,
-and expired groups. Delivery statistics separately track outstanding, delivered,
+and expired groups. `summaries` counts queued timer-generated events;
+`forwarded` includes them, while `received` counts only client observations.
+Timer deferrals do not inflate ingress rejection/budget counters.
+Delivery statistics separately track outstanding, delivered,
 failed, and abandoned jobs for the current process. Durable `spool` statistics
 report pending/failed jobs, retained payload bytes, and cumulative delivered
 jobs. A successful flush means its pending watermark finished, not that every
@@ -227,6 +272,7 @@ Run in the foreground under systemd or another supervisor. SIGTERM and SIGINT
 stop acceptance, cancel incomplete socket requests, and allow up to five
 seconds for existing delivery jobs to drain. The socket is removed on clean
 exit; a crash or SIGKILL may leave it behind. Unfinished deliveries stay on disk.
+Shutdown drains queued jobs but does not force future summaries.
 Filesystem synchronization can still block independently of socket/flush
 deadlines; let your supervisor enforce its own final kill deadline.
 

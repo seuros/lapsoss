@@ -11,6 +11,7 @@ use throttle_machines::{
 #[derive(Clone, Debug, Deserialize)]
 #[serde(default, deny_unknown_fields)]
 pub struct PolicyConfig {
+    pub timed_summaries: bool,
     pub representative_interval_seconds: u32,
     pub budget_events: u32,
     pub budget_window_seconds: u32,
@@ -22,6 +23,7 @@ pub struct PolicyConfig {
 impl Default for PolicyConfig {
     fn default() -> Self {
         Self {
+            timed_summaries: false,
             representative_interval_seconds: 60,
             budget_events: 100,
             budget_window_seconds: 60,
@@ -42,9 +44,11 @@ impl PolicyConfig {
             || self.max_fingerprints == 0
             || self.max_fingerprints > 65_536
             || self.retention_seconds < self.representative_interval_seconds
+            || (self.timed_summaries
+                && self.retention_seconds == self.representative_interval_seconds)
         {
             return Err(
-                "policy limits must be positive; retention must cover the representative interval; max_fingerprints <= 65536",
+                "policy limits must be positive; retention must cover the representative interval (strictly exceed it for timed summaries); max_fingerprints <= 65536",
             );
         }
         Ok(())
@@ -71,6 +75,7 @@ pub struct Outcome {
 pub struct Statistics {
     pub received: u64,
     pub forwarded: u64,
+    pub summaries: u64,
     pub aggregated: u64,
     pub excluded: u64,
     pub budget_limited: u64,
@@ -86,6 +91,52 @@ pub(crate) struct Group {
     pub occurrences: u64,
     pub pending: u64,
     pub last_forward: Option<f64>,
+    pub summary: Option<Summary>,
+}
+
+/// A bounded example, not a retained request, user, breadcrumb trail, or stack.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub(crate) struct Summary {
+    pub due: f64,
+    group: String,
+    sample: String,
+    level: String,
+    exception: Option<String>,
+    environment: Option<String>,
+    release: Option<String>,
+    source_id: String,
+}
+
+impl Summary {
+    fn new(event: &Event, due: f64) -> Self {
+        Self {
+            due,
+            group: fingerprint(event),
+            sample: event.exception_message().chars().take(256).collect(),
+            level: event.level.chars().take(16).collect(),
+            exception: event
+                .exception
+                .as_ref()
+                .map(|error| digest(error.class.as_bytes())),
+            environment: event
+                .environment
+                .as_ref()
+                .map(|value| value.chars().take(256).collect()),
+            release: event
+                .release
+                .as_ref()
+                .map(|value| value.chars().take(256).collect()),
+            source_id: event.id.to_string(),
+        }
+    }
+
+    fn event(&self) -> Event {
+        let mut event = Event::message(format!("Suppressed errors: {}", self.sample), &self.level);
+        event.environment.clone_from(&self.environment);
+        event.release.clone_from(&self.release);
+        event.fingerprint = json!([self.group]);
+        event
+    }
 }
 
 #[derive(Default, Serialize, Deserialize)]
@@ -113,7 +164,7 @@ impl Policy {
     /// Suppression is terminal policy success, never a delivery failure.
     pub(crate) fn submit(
         &self,
-        mut event: Event,
+        event: Event,
         now: f64,
         state: &mut State,
         group: &mut Option<Group>,
@@ -143,6 +194,15 @@ impl Policy {
             statistics.tracked_fingerprints += 1;
         }
         let group = group.get_or_insert_with(Group::default);
+        if !self.config.timed_summaries {
+            group.summary = None;
+        } else if group.summary.is_none() {
+            group.summary = Some(Summary::new(
+                &event,
+                group.last_forward.unwrap_or(now)
+                    + f64::from(self.config.representative_interval_seconds),
+            ));
+        }
         group.occurrences = group.occurrences.saturating_add(1);
         group.pending = group.pending.saturating_add(1);
         if group
@@ -153,6 +213,53 @@ impl Policy {
             return outcome(Decision::Aggregate, "duplicate", group.occurrences);
         }
 
+        self.forward(event, now, state, group, false, forward)
+    }
+
+    /// Timer-driven delivery does not create another observed occurrence.
+    pub(crate) fn summarize(
+        &self,
+        now: f64,
+        state: &mut State,
+        group: &mut Group,
+        forward: impl FnOnce(Event) -> bool,
+    ) {
+        let Some(summary) = &mut group.summary else {
+            return;
+        };
+        if !self.config.timed_summaries
+            || summary.exception.as_ref().is_some_and(|hash| {
+                self.config
+                    .excluded_exception_classes
+                    .iter()
+                    .any(|class| digest(class.as_bytes()) == *hash)
+            })
+        {
+            group.summary = None;
+            return;
+        }
+        if group.pending == 0 {
+            return;
+        }
+        if let Some(last) = group.last_forward
+            && now - last < f64::from(self.config.representative_interval_seconds)
+        {
+            summary.due = last + f64::from(self.config.representative_interval_seconds);
+            return;
+        }
+        let event = summary.event();
+        self.forward(event, now, state, group, true, forward);
+    }
+
+    fn forward(
+        &self,
+        mut event: Event,
+        now: f64,
+        state: &mut State,
+        group: &mut Group,
+        summary: bool,
+        forward: impl FnOnce(Event) -> bool,
+    ) -> Outcome {
         let budget = FixedWindow::check(
             FixedWindowState {
                 count: state.budget_count,
@@ -165,7 +272,12 @@ impl Policy {
             },
         );
         if !budget.allowed {
-            statistics.budget_limited = statistics.budget_limited.saturating_add(1);
+            if !summary {
+                state.statistics.budget_limited = state.statistics.budget_limited.saturating_add(1);
+            }
+            if let Some(template) = &mut group.summary {
+                template.due = now + budget.retry_after.max(1.0);
+            }
             return outcome(Decision::Aggregate, "destination_budget", group.occurrences);
         }
 
@@ -176,17 +288,31 @@ impl Policy {
         event.context["extra"]["lapsossd"] = json!({
             "occurrences": group.occurrences,
             "occurrences_since_previous_forward": group.pending,
-            "suppressed_since_previous_forward": group.pending.saturating_sub(1),
+            "suppressed_since_previous_forward": group.pending.saturating_sub(u64::from(!summary)),
+            "summary": summary,
+            "group": group.summary.as_ref().map(|template| &template.group),
+            "example_event_id": group.summary.as_ref().map(|template| &template.source_id),
         });
         if !forward(event) {
-            statistics.queue_rejected = statistics.queue_rejected.saturating_add(1);
+            if !summary {
+                state.statistics.queue_rejected = state.statistics.queue_rejected.saturating_add(1);
+            }
+            if let Some(template) = &mut group.summary {
+                template.due = now + 1.0;
+            }
             return outcome(Decision::Reject, "delivery_queue_full", group.occurrences);
         }
         state.budget_count = budget.state.count;
         state.budget_start = budget.state.window_start;
         group.last_forward = Some(now);
         group.pending = 0;
-        statistics.forwarded = statistics.forwarded.saturating_add(1);
+        if let Some(template) = &mut group.summary {
+            template.due = now + f64::from(self.config.representative_interval_seconds);
+        }
+        state.statistics.forwarded = state.statistics.forwarded.saturating_add(1);
+        if summary {
+            state.statistics.summaries = state.statistics.summaries.saturating_add(1);
+        }
         outcome(Decision::Forward, "representative", group.occurrences)
     }
 }

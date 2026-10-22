@@ -80,6 +80,7 @@ Keep state on persistent storage, not `/run` or another temporary filesystem.
         "settings": { "dsn": "https://PUBLIC_KEY@example.com/PROJECT_ID" }
       },
       "policy": {
+        "timed_summaries": true,
         "representative_interval_seconds": 60,
         "budget_events": 100,
         "budget_window_seconds": 60,
@@ -103,8 +104,10 @@ destination has its own policy and budget.
 
 Admission is acknowledged only after a durable transaction stores the decision,
 counts, budget, and queued payloads. Unfinished jobs replay after restart without
-spending another budget token. Summaries still accompany the next eligible
-event rather than running on a timer. Budgets limit logical admissions—not
+spending another budget token. Optional timed summaries report pending counts
+even when no further occurrence arrives; they spend the same destination budget.
+Without `timed_summaries`, counts accompany the next eligible event.
+Budgets limit logical admissions—not
 billing or HTTP attempts; ambiguous vendor acknowledgements can cause duplicates.
 See [daemon operations](docs/daemon.md) before deploying.
 

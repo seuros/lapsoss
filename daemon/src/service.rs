@@ -14,7 +14,7 @@ use tokio::{runtime::Handle, sync::oneshot};
 
 use crate::{
     policy::PolicyConfig,
-    store::{Result, StorageConfig, Store},
+    store::{Delivery, Result, StorageConfig, Store},
 };
 
 #[derive(Deserialize)]
@@ -76,6 +76,7 @@ struct Worker {
     base: f64,
     healthy: bool,
     barriers: Vec<Barrier>,
+    next_summary: Instant,
 }
 
 impl Service {
@@ -146,6 +147,7 @@ impl Service {
             origin: Instant::now(),
             healthy: true,
             barriers: Vec::new(),
+            next_summary: Instant::now(),
         };
         let (sender, receiver) = mpsc::sync_channel(32);
         std::thread::Builder::new()
@@ -202,7 +204,7 @@ impl Worker {
         let mut closing: Option<(Instant, oneshot::Sender<Value>)> = None;
         loop {
             if self.healthy
-                && let Err(error) = self.tick(true)
+                && let Err(error) = self.tick(true, closing.is_none())
             {
                 self.healthy = false;
                 eprintln!(
@@ -267,7 +269,7 @@ impl Worker {
             destination.dispatcher.cancel();
         }
         if self.healthy
-            && let Err(error) = self.tick(false)
+            && let Err(error) = self.tick(false, false)
         {
             self.healthy = false;
             eprintln!(
@@ -284,14 +286,7 @@ impl Worker {
         match request {
             Request::Submit(event) => {
                 let admission = self.store.admit(&event, self.now())?;
-                for (name, key, event) in admission.jobs {
-                    self.destinations
-                        .iter_mut()
-                        .find(|destination| destination.name == name)
-                        .ok_or("missing committed destination")?
-                        .waiting
-                        .push_back((key, event));
-                }
+                self.queue_jobs(admission.jobs)?;
                 Ok(admission.response)
             }
             Request::Statistics => {
@@ -308,7 +303,19 @@ impl Worker {
         }
     }
 
-    fn tick(&mut self, dispatch: bool) -> Result<()> {
+    fn queue_jobs(&mut self, jobs: Vec<Delivery>) -> Result<()> {
+        for (name, key, event) in jobs {
+            self.destinations
+                .iter_mut()
+                .find(|destination| destination.name == name)
+                .ok_or("missing committed destination")?
+                .waiting
+                .push_back((key, event));
+        }
+        Ok(())
+    }
+
+    fn tick(&mut self, dispatch: bool, generate_summaries: bool) -> Result<()> {
         let mut results = Vec::new();
         let mut acknowledgements = Vec::new();
         for (index, destination) in self.destinations.iter().enumerate() {
@@ -339,6 +346,11 @@ impl Worker {
                     }
                 }
             }
+        }
+        if generate_summaries && Instant::now() >= self.next_summary {
+            self.next_summary = Instant::now() + Duration::from_millis(100);
+            let jobs = self.store.summarize(self.now())?;
+            self.queue_jobs(jobs)?;
         }
         for destination in &mut self.destinations {
             if !dispatch {
