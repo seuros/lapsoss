@@ -1,6 +1,6 @@
 [package]
 name = "lapsoss_native"
-version = "2.0.0"
+version = "2.1.0"
 description = "Ruby bindings for the Lapsoss dispatcher"
 publish = false
 edition.workspace = true
