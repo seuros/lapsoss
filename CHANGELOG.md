@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://github.com/seuros/lapsoss/compare/v2.0.0...v2.1.0) (2026-10-22)
+
+
+### Features
+
+* add durable timed summaries for suppressed errors ([28d6033](https://github.com/seuros/lapsoss/commit/28d603337229bd781605365f35d0bb3cb440c56c))
+* persist daemon admissions and recover queued deliveries ([6ecac68](https://github.com/seuros/lapsoss/commit/6ecac68cb7d6625cef00f11d18a3272150c51874))
+* split Ruby capture client from lapsossd delivery daemon ([5ded26f](https://github.com/seuros/lapsoss/commit/5ded26f929015eb2473c19ca1bc3a01121c13aaf))
+
+
+### Bug Fixes
+
+* restore Rust crate version to 0.2.0 ([90baa6b](https://github.com/seuros/lapsoss/commit/90baa6bfe448b78b81824d958f25205ced8c42c8))
+
 ## [2.0.0](https://github.com/seuros/lapsoss/compare/v2.0.0...v2.0.0) (2026-10-21)
 
 
