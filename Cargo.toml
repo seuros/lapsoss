@@ -11,12 +11,13 @@ repository = "https://github.com/seuros/lapsoss"
 [workspace.dependencies]
 anyhow = "1"
 base64 = "0.23.1"
-chrono-machines = "0.9.0"
+chrono-machines = ">=0.13"
 flate2 = "1"
 httpdate = "1"
 jiff = { version = "0.2.38", default-features = false, features = ["std", "serde"] }
 magnus = "0.9"
 rama = { version = "0.4.0", features = ["http-backend", "tcp", "dns", "rustls", "ring"] }
+rand = "0.10"
 rb-sys = "0.9.130"
 redb = "4.3"
 serde = { version = "1", features = ["derive"] }

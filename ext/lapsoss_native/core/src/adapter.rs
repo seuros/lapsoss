@@ -2,11 +2,12 @@ use std::{
     collections::BTreeMap,
     future::Future,
     io::Write,
+    num::NonZeroU8,
     pin::Pin,
     time::{Duration, SystemTime},
 };
 
-use chrono_machines::{BackoffStrategy, ExponentialBackoff, rand};
+use chrono_machines::{Exponential, Retry};
 use flate2::{Compression, write::GzEncoder};
 use rama::http::{client::DefaultHttpWebClient, service::client::HttpClientExt};
 use rama::tls::client::{ServerVerifyMode, TlsServerVerify};
@@ -93,8 +94,6 @@ impl TransportConfig {
             || Duration::try_from_secs_f64(self.timeout).is_err()
             || Duration::try_from_secs_f64(self.initial_backoff).is_err()
             || Duration::try_from_secs_f64(self.max_backoff).is_err()
-            || Duration::try_from_secs_f64(self.max_backoff)
-                .is_ok_and(|delay| u64::try_from(delay.as_millis()).is_err())
         {
             return Err(AdapterError::new("Invalid transport configuration"));
         }
@@ -286,19 +285,22 @@ impl HttpAdapter {
     }
 
     async fn send(&self, request: PreparedRequest) -> Result<(), AdapterError> {
-        let retries = u8::try_from(self.transport.max_retries)
-            .map_err(|_| AdapterError::new("Invalid retry budget"))?;
-        let milliseconds = |seconds| {
-            u64::try_from(Duration::from_secs_f64(seconds).as_millis())
-                .map_err(|_| AdapterError::new("Invalid backoff duration"))
-        };
-        let backoff = ExponentialBackoff::new()
-            .base_delay_ms(milliseconds(self.transport.initial_backoff)?)
-            .max_delay_ms(milliseconds(self.transport.max_backoff)?)
-            .multiplier(self.transport.backoff_multiplier)
-            .max_attempts(retries.strict_add(1))
-            .jitter_factor(if self.transport.jitter { 1.0 } else { 0.0 });
-        for attempt in 1..=BackoffStrategy::max_attempts(&backoff) {
+        let invalid = || AdapterError::new("Invalid transport configuration");
+        let span = |seconds| Duration::try_from_secs_f64(seconds).map_err(|_| invalid());
+        let attempts = u8::try_from(self.transport.max_retries)
+            .ok()
+            .and_then(|retries| retries.checked_add(1))
+            .and_then(NonZeroU8::new)
+            .ok_or_else(invalid)?;
+        let shape = Exponential::new(
+            span(self.transport.initial_backoff)?,
+            self.transport.backoff_multiplier,
+            span(self.transport.max_backoff)?,
+            if self.transport.jitter { 1.0 } else { 0.0 },
+        )
+        .ok_or_else(invalid)?;
+        let mut budget = Retry::new(shape.into(), Some(attempts));
+        loop {
             let response = {
                 let mut builder = self.client.post(&request.url).body(request.body.clone());
                 if !self.transport.ssl_verify {
@@ -335,13 +337,11 @@ impl HttpAdapter {
             if !retry {
                 return Err(error);
             }
-            let Some(delay) = backoff.delay(attempt, &mut rand::rng()) else {
+            let Ok(wait) = budget.failed(rand::random()) else {
                 return Err(error);
             };
-            let wait = Duration::from_millis(delay);
             tokio::time::sleep(retry_after.map_or(wait, |server| server.max(wait))).await;
         }
-        Err(AdapterError::new("Retry budget exhausted"))
     }
 }
 

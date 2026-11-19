@@ -11,7 +11,6 @@ fn transport_validation_rejects_unsupported_budgets_and_durations() {
         ("initial_backoff", f64::NAN),
         ("max_backoff", 0.5),
         ("max_backoff", f64::MAX),
-        ("max_backoff", 1e17), // Duration fits, but milliseconds exceed u64.
         ("backoff_multiplier", 0.5),
         ("backoff_multiplier", f64::INFINITY),
     ] {
