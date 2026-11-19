@@ -3,10 +3,9 @@ use lapsoss::Event;
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
-use throttle_machines::{
-    fixed_window::{FixedWindow, FixedWindowParams, FixedWindowState},
-    gate::Gate,
-};
+use std::num::NonZeroU64;
+use std::time::Duration;
+use throttle_machines::{FixedWindow, FixedWindowPolicy, Gate};
 
 #[derive(Clone, Debug, Deserialize)]
 #[serde(default, deny_unknown_fields)]
@@ -150,6 +149,7 @@ pub(crate) struct State {
 /// representative payloads together; this layer performs no I/O.
 pub struct Policy {
     config: PolicyConfig,
+    budget: FixedWindowPolicy,
 }
 
 impl Policy {
@@ -157,7 +157,15 @@ impl Policy {
     /// Rejects invalid policy limits.
     pub fn new(config: PolicyConfig) -> Result<Self, &'static str> {
         config.validate()?;
-        Ok(Self { config })
+        let budget = NonZeroU64::new(u64::from(config.budget_events))
+            .and_then(|events| {
+                FixedWindowPolicy::new(
+                    Duration::from_secs(u64::from(config.budget_window_seconds)),
+                    events,
+                )
+            })
+            .ok_or("policy limits must be positive")?;
+        Ok(Self { config, budget })
     }
 
     /// Commit budget and representative state only after queue admission.
@@ -260,23 +268,20 @@ impl Policy {
         summary: bool,
         forward: impl FnOnce(Event) -> bool,
     ) -> Outcome {
-        let budget = FixedWindow::check(
-            FixedWindowState {
-                count: state.budget_count,
-                window_start: state.budget_start,
-            },
-            now,
-            FixedWindowParams {
-                limit: u64::from(self.config.budget_events),
-                window_size: f64::from(self.config.budget_window_seconds),
-            },
+        // A count persisted under a larger limit is spent either way.
+        let restored = FixedWindow::restored(
+            self.budget,
+            state.budget_count.min(self.budget.limit().get()),
+            instant(state.budget_start),
         );
-        if !budget.allowed {
+        let mut budget = restored.unwrap_or_else(|| FixedWindow::new(self.budget));
+        let at = instant(now);
+        if budget.check(at).is_err() {
             if !summary {
                 state.statistics.budget_limited = state.statistics.budget_limited.saturating_add(1);
             }
             if let Some(template) = &mut group.summary {
-                template.due = now + budget.retry_after.max(1.0);
+                template.due = now + budget.retry_after(at).as_secs_f64().max(1.0);
             }
             return outcome(Decision::Aggregate, "destination_budget", group.occurrences);
         }
@@ -302,8 +307,8 @@ impl Policy {
             }
             return outcome(Decision::Reject, "delivery_queue_full", group.occurrences);
         }
-        state.budget_count = budget.state.count;
-        state.budget_start = budget.state.window_start;
+        state.budget_count = budget.count();
+        state.budget_start = budget.window_start().as_secs_f64();
         group.last_forward = Some(now);
         group.pending = 0;
         if let Some(template) = &mut group.summary {
@@ -315,6 +320,16 @@ impl Policy {
         }
         outcome(Decision::Forward, "representative", group.occurrences)
     }
+}
+
+/// Policy clock seconds as the `Duration` the budget window runs on. Callers
+/// pass finite, non-negative seconds; anything else saturates.
+fn instant(seconds: f64) -> Duration {
+    Duration::try_from_secs_f64(seconds).unwrap_or(if seconds > 0.0 {
+        Duration::MAX
+    } else {
+        Duration::ZERO
+    })
 }
 
 pub(crate) fn valid_event(event: &Event) -> bool {

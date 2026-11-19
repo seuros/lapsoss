@@ -2701,9 +2701,9 @@ dependencies = [
 
 [[package]]
 name = "throttle-machines"
-version = "0.3.1"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c0a3fd615d10838ecd927b414dfe8b902ffcd7aab7881781dea7682f82005c5"
+checksum = "f594c2be67471326684e275c0cab480b6ccbdecdb78866ebef535c701d902ee5"
 
 [[package]]
 name = "time"
