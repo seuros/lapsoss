@@ -446,7 +446,7 @@ fn open_database(path: &Path) -> Result<(Database, bool)> {
         .open(path)?;
     let db = Database::builder()
         .set_cache_size(8 * 1024 * 1024)
-        .create_with_backend(FileBackend::new(file)?)?;
+        .create_with_backend(FileBackend::new(file))?;
     File::open(parent)?.sync_all()?;
     Ok((db, initialized))
 }

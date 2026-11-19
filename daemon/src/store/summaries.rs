@@ -1,4 +1,4 @@
-use redb::{ReadableDatabase, TableDefinition, WriteTransaction};
+use redb::{ReadableDatabase, ReadableTable, TableDefinition, WriteTransaction};
 
 use super::{
     Delivery, Destination, Ledger, Result, Store, Timed, commit, enqueue, expire, get,
